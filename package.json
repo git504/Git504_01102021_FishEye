@@ -2,8 +2,11 @@
   "name": "git504_2122_p6-cr__ez-un-site-accessible-pour-une-plateforme-de_photographes",
   "version": "1.0.0",
   "description": "Créez un site accessible pour une plateforme de photographes",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
+    "start": "node .",
+    "lint": "eslint .",
+    "server": "json-server --watch db.json",
     "prefix": "postcss ./style.css --use autoprefixer -d./style.cssprefixed/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

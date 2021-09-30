@@ -6,6 +6,12 @@
 
 ## Mission : intégration avec du contenu dynamique Client
 
+      \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 
 ## Compétences évaluées :
@@ -19,12 +25,12 @@ FishEye est un site web qui permet aux photographes indépendants de présenter 
 
 eslint test :
 
-- 1. `cd eslint`
-- 2. `npm test`
+- 1. `cd eslint` + `npm test`
+- 2. ou depuis root `npm run lint`
 
 JSON Server
 
-- 1. `json-server --watch db.json`
+- 1. `npm run server`
      http://localhost:3000/photographers
      http://localhost:3000/media
 
