@@ -1,10 +1,12 @@
-# Projet n°6 Openclassrooms parcours frontend
+# Projet n°6 parcours frontend
 
-## Mission : intégration avec du contenu dynamique
+### openclassrooms
 
 ![Logo](./assets/logo.png)
 
-Client : FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
+## Mission : intégration avec du contenu dynamique Client
+
+FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 
 ## Compétences évaluées :
 
@@ -13,8 +15,25 @@ Client : FishEye est un site web qui permet aux photographes indépendants de pr
 - [x] Écrire du code JavaScript maintenable
 - [x] Gérer les événements du site avec JavaScript
 
-## Run project :
+## Run
 
-- [x] `npm run start` to start server on http://localhost:9000/
+eslint test :
+
+- 1. `cd eslint`
+- 2. `npm test`
+
+JSON Server
+
+- 1. `json-server --watch db.json`
+     http://localhost:3000/photographers
+     http://localhost:3000/media
+
+autoprefixer - postcss - postcss-cli
+
+- 1. `npm run prefix`
+
+**nota** : `node v14.18.0` avec `nvm use 14`
 
 [LIEN REPO GITHUB](https://github.com/git504/Git504_01102021_FishEye)
+
+![Logo](./assets/teaser.png)

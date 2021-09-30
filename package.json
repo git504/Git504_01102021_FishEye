@@ -4,6 +4,7 @@
   "description": "Créez un site accessible pour une plateforme de photographes",
   "main": "index.js",
   "scripts": {
+    "prefix": "postcss ./style.css --use autoprefixer -d./style.cssprefixed/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,15 @@
   ],
   "author": "git504",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/git504/Git504_01102021_FishEye/issues"
   },
-  "homepage": "https://github.com/git504/Git504_01102021_FishEye#readme"
+  "homepage": "https://github.com/git504/Git504_01102021_FishEye#readme",
+  "dependencies": {
+    "autoprefixer": "^10.3.6",
+    "json-server": "^0.16.3",
+    "postcss": "^8.3.8",
+    "postcss-cli": "^9.0.1"
+  }
 }
