@@ -1,4 +1,4 @@
-# Projet n°6 OpenClassRoom parcours frontend
+# Projet n°6 Openclassrooms parcours frontend
 
 ## Mission : intégration avec du contenu dynamique
 
