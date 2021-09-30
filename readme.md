@@ -2,6 +2,8 @@
 
 ## Mission : intégration avec du contenu dynamique
 
+![Logo](./assets/logo.png)
+
 Client : FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 
 ## Compétences évaluées :
