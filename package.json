@@ -4,7 +4,7 @@
   "description": "Créez un site accessible pour une plateforme de photographes",
   "main": "index.html",
   "scripts": {
-    "start": "node .",
+    "start": "opener http://localhost:5500",
     "lint": "eslint .",
     "server": "json-server --watch db.json",
     "prefix": "postcss ./style.css --use autoprefixer -d./style.cssprefixed/",

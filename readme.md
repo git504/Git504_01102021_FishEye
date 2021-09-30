@@ -6,12 +6,6 @@
 
 ## Mission : intégration avec du contenu dynamique Client
 
-      \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 
 ## Compétences évaluées :
