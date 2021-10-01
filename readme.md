@@ -17,10 +17,8 @@ FishEye est un site web qui permet aux photographes indépendants de présenter 
 
 ## start :
 
-- dans le terminal lancer la commande
+- dans le terminal lancer la commande `npm run dev`
 
-`npm run dev`
-
-[LIEN REPO GITHUB](https://github.com/git504/Git504_01102021_FishEye)
+[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
 ![Logo](./assets/teaser.png)
