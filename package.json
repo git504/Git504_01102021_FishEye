@@ -9,7 +9,7 @@
     "nodemon": "nodemon index.js",
     "lint": "cd ./eslint && npm test",
     "server": "json-server --watch db.json",
-    "prefix": "postcss ./style.css --use autoprefixer -d./style.cssprefixed/"
+    "prefix": "postcss ./style.css --use autoprefixer -d ./prefixed"
   },
   "repository": {
     "type": "git",
