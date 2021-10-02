@@ -19,3 +19,11 @@ fetch("http://localhost:3000/photographers")
   .then((response) => response.json())
   .catch((error) => console.error("Error:", error))
   .then((response) => console.log("Success:", JSON.stringify(response)));
+
+/*
+\   ^__^
+\  (oo)\_______
+   (__)\       )\/\
+       ||----w |
+       ||     ||
+*/
