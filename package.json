@@ -2,13 +2,12 @@
   "name": "git504_2122_p6-cr__ez-un-site-accessible-pour-une-plateforme-de_photographes",
   "version": "1.0.0",
   "description": "Créez un site accessible pour une plateforme de photographes",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "sass": "sass --watch ./sass:./style",
     "compressed": "sass ./sass/:./css/ --style=compressed --no-source-map",
-    "dev": "npm-run-all --parallel server start nodemon lint sass",
+    "dev": "npm-run-all --parallel server start sass",
     "start": "opener http://localhost:5500",
-    "nodemon": "nodemon index.js",
     "lint": "cd ./eslint && npm test",
     "server": "json-server --watch db.json",
     "prefix": "postcss ./style/main.css --use autoprefixer -d ./prefixed"
@@ -35,7 +34,7 @@
     "autoprefixer": "^10.3.6",
     "install": "^0.13.0",
     "json-server": "^0.16.3",
-    "nodemon": "^2.0.13",
+    "node-fetch": "^3.0.0",
     "postcss": "^8.3.8",
     "postcss-cli": "^9.0.1"
   },
