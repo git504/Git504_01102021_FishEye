@@ -1,0 +1,15 @@
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+
+@function lightness-shift($colour){
+    @if (lightness($colour) < 100%) {
+    @return lighten($colour, 7%);
+}@else{
+    @return darken($colour, 7%);
+    } 
+}

@@ -1,6 +1,23 @@
-@import "./variables";
-@import "./mixins";
-@import "./elements/navbar";
-@import "./elements/modale";
-@import "./pages/home";
-@import "./pages/profil";
+/*  ---------------------------------------------------------------------- *\
+        Indendation de la CODEBASE avec le préprocesseur CSS Sass ;
+        Compilation main.SCSS vers main.CSS avec le script dans package.json ;
+\*  ---------------------------------------------------------------------- */
+
+@import "./01_utils/_variables";
+// @import "./01_utils/_animations";
+// @import "./01_utils/_functions";
+// @import "./01_utils/_mixins";
+// @import "./01_utils/_extensions";
+// @import "./02_vendors/_vendors";
+// @import "./03_base/_base";
+// @import "./03_base/_typography";
+// @import "./04_component/_loadingspinner";
+// @import "./04_component/_btn";
+// @import "./05_layouts/_header";
+@import "./05_layouts/_nav";
+// @import "./05_layouts/_container";
+// @import "./05_layouts/_footer";
+@import "./05_layouts/_form";
+@import "./06_pages/_homepage";
+@import "./06_pages/_profil";
+// @import "./07_themes/_themes";

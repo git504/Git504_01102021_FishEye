@@ -6,7 +6,7 @@
   "scripts": {
     "sass": "sass --watch ./sass:./style",
     "compressed": "sass ./sass/:./css/ --style=compressed --no-source-map",
-    "dev": "npm-run-all --parallel server start sass",
+    "dev": "npm-run-all --parallel server start sass lint",
     "start": "opener http://localhost:5500",
     "lint": "cd ./eslint && npm test",
     "server": "json-server --watch db.json",

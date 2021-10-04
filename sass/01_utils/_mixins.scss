@@ -1,0 +1,70 @@
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+
+/*  ---------------------------------------------------------------------- *\ 
+            SASS Internal Built-In Modules
+            The sass:color module generates new colors based on existing ones, 
+            making it easy to build color themes.
+            https://sass-lang.com/documentation/modules/color
+\*  ---------------------------------------------------------------------- */
+@use "sass:color";
+
+/*  ---------------------------------------------------------------------- *\ 
+            MIXIN BUTTON - HOMEPAGE
+\*  ---------------------------------------------------------------------- */
+@mixin button {
+    border: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    color: $color-white;
+    background-color: $color-background-greylight;
+    background-image: linear-gradient(0deg, color.scale($color-primary, $alpha: -10%) 0%, color.scale($color-secondary, $alpha: -10%) 100%);
+    cursor: pointer;
+    transition-duration: 0.33s;
+    box-shadow: 0.21rem 0.21rem 10px rgba(0, 0, 0, 0.33);
+  
+    &:hover {
+      background-color: $color-white;
+      box-shadow: 0.28rem 0.28rem 10px rgba(0, 0, 0, 0.49);
+    }
+  
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+/*  ---------------------------------------------------------------------- *\ 
+            MIXIN STEP - HOMEPAGE
+            ECLAIRCIR BTN
+\*  ---------------------------------------------------------------------- */
+   @mixin step ($colour: lightness-shift($color-background-greylight)){
+    padding: 1.5rem;
+    border-radius: 1.28rem;
+    display: flex;
+    background-color: $colour;
+    position: relative;
+    background-image: linear-gradient(0deg, color.scale($color-background-greydark, $alpha: -10%) 0%, color.scale($color-background-greylight, $alpha: -10%) 50%, color.scale($color-white, $alpha: -10%) 100%);
+    cursor: pointer;
+    transition-duration: 0.33s;
+    box-shadow: 0.28rem 0.28rem 10px rgba(0, 0, 0, 0.33);
+   }
+
+/*  ---------------------------------------------------------------------- *\ 
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+   @mixin typography ($color: $color-title){
+    font-size: 16px;
+    font-kerning: normal;
+    line-height: 1.2rem;
+    $color : $color;
+    }

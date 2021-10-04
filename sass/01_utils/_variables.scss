@@ -1,0 +1,35 @@
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+
+/*  ---------------------------------------------------------------------- *\ 
+        "Améliorez la maintenabilité du code" avec les variables Sass ;
+        "Addon COLORZILLA" to pick the exact color from template page (maquette) ;
+        "Nommer" la variable en fonction de son "rôle" ;
+
+        ICI, pas de liste 
+        car elles sont difficiles à lire en revenant sur le code & non contextuel 
+
+        une MAP pourrait etre realisé pour les differents ETATS avec une liste : focus, hover...
+        https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599971-integrez-les-types-de-donnees-sass
+\*  ---------------------------------------------------------------------- */
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background-greylight : hsl(0,0%,97%);
+$color-background-greydark : #EDEDED;
+$color-background-footer : #353535;
+$color-white : #FFFFFF;
+$color-icon : #7E7E7E;
+$color-title : rgb(7, 7, 7);
+$appPadding: 3rem;
+
+/*  ---------------------------------------------------------------------- *\ 
+        RESPONSIVE BREACKPOINT
+        64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+$min-width-rem : 64rem; 
