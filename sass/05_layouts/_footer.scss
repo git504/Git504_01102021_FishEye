@@ -1,93 +1,9 @@
-/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
-qui contiennent ce qui est réutilisable, 
-par exemple un header pour les mises en page de grande taille 
+/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM
+qui contiennent ce qui est réutilisable,
+par exemple un header pour les mises en page de grande taille
 ou un footer ;
 
 @import "./layouts/header";
 @import "./layouts/nav";
 @import "./layouts/container";
 @import "./layouts/form";*/
-
-.footer {
-    background-color: $color-background-footer;
-    
-    .container {
-      display: flex;
-      flex-direction: column;
-      padding: $appPadding;
-    }
-    
-    &__logo {
-      color: $color-white;
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-  
-    &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-  
-    &__listli {
-      margin: 0.5rem 0;
-  
-      &:first-child {
-        margin-top: 0;
-      }
-  
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    
-    &__icon {
-      width: 1.2rem;
-      margin-right: 0.5rem;
-    }
-
-    /*  ---------------------------------------------------------------------- *\ 
-        HOVER
-        animation Underline
-    \*  ---------------------------------------------------------------------- */
-    &__linka {
-      color: $color-white;
-      text-decoration: none;
-      display: inline-block;
-      position: relative;
-      
-      &:hover{
-        font-weight: bold;
-        color : $color-background-greylight;
-      }
-      
-      &--contact, 
-      &--mentions {
-        color: $color-white;
-        text-decoration: none;
-        display: inline-block;
-        position: relative;
-
-        &:hover {
-          text-decoration: underline;
-          color: $color-white;
-          text-decoration-thickness: 0.10rem;
-        }
-      }
-      
-        &:hover::before {
-          content: "";
-          position: absolute;
-          width: 87%;
-          animation: footer 1s ease-out forwards; //timing-function
-          height: 0.10rem;
-          bottom: 0;
-          left: 28px;
-          background-color: $color-white;
-          transform-origin: bottom left;
-          transition: transform;
-        }
-}
-}
