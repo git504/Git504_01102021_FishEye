@@ -71,7 +71,7 @@
       "likes": 62,
       "date": "2011-12-08",
       "price": 55,
-      "description": ""
+      "altTxt" : "Femme avec un pull et un pantalon jaune qui pose sur un terrain de basket"
     },
     {
       "id": 8520927,
@@ -82,7 +82,7 @@
       "likes": 11,
       "date": "2011-11-06",
       "price": 55,
-      "description": ""
+      "altTxt" : "Femme qui pose accroupi sur un pont avec une jambe tendu sur la gauche et portant une tenue verte"
     },
     {
       "id": 9025895,
@@ -93,18 +93,18 @@
       "likes": 72,
       "date": "2013-08-12",
       "price": 55,
-      "description": ""
+      "altTxt" : "Femme portant un chemisiée à rayure noir et jaune"
     },
     {
       "id": 9275938,
       "photographerId": 82,
       "title": "Wedding Gazebo",
-      "image": "Event-_WeddingGazebo.jpg",
+      "image": "Event_WeddingGazebo.jpg",
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
       "price": 55,
-      "description": ""
+      "altTxt" : "Une allée de mariage avec au bout un kiosque en pierre décoré de fleurs roses et blanches "
     },
     {
       "id": 2053494,
@@ -115,7 +115,7 @@
       "likes": 2,
       "date": "2020-05-25",
       "price": 55,
-      "description": ""
+      "altTxt" : "Scène de nuit avec, au premier plan la mariée et le marier, regardant leurs convivent tenant dans leurs mains des cierges magiques allumés"
     },
     {
       "id": 7324238,
@@ -126,7 +126,7 @@
       "likes": 33,
       "date": "2019-06-12",
       "price": 55,
-      "description": ""
+      "altTxt" : "Un repas d'anniversaire au restaurant avec au milieu de la photo deux ballons dorés représentant un 1 et un 8"
     },
     {
       "id": 8328953,
@@ -137,7 +137,7 @@
       "likes": 24,
       "date": "2011-12-08",
       "price": 100,
-      "description": ""
+      "altTxt" : "Un chevel sculté avec différents morceaux de bois ayant des teintes différentes"
     },
     {
       "id": 7502053,
@@ -148,7 +148,7 @@
       "likes": 88,
       "date": "2007-05-07",
       "price": 55,
-      "description": ""
+      "altTxt" : "Peinture sur un mur représentant un triangle blanc ainsi que les épaules et le coup d'un homme"
     },
     {
       "id": 8523492,
@@ -159,7 +159,7 @@
       "likes": 24,
       "date": "2018-05-05",
       "price": 55,
-      "description": ""
+      "altTxt" : "Un tunnel dans un metro avec des grafitis sur les murs"
     },
     {
       "id": 75902334,
@@ -170,7 +170,7 @@
       "likes": 75,
       "date": "2019-11-25",
       "price": 55,
-      "description": ""
+      "altTxt" : " une peinture sur un mur représentant des pigeons de profils qui sont soit de couleur bleu, soit de couleur rose"
     },
 
     {
@@ -182,7 +182,7 @@
       "likes": 52,
       "date": "2013-02-30",
       "price": 70,
-      "description": ""
+      "altTxt" : "Plusieurs personnes vu de haut faisant de l'aviron"
     },
     {
       "id": 92758372,
@@ -193,7 +193,7 @@
       "likes": 58,
       "date": "2018-07-17",
       "price": 70,
-      "description": ""
+      "altTxt" : "Une femme en robe bleu de face qui lève le bras gauche et un homme de face avec une veste et pantalon clairs levant son bras droit "
     },
     {
       "id": 32958383,
@@ -204,7 +204,7 @@
       "likes": 11,
       "date": "2019-08-12",
       "price": 70,
-      "description": ""
+      "altTxt" : "Un femme de face portant une robe rouge à dentelles et des lunettes de soleil"
     },
     {
       "id": 928587383,
@@ -215,7 +215,7 @@
       "likes": 2,
       "date": "2019-01-02",
       "price": 70,
-      "description": ""
+      "altTxt" : "Scène de réunion où se trouve 5 personnes dont une femme au centre montrant des post-it coller sur le mur"
     },
     {
       "id": 725639493,
@@ -226,7 +226,7 @@
       "likes": 3,
       "date": "2019-05-20",
       "price": 70,
-      "description": ""
+      "altTxt" : "Scène de réunion où l'on peut voir 5 hommes dont debout sur la gauche présentant un produit"
     },
     {
       "id": 23394384,
@@ -237,7 +237,7 @@
       "likes": 52,
       "date": "2019-07-18",
       "price": 70,
-      "description": ""
+      "altTxt" : "Une femme de face assis sur un banc de piano avec face à elle un pianon."
     },
     {
       "id": 87367293,
@@ -248,7 +248,7 @@
       "likes": 23,
       "date": "2018-02-22",
       "price": 70,
-      "description": ""
+      "altTxt" : "Une femme de profil tenant dans sa main gauche un micro et portant une robe à frange blanc et dorée"
     },
     {
       "id": 593834784,
@@ -259,7 +259,7 @@
       "likes": 52,
       "date": "2017-03-13",
       "price": 70,
-      "description": ""
+      "altTxt" : "Un cerf posant de face et fixant l'objectif"
     },
     {
       "id": 83958935,
@@ -270,7 +270,7 @@
       "likes": 52,
       "date": "2016-06-12",
       "price": 70,
-      "description": ""
+      "altTxt" : "Un chiot noir et blanc jouant avec sa laisse sur le bord de mer"
     },
 
     {
@@ -282,7 +282,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "description": ""
+      "altTxt" : "Une vue de haut d'une crète d'une motagne"
     },
     {
       "id": 343423425,
@@ -293,7 +293,7 @@
       "likes": 101,
       "date": "2017-04-03",
       "price": 45,
-      "description": ""
+      "altTxt" : "Plusieurs personnes prenant un bain dans une source d'eau chaude naturelle"
     },
     {
       "id": 73434243,
@@ -304,7 +304,7 @@
       "likes": 99,
       "date": "2018-04-30",
       "price": 45,
-      "description": ""
+      "altTxt" : "Paysage coupé en deux verticalement par une route"
     },
     {
       "id": 23425523,
@@ -315,7 +315,7 @@
       "likes": 34,
       "date": "2016-04-05",
       "price": 45,
-      "description": ""
+      "altTxt" : "Sur le début du pont qui mène à une forêt"
     },
     {
       "id": 23134513,
@@ -326,7 +326,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "description": ""
+      "altTxt" : "Sur une barque en plein milieu du lac qui est entouré de montagnes"
     },
     {
       "id": 92352352,
@@ -337,7 +337,7 @@
       "likes": 66,
       "date": "2018-05-24",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait d'une femme souriante les cheveux roux attachés aux yeux marron et portant un rouge à lèvre rouge"
     },
     {
       "id": 34513453,
@@ -348,7 +348,7 @@
       "likes": 52,
       "date": "2017-04-21",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait noir et blanc d'un homme de trois quart portant une chaine"
     },
     {
       "id": 23523533,
@@ -359,7 +359,7 @@
       "likes": 95,
       "date": "2018-11-02",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait noir et blanc d'une femme de face ayant les sourcils et cheveux blancs"
     },
     {
       "id": 525834234,
@@ -370,7 +370,7 @@
       "likes": 25,
       "date": "2019-01-02",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait d'un homme agés de face avec sa main gauche devant le menton et tenant une cigarette"
     },
 
     {
@@ -382,7 +382,7 @@
       "likes": 88,
       "date": "2019-02-03",
       "price": 45,
-      "description": ""
+      "altTxt" :  " Paysage de montagne avec au premier une personne se tenant sur l'une d'elle"
     },
     {
       "id": 625025343,
@@ -393,7 +393,7 @@
       "likes": 85,
       "date": "2019-04-03",
       "price": 45,
-      "description": ""
+      "altTxt" : "Ville cotière avec les maisons de multiples couleurs agglutinés sur la falaise"
     },
     {
       "id": 2525345343,
@@ -404,7 +404,7 @@
       "likes": 34,
       "date": "2019-04-07",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait noir et blanc d'une petite fille de face se tirrant les joues vers le bas"
     },
     {
       "id": 2523434634,
@@ -415,7 +415,7 @@
       "likes": 63,
       "date": "2019-04-07",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait d'une fille de face portant des lunettes"
     },
     {
       "id": 398847109,
@@ -426,7 +426,7 @@
       "likes": 55,
       "date": "2019-06-20",
       "price": 45,
-      "description": ""
+      "altTxt" : "Portrait noir et blanc d'une femme de face ayant la tête levé et les yeux légèrement fermés"
     },
     {
       "id": 2534342,
@@ -437,7 +437,7 @@
       "likes": 25,
       "date": "2019-06-21",
       "price": 45,
-      "description": ""
+      "altTxt" : "Table de mariage placé sur le bord de mer"
     },
     {
       "id": 65235234,
@@ -448,7 +448,7 @@
       "likes": 52,
       "date": "2019-06-25",
       "price": 45,
-      "description": ""
+      "altTxt" : "Deux mariés se tenant de profil face à face et se tenant par les hanches"
     },
     {
       "id": 23523434,
@@ -459,7 +459,7 @@
       "likes": 77,
       "date": "2019-06-28",
       "price": 45,
-      "description": ""
+      "altTxt" : "Les mariés souriant se tenant de profil, face à face"
     },
     {
       "id": 5234343,
@@ -470,7 +470,7 @@
       "likes": 142,
       "date": "2019-08-23",
       "price": 60,
-      "description": ""
+      "altTxt" : "Chevaux sauvages trotant au milieu des montagnes"
     },
     {
       "id": 95234343,
@@ -481,7 +481,7 @@
       "likes": 59,
       "date": "2019-07-02",
       "price": 60,
-      "description": ""
+      "altTxt" : "Rollier à long brins"
     },
 
     {
@@ -493,7 +493,7 @@
       "likes": 25,
       "date": "2019-04-03",
       "price": 60,
-      "description": ""
+      "altTxt" : "Rue du japon avec en premier plan deux femmes portant un yukata, et en arrière plan une tour traditionnel japonaise"
     },
     {
       "id": 2523434,
@@ -504,7 +504,7 @@
       "likes": 53,
       "date": "2019-05-06",
       "price": 60,
-      "description": ""
+      "altTxt" : "Canal de venise"
     },
     {
       "id": 95293534,
@@ -515,7 +515,7 @@
       "likes": 33,
       "date": "2019-05-12",
       "price": 60,
-      "description": ""
+      "altTxt" : "Lac entouré de montagne"
     },
     {
       "id": 356234343,
@@ -526,7 +526,7 @@
       "likes": 53,
       "date": "2019-06-20",
       "price": 60,
-      "description": ""
+      "altTxt" : "Un vélo posé sur un rembarde d'escalier et un lampadaire"
     },
     {
       "id": 235234343,
@@ -537,7 +537,7 @@
       "likes": 63,
       "date": "2019-06-26",
       "price": 60,
-      "description": ""
+      "altTxt" : "Vue sur une ville au travers d'une porte d'un ancien batiment indien"
     },
     {
       "id": 6234234343,
@@ -548,7 +548,7 @@
       "likes": 52,
       "date": "2019-06-30",
       "price": 60,
-      "description": ""
+      "altTxt" : "Batiment ancien"
     },
     {
       "id": 6525666253,
@@ -559,7 +559,7 @@
       "likes": 63,
       "date": "2019-07-20",
       "price": 60,
-      "description": ""
+      "altTxt" : "Village sur une colline"
     },
     {
       "id": 98252523433,
@@ -570,7 +570,7 @@
       "likes": 88,
       "date": "2020-01-05",
       "price": 60,
-      "description": ""
+      "altTxt" : "Vue de la tour en contre plongée"
     },
     {
       "id": 9259398453,
@@ -581,7 +581,7 @@
       "likes": 57,
       "date": "2020-01-20",
       "price": 65,
-      "description": ""
+      "altTxt" : "Vue de haut d'une autoroute"
     },
     {
       "id": 3523523534,
@@ -592,7 +592,7 @@
       "likes": 54,
       "date": "2020-05-05",
       "price": 60,
-      "description": ""
+      "altTxt" : "Batiments de plusieurs étages de couleur orange et blanc"
     },
 
     {
@@ -604,7 +604,7 @@
       "likes": 150,
       "date": "2018-02-30",
       "price": 70,
-      "description": ""
+      "altTxt" :"Femme se tenant par un tissu suspendu et faisant des rotations"
     },
     {
       "id": 235234343,
@@ -615,7 +615,7 @@
       "likes": 101,
       "date": "2018-03-05",
       "price": 65,
-      "description": ""
+      "altTxt" : "Femme escaladant une roche "
     },
     {
       "id": 235343222,
@@ -626,7 +626,7 @@
       "likes": 103,
       "date": "2018-03-10",
       "price": 70,
-      "description": ""
+      "altTxt" : "Homme de face surfant dans un tunnel d'eau"
     },
     {
       "id": 7775342343,
@@ -637,7 +637,7 @@
       "likes": 77,
       "date": "2018-04-16",
       "price": 50,
-      "description": ""
+      "altTxt" : "Vue en contre plongée d'un homme faisant une figure de ski"
     },
     {
       "id": 9253445784,
@@ -648,7 +648,7 @@
       "likes": 88,
       "date": "2018-04-22",
       "price": 65,
-      "description": ""
+      "altTxt" : "Cinq femmes de profil faisant une course à pied sur une piste de course dans un stade"
     },
     {
       "id": 22299394,
@@ -659,7 +659,7 @@
       "likes": 95,
       "date": "2018-04-27",
       "price": 70,
-      "description": ""
+      "altTxt" : "Homme de face faisant une figure de skateboard"
     },
     {
       "id": 3452342633,
@@ -670,7 +670,7 @@
       "likes": 52,
       "date": "2018-05-03",
       "price": 75,
-      "description": ""
+      "altTxt" : "Verrière blanche au plafond"
     },
     {
       "id": 939234243,
@@ -681,7 +681,7 @@
       "likes": 55,
       "date": "2018-05-10",
       "price": 72,
-      "description": ""
+      "altTxt" : "Batiment ressemblant à une vague d'eau"
     },
     {
       "id": 222959233,
@@ -692,7 +692,7 @@
       "likes": 85,
       "date": "2018-05-15",
       "price": 71,
-      "description": ""
+      "altTxt" : "Photo du ciel entre deux batiments formant un fer à cheval"
     },
     {
       "id": 965933434,
@@ -703,7 +703,7 @@
       "likes": 66,
       "date": "2018-05-20",
       "price": 58,
-      "description": ""
+      "altTxt" : "Photo du ciel entre deux batiments formant une croix"
     },
     {
       "id": 777723343,
@@ -714,7 +714,6 @@
       "likes": 79,
       "date": "2018-05-21",
       "price": 80,
-      "description": ""
+      "altTxt" : "deux batiments incurvés connectés par un pont"
     }
   ]
-}
