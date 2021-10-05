@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FishEye</title>
+    <link rel="icon" href="./assets/favicon.ico" />
+    <title>Accueil FishEye</title>
     <link rel="stylesheet" type="text/css" href="style/main.css" media="all" />
 
-    <!-- Open Graph data -->
+    <!----------------------------------------------------------------------
+ Open Graph data Facebbok  ᚮ◍𐌏‿𐌏◍ᚭ
+  ------------------------------------------------------------------------>
+
     <meta
       property="og:title"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -23,7 +27,10 @@
       content="FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. "
     />
 
-    <!-- Twitter Card data -->
+    <!----------------------------------------------------------------------
+ Twitter Card data  ᚮ◍𐌏‿𐌏◍ᚭ
+  ------------------------------------------------------------------------>
+
     <meta
       name="twitter:card"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -41,7 +48,112 @@
     <!-- Twitter Summary card images must be at least 200x200px -->
     <meta name="twitter:image" content="./assets/logo.png" />
   </head>
-  <body></body>
+  <body>
+    <a href="#main" class="anchor">Passer au contenu</a>
+
+    <!----------------------------------------------------------------------
+ HEADER : logo, une barre de recherche, title    ᚮ◍𐌏‿𐌏◍ᚭ
+  ------------------------------------------------------------------------>
+    <header role="banner" class="header">
+      <!-- logo -->
+      <a aria-label="Fisheye" href="./index.html" class="header__svg">
+        <svg
+          role="img"
+          width="150"
+          height="50"
+          viewBox="0 0 200 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-describedby="title description"
+        >
+          <title id="title">Fisheye</title>
+          <image
+            x="0"
+            y="0"
+            height="50"
+            width="150"
+            xlink:href="./assets/logo.svg"
+          />
+          <desc id="description">Fisheye le logo</desc>
+        </svg>
+      </a>
+
+      <!-- nav-->
+      <nav
+        role="navigation"
+        aria-label="photographer categories"
+        class="header__nav"
+      >
+        <ul class="header__filter-list">
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#portrait</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#events</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#travel</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#animals</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#sports</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#architecture</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#art</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#fashion</a>
+          </li>
+
+          <li class="header__filter-list-item">
+            <a href="./index.html" class="header__filter-tag">#sport</a>
+          </li>
+        </ul>
+
+        <!-- title -->
+        <h1 class="header__title">Nos photographes</h1>
+      </nav>
+    </header>
+
+    <!----------------------------------------------------------------------
+ MAIN : 1 section = 1 profil + 1 article   ᚮ◍𐌏‿𐌏◍ᚭ
+  ------------------------------------------------------------------------>
+    <main class="main" id="main" role="main">
+      <!-- section -->
+      <section
+        role="region"
+        class="photographers"
+        aria-label="Photographers profils"
+      >
+        <!-- article -->
+        <article class="photographer">
+          <a href="jhbjhv" class="photographer__header">
+            <img class="photographer__img" src="" alt="ss" />
+            <h2 class="photographer__name">name</h2>
+          </a>
+          <div class="photographer__content">
+            <p class="photographer__location">location</p>
+            <p class="photographer__tagline">teaser</p>
+            <p class="photographer__price">prix en €/jour</p>
+          </div>
+          <div class="photographer__tags"># # # # #</div>
+        </article>
+      </section>
+    </main>
+  </body>
+
   <script src="app.js"></script>
   <script src="./dist/polyfill.bundle.js"></script>
   <script src="./dist/app.bundle.js"></script>

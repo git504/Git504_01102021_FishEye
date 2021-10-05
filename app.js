@@ -2,7 +2,7 @@
 const URL_PHOTOGRAPHERS = "http://localhost:3000/photographers";
 const URL_MEDIA = "http://localhost:3000/media";
 
-// Promise.all, exécute nos requêtes en parallèle et en séquence.
+// Promise.all , exécute nos requêtes en parallèle et en séquence.
 var requests = async () => {
   await Promise.all([fetch(URL_PHOTOGRAPHERS), fetch(URL_MEDIA)])
     .then(([photographers, media]) => {
@@ -17,3 +17,4 @@ var requests = async () => {
       console.log(err, "Une erreur est survenue");
     });
 };
+requests();
