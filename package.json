@@ -6,8 +6,8 @@
   "scripts": {
     "sass": "sass --watch ./sass:./style",
     "compressed": "sass ./sass/:./css/ --style=compressed --no-source-map",
-    "dev": "npm-run-all --parallel server start sass lint build",
-    "start": "opener http://localhost:5500",
+    "dev": "npm-run-all --parallel server sass lint build",
+    "start": "npm-run-all --parallel server sass",
     "lint": "cd ./eslint && npm test",
     "server": "json-server --watch db.json",
     "prefix": "postcss ./style/main.css --use autoprefixer -d ./prefixed",

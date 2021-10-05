@@ -1,17 +1,63 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 22 | @import "./06_pages/_profil";
- *    |         ^^^^^^^^^^^^^^^^^^^^
- *    '
- *   sass/main.scss 22:9  root stylesheet */
+@charset "UTF-8";
+/*  ---------------------------------------------------------------------- *\
+        Indendation de la CODEBASE avec le préprocesseur CSS Sass ;
+        Compilation main.SCSS vers main.CSS avec le script dans package.json ;
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+%placeholders pour les extensions (si vous en utilisez) ;
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 22 \2502  @import \"./06_pages/_profil\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass/main.scss 22:9  root stylesheet";
-}
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\ 
+        "Améliorez la maintenabilité du code" avec les variables Sass ;
+        "Addon COLORZILLA" to pick the exact color from template page (maquette) ;
+        "Nommer" la variable en fonction de son "rôle" ;
+
+        ICI, pas de liste 
+        car elles sont difficiles à lire en revenant sur le code & non contextuel 
+
+        une MAP pourrait etre realisé pour les differents ETATS avec une liste : focus, hover...
+        https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599971-integrez-les-types-de-donnees-sass
+\*  ---------------------------------------------------------------------- */
+/*  ---------------------------------------------------------------------- *\ 
+        RESPONSIVE BREACKPOINT
+        64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
+qui contiennent ce qui est réutilisable, 
+par exemple un header pour les mises en page de grande taille 
+ou un footer ;
+
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";*/
+/*  ---------------------------------------------------------------------- *\ 
+            PAS DE PARTIEL NAV
+\*  ---------------------------------------------------------------------- */
+/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
+qui contiennent ce qui est réutilisable, 
+par exemple un header pour les mises en page de grande taille 
+ou un footer ;
+
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";*/
+/*  ---------------------------------------------------------------------- *\ 
+            PAS DE PARTIEL FORM
+\*  ---------------------------------------------------------------------- */
+/*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
+qu’à une seule page. Vous utilisez des boutons dans tout votre site,
+en revanche votre page d’accueil comporte une section Citation
+et une grille de projets qui ne sont employés nulle part ailleurs.
+En d’autres termes, pages/ contient des règles spécifiques à une
+seule page qui ne seront pas réutilisées ailleurs ;
+
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";*/
+
+/*# sourceMappingURL=main.css.map */
