@@ -1,16 +1,32 @@
-/*PARTIELS : le directory base/ contient les fichiers qui définissent 
-les fondations de votre site, par exemple la police de caractères 
-et les normes que vous voulez appliquer sur tout votre site, 
+/*PARTIELS : le directory base/ contient les fichiers qui définissent
+les fondations de votre site, par exemple la police de caractères
+et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
 @import "./base/base";
 @import "./base/typography";*/
 
-/*  ---------------------------------------------------------------------- *\ 
-            Font-family : SHRIKHAND
+/*  ---------------------------------------------------------------------- *\
+            Font-family : DM_SANS
 \*  ---------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
+@include font-face(
+  "dm_sansregular",
+  font-files(
+    "./assets/DM_Sans/dmsans-regular-webfont.woff",
+    "./assets/DM_Sans/dmsans-mediumitalic-webfont.woff",
+    "./assets/DM_Sans/dmsans-medium-webfont.woff",
+    "./assets/DM_Sans/dmsans-italic-webfont.woff",
+    "./assets/DM_Sans/dmsans-bolditalic-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff",
+    "./assets/DM_Sans/dmsans-bold-webfont.woff"
+  )
+);
 
 body {
-    @include typography;
+  @include typography;
 }

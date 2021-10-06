@@ -52,11 +52,11 @@
     <a href="#main" class="anchor">Passer au contenu</a>
 
     <!----------------------------------------------------------------------
- HEADER : logo, une barre de recherche, title    ᚮ◍𐌏‿𐌏◍ᚭ
+ HEADER : LOGO + SEARCHby# + TITLE    ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
     <header role="banner" class="header">
       <!-- logo -->
-      <a aria-label="Fisheye" href="./index.html" class="header__svg">
+      <a aria-label="Fisheye" href="./index.html" class="header__logo">
         <svg
           role="img"
           width="150"
@@ -127,34 +127,32 @@
       </nav>
     </header>
 
-    <!----------------------------------------------------------------------
- MAIN : 1 section = 1 profil + 1 article   ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
     <main class="main" id="main" role="main">
       <!-- section -->
-      <section
-        role="region"
-        class="photographers"
-        aria-label="Photographers profils"
-      >
-        <!-- article -->
-        <article class="photographer">
-          <a href="jhbjhv" class="photographer__header">
-            <img class="photographer__img" src="" alt="ss" />
-            <h2 class="photographer__name">name</h2>
+      <section role="region" class="users" aria-label="users profils">
+        <!-- DEBUT insertion du composant .USER en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+        <article class="user">
+          <a href="./user.html" class="user__header">
+            <img
+              class="user__img"
+              src="assets/Sample Photos/Ellie Rose/Architecture_Cross_Bar.jpg"
+              alt="architecure"
+            />
+            <h2 class="user__name">Profil Test</h2>
           </a>
-          <div class="photographer__content">
-            <p class="photographer__location">location</p>
-            <p class="photographer__tagline">teaser</p>
-            <p class="photographer__price">prix en €/jour</p>
+          <div class="user__content">
+            <p class="user__location">Paris</p>
+            <p class="user__tagline">super fotographe</p>
+            <p class="user__price">100€/jour</p>
           </div>
-          <div class="photographer__tags"># # # # #</div>
+          <div class="user__tags"># # # # #</div>
         </article>
+        <!-- FIN insertion du composant .USER en Javascrpit -->
       </section>
     </main>
-  </body>
 
-  <script src="app.js"></script>
-  <script src="./dist/polyfill.bundle.js"></script>
-  <script src="./dist/app.bundle.js"></script>
+    <script src="js/app.js" type="module"></script>
+    <script src="./dist/polyfill.bundle.js"></script>
+    <script src="./dist/app.bundle.js"></script>
+  </body>
 </html>

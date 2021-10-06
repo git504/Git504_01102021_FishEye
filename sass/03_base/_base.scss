@@ -1,14 +1,15 @@
-/*PARTIELS : le directory base/ contient les fichiers qui définissent 
-les fondations de votre site, par exemple la police de caractères 
-et les normes que vous voulez appliquer sur tout votre site, 
+/*PARTIELS : le directory base/ contient les fichiers qui définissent
+les fondations de votre site, par exemple la police de caractères
+et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
 @import "./base/base";
 @import "./base/typography";*/
 
-body, html {
+body,
+html {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
 
