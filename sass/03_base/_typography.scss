@@ -10,23 +10,10 @@ telles que le box-sizing ;
             Font-family : DM_SANS
 \*  ---------------------------------------------------------------------- */
 
-@include font-face(
-  "dm_sansregular",
-  font-files(
-    "./assets/DM_Sans/dmsans-regular-webfont.woff",
-    "./assets/DM_Sans/dmsans-mediumitalic-webfont.woff",
-    "./assets/DM_Sans/dmsans-medium-webfont.woff",
-    "./assets/DM_Sans/dmsans-italic-webfont.woff",
-    "./assets/DM_Sans/dmsans-bolditalic-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff",
-    "./assets/DM_Sans/dmsans-bold-webfont.woff"
-  )
-);
-
-body {
-  @include typography;
+@font-face {
+  font-family: "dm_sansregular";
+  src: url("./assets/DM_Sans/dmsans-regular-webfont.woff2") format("woff2"),
+    url("./assets/DM_Sans/dmsans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

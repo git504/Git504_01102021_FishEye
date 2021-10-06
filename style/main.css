@@ -25,6 +25,22 @@
         RESPONSIVE BREACKPOINT
         64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
+/*PARTIELS : le directory base/ contient les fichiers qui définissent
+les fondations de votre site, par exemple la police de caractères
+et les normes que vous voulez appliquer sur tout votre site,
+telles que le box-sizing ;
+
+@import "./base/base";
+@import "./base/typography";*/
+/*  ---------------------------------------------------------------------- *\
+            Font-family : DM_SANS
+\*  ---------------------------------------------------------------------- */
+@font-face {
+  font-family: "dm_sansregular";
+  src: url("./assets/DM_Sans/dmsans-regular-webfont.woff2") format("woff2"), url("./assets/DM_Sans/dmsans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 /*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
 qui contiennent ce qui est réutilisable, 
 par exemple un header pour les mises en page de grande taille 
