@@ -88,63 +88,70 @@
               <h1 class="user__name">Mimi Keel</h1>
               <p class="user__location">London, UK</p>
               <p class="user__tagline">Voir le beau dans le quotidien</p>
-              <div class="user__tags">
-                <span class="user__tag"
-                  ><a href="./index.html?tag=portrait">#portrait</a></span
-                ><span class="user__tag"
-                  ><a href="./index.html?tag=events">#events</a></span
-                ><span class="user__tag"
-                  ><a href="./index.html?tag=travel">#travel</a></span
-                ><span class="user__tag"
-                  ><a href="./index.html?tag=animals">#animals</a></span
-                >
-              </div>
+
+              <ul
+                class="user__tags"
+                role="navigation"
+                aria-label="search by categories"
+              >
+                <li class="user__tag">
+                  <a href="./index.html?tag=portrait">#portrait</a>
+                </li>
+                <li class="user__tag">
+                  <a href="./index.html?tag=portrait">#portrait</a>
+                </li>
+                <li class="user__tag">
+                  <a href="./index.html?tag=portrait">#portrait</a>
+                </li>
+              </ul>
             </div>
             <button class="user__contactButton">Contactez-moi</button>
           </div>
           <img
             class="user__img"
-            src="./assets/Sample Photos/Photographers ID Photos/MimiKeel.jpg"
+            src="./assets/SamplePhotos/PhotographersIDPhotos/MimiKeel.jpg"
             alt="Mimi Keel"
           />
         </article>
         <!-- FIN insertion du composant .USER header en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
       </section>
 
-      <div class="infos">
+      <aside
+        class="infos"
+        role="contentinfo"
+        aria-label="basic infos like price, followers"
+      >
         <!-- DEBUT insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <div class="infos">
-          <p class="infos__price">400€ / jour</p>
+        <p class="infos__price">400€ / jour</p>
 
-          <div class="infos__likes">
-            <p class="infos__totalLikes">680</p>
+        <div class="infos__likes">
+          <p class="infos__totalLikes">680</p>
 
-            <svg
-              role="img"
-              class="infos__heart"
-              width="19"
-              height="19"
-              viewBox="0 0 19 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-describedby="title-680 description-680"
-            >
-              <title id="title-680">Likes</title>
-              <desc id="description-680">Icone en forme de cœur</desc>
-              <path
-                d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
-                fill="#000"
-              ></path>
-            </svg>
-          </div>
+          <svg
+            role="img"
+            class="infos__heart"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-describedby="title-680 description-680"
+          >
+            <title id="title-680">Likes</title>
+            <desc id="description-680">Icone en forme de cœur</desc>
+            <path
+              d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
+              fill="#000"
+            ></path>
+          </svg>
         </div>
         <!-- FIN insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-      </div>
+      </aside>
 
       <!----------------------------------------------------------------------
  DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
-      <section class="filter" aria-label="media's filter">
+      <section class="filter" aria-label="content filter">
         <div class="filter__dropdown">
           <label for="OrderBy" class="filter__label">Trier par</label>
           <div class="filter__custom-select">
@@ -154,7 +161,7 @@
               class="filter__select"
               type="button"
               value="Popularité"
-              role="button"
+              role="button search"
               aria-haspopup="listbox"
             />
             <span class="filter__custom-arrow"></span>
@@ -205,15 +212,16 @@
         <!-- DEBUT insertion du composant .USER carroussel video en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <article class="media__card">
           <a
-            href="./assets/Sample Photos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
+            href="./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
           >
             <div class="media__playIcon"></div>
             <video
               class="media__thumb"
               title="Chevaux sauvages trotant au milieu des montagnes"
+              role="video"
             >
               <source
-                src="./assets/Sample Photos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
+                src="./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
                 type="video/mp4"
               />
             </video>
@@ -247,11 +255,12 @@
         <!-- DEBUT insertion du composant .USER carroussel foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
 
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Animals_Rainbow.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg">
             <img
-              src="/assets/Sample Photos/Mimi/Animals_Rainbow.jpg"
+              src="/assets/SamplePhotos/Mimi/Animals_Rainbow.jpg"
               alt="Rollier à long brins"
               class="media__thumb"
+              role="img"
             />
           </a>
           <div class="media__content">
@@ -282,9 +291,9 @@
         <!-- FIN insertion du composant .USER carroussel foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
 
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Event_BenevidesWedding.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Event_BenevidesWedding.jpg"
+              src="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg"
               alt="Les mariés souriant se tenant de profil, face à face"
               class="media__thumb"
             />
@@ -315,9 +324,9 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Event_PintoWedding.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Event_PintoWedding.jpg"
+              src="./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg"
               alt="Deux mariés se tenant de profil face à face et se tenant par les hanches"
               class="media__thumb"
             />
@@ -348,9 +357,9 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Event_SeasideWedding.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Event_SeasideWedding.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Event_SeasideWedding.jpg"
+              src="./assets/SamplePhotos/Mimi/Event_SeasideWedding.jpg"
               alt="Table de mariage placé sur le bord de mer"
               class="media__thumb"
             />
@@ -381,9 +390,9 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Portrait_Background.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Portrait_Background.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Portrait_Background.jpg"
+              src="./assets/SamplePhotos/Mimi/Portrait_Background.jpg"
               alt="Portrait noir et blanc d'une femme de face ayant la tête levé et les yeux légèrement fermés"
               class="media__thumb"
             />
@@ -414,9 +423,9 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Portrait_Wednesday.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Portrait_Wednesday.jpg"
+              src="./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg"
               alt="Portrait noir et blanc d'une petite fille de face se tirrant les joues vers le bas"
               class="media__thumb"
             />
@@ -447,8 +456,8 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Portrait_Nora.jpg">
-            <img src="./assets/Sample Photos/Mimi/Portrait_Nora.jpg" />
+          <a href="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg">
+            <img src="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg" />
             alt="Portrait d'une fille de face portant des lunettes"
             class="media__thumb" />
           </a>
@@ -478,9 +487,9 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Travel_HillsideColor.jpg">
+          <a href="./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg">
             <img
-              src="./assets/Sample Photos/Mimi/Travel_HillsideColor.jpg"
+              src="./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg"
               alt="Ville cotière avec les maisons de multiples couleurs agglutinés sur la falaise"
               class="media__thumb"
             />
@@ -511,8 +520,8 @@
           </div>
         </article>
         <article class="media__card">
-          <a href="./assets/Sample Photos/Mimi/Travel_Lonesome.jpg">
-            <img src="./assets/Sample Photos/Mimi/Travel_Lonesome.jpg" />
+          <a href="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg">
+            <img src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg" />
             alt=" Paysage de montagne avec au premier une personne se tenant sur
             l'une d'elle" class="media__thumb" />
           </a>
@@ -552,8 +561,8 @@
           <div class="modal__body">
             <form
               name="contact"
-              action="./photographer.html"
-              method="get"
+              action="./user.html"
+              method="post"
               class="form"
             >
               <div
@@ -569,7 +578,7 @@
                   minlength="2"
                   required
                   aria-required="true"
-                  placeholder="John"
+                  placeholder="your first name"
                 />
               </div>
               <div
@@ -585,12 +594,12 @@
                   minlength="2"
                   required
                   aria-required="true"
-                  placeholder="Doe"
+                  placeholder="your lastname"
                 />
               </div>
               <div
                 class="form__data"
-                data-error="Veuillez saisir un email valide (Ex: john.doe@gmail.com, johndoe@gmail.com)"
+                data-error="Veuillez saisir un email valide (Ex: my.email@gmail.com, hello@gmail.com)"
               >
                 <label for="email" class="form__label">E-mail</label>
                 <input
@@ -600,7 +609,7 @@
                   name="email"
                   required
                   aria-required="true"
-                  placeholder="johndoe@gmail.com, john.doe@gmail.com, ..."
+                  placeholder="your email"
                 />
               </div>
               <div
@@ -616,7 +625,7 @@
                   rows="10"
                   required
                   aria-required="true"
-                  placeholder="Bonjour..."
+                  placeholder="let's start your text here..."
                 ></textarea>
               </div>
               <input class="form__submitButton" type="submit" value="Send" />
@@ -643,7 +652,7 @@
             Close dialog</button
           ><img
             class="lightbox__media"
-            src="./assets/Sample Photos/Mimi/Animals_Rainbow.jpg"
+            src="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg"
           />
         </div>
         <h2 class="lightbox__title">Rainbow Bird</h2>

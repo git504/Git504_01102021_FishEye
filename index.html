@@ -81,7 +81,7 @@
       <!-- nav-->
       <nav
         role="navigation"
-        aria-label="photographer categories"
+        aria-label="search by categories"
         class="header__nav"
       >
         <ul class="header__filter-list">
@@ -135,17 +135,31 @@
           <a href="./user.html" class="user__header">
             <img
               class="user__img"
-              src="assets/Sample Photos/Ellie Rose/Architecture_Cross_Bar.jpg"
+              src="assets/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg"
               alt="architecure"
             />
             <h2 class="user__name">Profil Test</h2>
           </a>
-          <div class="user__content">
+          <aside class="user__content">
             <p class="user__location">Paris</p>
             <p class="user__tagline">super fotographe</p>
             <p class="user__price">100€/jour</p>
-          </div>
-          <div class="user__tags"># # # # #</div>
+          </aside>
+          <ul
+            role="navigation"
+            aria-label="search by categories"
+            class="user__tags"
+          >
+            <li class="user__tag">
+              <a href="./index.html?tag=portrait">#portrait</a>
+            </li>
+            <li class="user__tag">
+              <a href="./index.html?tag=portrait">#portrait</a>
+            </li>
+            <li class="user__tag">
+              <a href="./index.html?tag=portrait">#portrait</a>
+            </li>
+          </ul>
         </article>
         <!-- FIN insertion du composant .USER en Javascrpit -->
       </section>
