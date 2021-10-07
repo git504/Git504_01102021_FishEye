@@ -220,6 +220,12 @@
               title="Chevaux sauvages trotant au milieu des montagnes"
               role="video"
             >
+              <track
+                kind="subtitles"
+                src="./assets/SamplePhotos/my_captions.vtt"
+                srclang="fr"
+                label="français"
+              />
               <source
                 src="./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
                 type="video/mp4"
@@ -446,7 +452,9 @@
                 aria-describedby="title-Wed description-Wed"
               >
                 <title id="title-Wed">Likes</title>
-                <desc id="description-Wed">Icone en forme de cœur</desc>
+                <desc id="description-Wed" aria-hidden="true">
+                  Icone en forme de cœur
+                </desc>
                 <path
                   d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
                   fill="#911C1C"
@@ -457,9 +465,11 @@
         </article>
         <article class="media__card">
           <a href="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg">
-            <img src="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg" />
-            alt="Portrait d'une fille de face portant des lunettes"
-            class="media__thumb" />
+            <img
+              src="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg"
+              alt="Portrait d'une fille de face portant des lunettes"
+              class="media__thumb"
+            />
           </a>
           <div class="media__content">
             <h2 class="media__title">Nora Portrait</h2>
@@ -521,9 +531,12 @@
         </article>
         <article class="media__card">
           <a href="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg">
-            <img src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg" />
-            alt=" Paysage de montagne avec au premier une personne se tenant sur
-            l'une d'elle" class="media__thumb" />
+            <img
+              src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg"
+              alt=" Paysage de montagne avec au premier une personne se tenant sur
+            l'une d'elle"
+              class="media__thumb"
+            />
           </a>
           <div class="media__content">
             <h2 class="media__title">Lonesome</h2>
@@ -616,8 +629,14 @@
                 class="form__data"
                 data-error="Veuillez saisir votre message."
               >
-                <label for="textArea" class="form__label">Votre message</label>
+                <label id="txtboxLabel" for="textArea" class="form__label"
+                  >Votre message</label
+                >
                 <textarea
+                  role="textbox"
+                  contenteditable="true"
+                  aria-placeholder="let's start your text here..."
+                  aria-labelledby="txtboxLabel"
                   class="form__text-area"
                   name="textArea"
                   id="textArea"
@@ -640,15 +659,30 @@
   ------------------------------------------------------------------------>
     <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
     <div class="lightbox" aria-label="image closeup view">
-      <button class="lightbox__next lightbox__button" tabindex="0">
+      <button
+        class="lightbox__next lightbox__button"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      >
         Next image
       </button>
-      <button class="lightbox__previous lightbox__button" tabindex="0">
+      <button
+        class="lightbox__previous lightbox__button"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      >
         Previous image
       </button>
       <div class="lightbox__container" aria-label="image closeup view">
         <div class="lightbox__image">
-          <button class="lightbox__close lightbox__button" tabindex="0">
+          <button
+            class="lightbox__close lightbox__button"
+            role="button"
+            aria-pressed="undefined"
+            tabindex="0"
+          >
             Close dialog</button
           ><img
             class="lightbox__media"

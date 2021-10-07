@@ -1,3 +1,8 @@
+// aria-current="page”
+//menu dropdown : aria-expanded si ouvert
+// aria-describedby="title-Wil description-Wil" card foto
+// user card index aria-posinset="5"
+
 "use strict";
 const URL_PHOTOGRAPHERS = "http://localhost:3000/photographers";
 const URL_MEDIA = "http://localhost:3000/media";

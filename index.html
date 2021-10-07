@@ -129,9 +129,20 @@
 
     <main class="main" id="main" role="main">
       <!-- section -->
-      <section role="region" class="users" aria-label="users profils">
+      <section
+        role="feed"
+        aria-busy="true"
+        class="users"
+        aria-label="users profils"
+        aria-setsize="-1"
+      >
         <!-- DEBUT insertion du composant .USER en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <article class="user">
+        <article
+          class="user"
+          aria-labelledby="user__name"
+          aria-posinset="1"
+          aria-setsize="6"
+        >
           <a href="./user.html" class="user__header">
             <img
               class="user__img"
@@ -145,21 +156,27 @@
             <p class="user__tagline">super fotographe</p>
             <p class="user__price">100€/jour</p>
           </aside>
-          <ul
+          <nav
             role="navigation"
             aria-label="search by categories"
-            class="user__tags"
+            class="card__nav"
           >
-            <li class="user__tag">
-              <a href="./index.html?tag=portrait">#portrait</a>
-            </li>
-            <li class="user__tag">
-              <a href="./index.html?tag=portrait">#portrait</a>
-            </li>
-            <li class="user__tag">
-              <a href="./index.html?tag=portrait">#portrait</a>
-            </li>
-          </ul>
+            <ul
+              role="navigation"
+              aria-label="search by categories"
+              class="user__tags"
+            >
+              <li class="user__tag">
+                <a href="./index.html?tag=portrait">#portrait</a>
+              </li>
+              <li class="user__tag">
+                <a href="./index.html?tag=portrait">#portrait</a>
+              </li>
+              <li class="user__tag">
+                <a href="./index.html?tag=portrait">#portrait</a>
+              </li>
+            </ul>
+          </nav>
         </article>
         <!-- FIN insertion du composant .USER en Javascrpit -->
       </section>
