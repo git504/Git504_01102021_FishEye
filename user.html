@@ -216,6 +216,7 @@
           >
             <div class="media__playIcon"></div>
             <video
+              controls
               class="media__thumb"
               title="Chevaux sauvages trotant au milieu des montagnes"
               role="video"
@@ -571,8 +572,9 @@
       <section class="modal" role="region" aria-label="Contact form">
         <div class="modal__content" aria-labelledby="contact" role="dialog">
           <span class="modal__close">Close Contact form</span>
-          <div class="modal__body">
+          <div class="modal__body" role="group" aria-labelledby="coordonnees">
             <form
+              id="coordonnees"
               name="contact"
               action="./user.html"
               method="post"
@@ -582,7 +584,13 @@
                 class="form__data"
                 data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom."
               >
-                <label for="firstname" class="form__label">Prénom</label>
+                <label
+                  for="firstname"
+                  class="form__label"
+                  id="first-name"
+                  aria-label="send firstname"
+                  >Prénom</label
+                >
                 <input
                   class="form__text"
                   type="text"
@@ -592,13 +600,21 @@
                   required
                   aria-required="true"
                   placeholder="your first name"
+                  aria-labelledby="first-name"
+                  aria-describedby="first name format"
                 />
               </div>
               <div
                 class="form__data"
                 data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom."
               >
-                <label for="lastname" class="form__label">Nom</label>
+                <label
+                  for="lastname"
+                  class="form__label"
+                  id="last-name"
+                  aria-label="send name"
+                  >Nom</label
+                >
                 <input
                   class="form__text"
                   type="text"
@@ -608,13 +624,21 @@
                   required
                   aria-required="true"
                   placeholder="your lastname"
+                  aria-labelledby="last-name"
+                  aria-describedby="last name format"
                 />
               </div>
               <div
                 class="form__data"
                 data-error="Veuillez saisir un email valide (Ex: my.email@gmail.com, hello@gmail.com)"
               >
-                <label for="email" class="form__label">E-mail</label>
+                <label
+                  for="email"
+                  class="form__label"
+                  id="email-form"
+                  aria-label="send email"
+                  >E-mail</label
+                >
                 <input
                   class="form__text"
                   type="email"
@@ -623,13 +647,19 @@
                   required
                   aria-required="true"
                   placeholder="your email"
+                  aria-labelledby="email-form"
+                  aria-describedby="email format"
                 />
               </div>
               <div
                 class="form__data"
                 data-error="Veuillez saisir votre message."
               >
-                <label id="txtboxLabel" for="textArea" class="form__label"
+                <label
+                  id="txtboxLabel"
+                  for="textArea"
+                  class="form__label"
+                  aria-label="send etxt"
                   >Votre message</label
                 >
                 <textarea
@@ -645,6 +675,7 @@
                   required
                   aria-required="true"
                   placeholder="let's start your text here..."
+                  aria-describedby="textareaformat"
                 ></textarea>
               </div>
               <input class="form__submitButton" type="submit" value="Send" />

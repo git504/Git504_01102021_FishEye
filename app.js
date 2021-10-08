@@ -2,6 +2,8 @@
 //menu dropdown : aria-expanded si ouvert
 // aria-describedby="title-Wil description-Wil" card foto
 // user card index aria-posinset="5"
+//form aria-invalid
+// https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css/6965649-rendez-vos-modales-et-carrousels-accessibles
 
 "use strict";
 const URL_PHOTOGRAPHERS = "http://localhost:3000/photographers";
