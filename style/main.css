@@ -3,25 +3,25 @@
         Indendation de la CODEBASE avec le préprocesseur CSS Sass ;
         Compilation main.SCSS vers main.CSS avec le script dans package.json ;
 \*  ---------------------------------------------------------------------- */
-/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les  
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
 %placeholders pour les extensions (si vous en utilisez) ;
 
 @import "./utils/variables";
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";*/
-/*  ---------------------------------------------------------------------- *\ 
+/*  ---------------------------------------------------------------------- *\
         "Améliorez la maintenabilité du code" avec les variables Sass ;
         "Addon COLORZILLA" to pick the exact color from template page (maquette) ;
         "Nommer" la variable en fonction de son "rôle" ;
 
-        ICI, pas de liste 
-        car elles sont difficiles à lire en revenant sur le code & non contextuel 
+        ICI, pas de liste
+        car elles sont difficiles à lire en revenant sur le code & non contextuel
 
         une MAP pourrait etre realisé pour les differents ETATS avec une liste : focus, hover...
         https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599971-integrez-les-types-de-donnees-sass
 \*  ---------------------------------------------------------------------- */
-/*  ---------------------------------------------------------------------- *\ 
+/*  ---------------------------------------------------------------------- *\
         RESPONSIVE BREACKPOINT
         64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
@@ -34,46 +34,60 @@ telles que le box-sizing ;
 @import "./base/typography";*/
 /*  ---------------------------------------------------------------------- *\
             Font-family : DM_SANS
-\*  ---------------------------------------------------------------------- */
+            \*  ---------------------------------------------------------------------- */
 @font-face {
-  font-family: "dm_sansregular";
-  src: url("./assets/DM_Sans/dmsans-regular-webfont.woff2") format("woff2"), url("./assets/DM_Sans/dmsans-regular-webfont.woff") format("woff");
-  font-weight: normal;
+  font-family: "DM Sans Regular";
   font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Regular"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-Regular.woff") format("woff");
 }
-/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
-qui contiennent ce qui est réutilisable, 
-par exemple un header pour les mises en page de grande taille 
-ou un footer ;
+@font-face {
+  font-family: "DM Sans Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Italic"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Medium"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans Medium Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Medium Italic"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-MediumItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Bold"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "DM Sans Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Bold Italic"), url("../../assets/dm-sans-cufonfonts-webfont/DMSans-BoldItalic.woff") format("woff");
+}
+/*PARTIELS : le directory base/ contient les fichiers qui définissent
+les fondations de votre site, par exemple la police de caractères
+et les normes que vous voulez appliquer sur tout votre site,
+telles que le box-sizing ;
 
-@import "./layouts/header";
-@import "./layouts/nav";
-@import "./layouts/container";
-@import "./layouts/form";*/
-/*  ---------------------------------------------------------------------- *\ 
-            PAS DE PARTIEL NAV
-\*  ---------------------------------------------------------------------- */
-/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM 
-qui contiennent ce qui est réutilisable, 
-par exemple un header pour les mises en page de grande taille 
-ou un footer ;
+@import "./base/base";*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans Regular", "DM Sans Medium", "DM Sans Bold", Arial;
+}
 
-@import "./layouts/header";
-@import "./layouts/nav";
-@import "./layouts/container";
-@import "./layouts/form";*/
-/*  ---------------------------------------------------------------------- *\ 
-            PAS DE PARTIEL FORM
-\*  ---------------------------------------------------------------------- */
-/*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
-qu’à une seule page. Vous utilisez des boutons dans tout votre site,
-en revanche votre page d’accueil comporte une section Citation
-et une grille de projets qui ne sont employés nulle part ailleurs.
-En d’autres termes, pages/ contient des règles spécifiques à une
-seule page qui ne seront pas réutilisées ailleurs ;
-
-@import "./pages/work";
-@import "./pages/about";
-@import "./pages/project";*/
+body,
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+}
 
 /*# sourceMappingURL=main.css.map */

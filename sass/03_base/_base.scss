@@ -3,18 +3,18 @@ les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
-@import "./base/base";
-@import "./base/typography";*/
+@import "./base/base";*/
+// @import "./base/typography";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
 
 body,
 html {
   margin: 0;
-  font-family: "dm_sansregular";
   scroll-behavior: smooth;
-}
-
-.container {
-  max-width: 1280px;
-  margin: auto;
-  position: relative;
 }
