@@ -12,6 +12,8 @@ requests();
 filterTags();
 
 //modale
+//lightbox
+//carrousel
+
 const car = new vehicule("renault", "clio");
 car.presenteVehicule();
-//

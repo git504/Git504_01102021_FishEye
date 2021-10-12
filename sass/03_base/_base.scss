@@ -3,7 +3,7 @@ les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
-@import "./base/base";*/
+*/
 
 * {
   box-sizing: border-box;
@@ -17,5 +17,9 @@ html {
   font-size: $fontsize10px;
   margin: 0;
   font-family: font-choice(regular);
+  height: 100%;
+}
+
+a {
   text-decoration: none;
 }

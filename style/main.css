@@ -80,7 +80,7 @@ les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
-@import "./base/base";*/
+*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -93,6 +93,10 @@ html {
   font-size: 10px;
   margin: 0;
   font-family: "DM Sans Regular";
+  height: 100%;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -143,6 +147,54 @@ qui sont plus indépendants, comme les boutons.*/
   align-items: center;
   flex-direction: row;
   color: #d3573c;
+}
+
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
+            ANCHOR fix debut de page
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.anchor {
+  position: aboslute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% -50%);
+  display: block;
+  width: 17rem;
+  height: 1.9rem;
+  top: 0.3rem;
+  bottom: 26.67%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "DM Sans Bold";
+  line-height: 2.3rem;
+  text-align: center;
+  color: black;
+  font-size: 1.8rem;
+  background-color: #db8876;
+  border-radius: 0.3rem;
+}
+@media (max-width: 640px) {
+  .anchor {
+    display: none;
+  }
 }
 
 /*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
