@@ -96,8 +96,12 @@ html {
   height: 100%;
 }
 
-a {
+a,
+ul,
+li {
   text-decoration: none;
+  list-style: none;
+  display: flex;
 }
 
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
@@ -197,6 +201,68 @@ qui sont plus indépendants, comme les boutons.*/
   }
 }
 
+/*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM
+qui contiennent ce qui est réutilisable,
+par exemple un header pour les mises en page de grande taille
+ou un footer ;
+
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";*/
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.header,
+nav {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+  height: auto;
+  width: 70%;
+  margin: 0.5rem;
+}
+
+.header__logo {
+  display: flex;
+  flex-basis: content;
+  align-items: center;
+  justify-content: center;
+}
+
+image {
+  color: #901c1c;
+}
+
+.header__filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__filter-tag {
+  height: 2.2rem;
+  text-transform: capitalize;
+  font-family: "DM Sans Bold";
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.1rem;
+  border: 0.05rem solid #525252;
+  color: #901c1c;
+}
+
 /*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
 qu’à une seule page. Vous utilisez des boutons dans tout votre site,
 en revanche votre page d’accueil comporte une section Citation
@@ -218,11 +284,5 @@ seule page qui ne seront pas réutilisées ailleurs ;
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
 
 /*# sourceMappingURL=main.css.map */

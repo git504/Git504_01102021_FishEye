@@ -7,3 +7,55 @@ ou un footer ;
 @import "./layouts/nav";
 @import "./layouts/container";
 @import "./layouts/form";*/
+
+@import "../01_utils/mixins";
+
+.header,
+nav {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+  height: auto;
+  width: 70%;
+  margin: 0.5rem;
+}
+
+.header__logo {
+  display: flex;
+  flex-basis: content;
+  align-items: center;
+  justify-content: center;
+}
+image {
+  color: $color-primary;
+}
+
+.header__filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__filter-tag {
+  height: 2.2rem;
+  text-transform: capitalize;
+  font-family: font-choice(bold);
+  font-size: map-get($font-size, hashtag);
+  padding: 0.2rem;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  border: 0.05rem solid $color-gray;
+  color: $color-primary;
+}
+
+// :active qui “permet de cibler un élément lorsque celui-ci est activé par l'utilisateur” (par exemple, quand l’utilisateur a cliqué dessus) ;
+
+// :hover qui permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer ;
+
+// :link qui cible tous les liens n’ayant pas encore été visités ;
+
+// :visited concernant tous les liens visités ;
+
+// :focus qui permet de cibler un élément lorsque celui-ci reçoit le focus (élément sélectionné au clavier ou à la souris).
