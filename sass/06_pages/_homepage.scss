@@ -5,6 +5,24 @@ et une grille de projets qui ne sont employés nulle part ailleurs.
 En d’autres termes, pages/ contient des règles spécifiques à une
 seule page qui ne seront pas réutilisées ailleurs ;
 
-@import "./pages/work";
 @import "./pages/about";
 @import "./pages/project";*/
+
+@import "../01_utils/mixins";
+
+.header {
+  @include flexCenter(row);
+  @include mobile {
+    // @include flexCenter(column);
+  }
+}
+
+// :active qui “permet de cibler un élément lorsque celui-ci est activé par l'utilisateur” (par exemple, quand l’utilisateur a cliqué dessus) ;
+
+// :hover qui permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer ;
+
+// :link qui cible tous les liens n’ayant pas encore été visités ;
+
+// :visited concernant tous les liens visités ;
+
+// :focus qui permet de cibler un élément lorsque celui-ci reçoit le focus (élément sélectionné au clavier ou à la souris).

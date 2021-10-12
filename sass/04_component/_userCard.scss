@@ -2,11 +2,11 @@
 qui sont plus indépendants, comme les boutons.*/
 
 /*  ---------------------------------------------------------------------- *\
-            btn HOMEPAGE
+            USERCARDS INDEX.HTML
 \*  ---------------------------------------------------------------------- */
 
 @import "../01_utils/mixins";
 
-.user__tags {
-  @include tagTheme($light-theme: true);
+.user__name {
+  @include typographie-title-card;
 }

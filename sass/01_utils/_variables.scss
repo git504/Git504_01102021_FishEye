@@ -17,14 +17,21 @@
         une MAP pourrait etre realisé pour les differents ETATS avec une liste : focus, hover...
         https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599971-integrez-les-types-de-donnees-sass
 \*  ---------------------------------------------------------------------- */
-
+$fontsize10px: 0.625 * 16px;
 $color-primary: #901c1c;
 $color-secondary: #db8876;
 $color-tertiary: #d3573c;
 $color-gray: #525252;
 $color-white: #fafafa;
 $color-black: black;
-$font: "DM Sans Regular", "DM Sans Medium", "DM Sans Bold", Arial;
+$main-font: (
+  regular: "DM Sans Regular",
+  regularItalic: "DM Sans Italic",
+  medium: "DM Sans Medium",
+  mediumItalic: "DM Sans Medium Italic",
+  bold: "DM Sans Bold",
+  boldItalic: "DM Sans Bold Italic",
+);
 $breakpoints: (
   "small": 320px,
   "med": 640px,
@@ -34,18 +41,13 @@ $breakpoints: (
   // ...
 );
 $font-size: (
-  title: 36px,
-  dropdown: 18px,
-  location: 13px,
-  teaser: 12px,
-  hashtag: 10px,
-  price: 9px,
+  title: 3.6rem,
+  dropdown: 1.8rem,
+  location: 1.3rem,
+  teaser: 1.2rem,
+  hashtag: 1rem,
+  price: 0.9rem,
 );
-$appPadding: 3rem;
-$border-radius: 11px;
 
-/*  ---------------------------------------------------------------------- *\
-        RESPONSIVE BREACKPOINT
-        64rem X 16px de font-size = 1024px
-\*  ---------------------------------------------------------------------- */
-$min-width-rem: 64rem;
+$appPadding: 3rem;
+$border-radius: 1.1rem;

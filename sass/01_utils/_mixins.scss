@@ -7,31 +7,104 @@
 @import "./utils/extensions";*/
 
 /*  ---------------------------------------------------------------------- *\
-            SASS Internal Built-In Modules
-            The sass:color module generates new colors based on existing ones,
-            making it easy to build color themes.
-            https://sass-lang.com/documentation/modules/color
-\*  ---------------------------------------------------------------------- */
-@use "sass:color";
-
-/*  ---------------------------------------------------------------------- *\
-            MIXIN BUTTON - HOMEPAGE
-\*  ---------------------------------------------------------------------- */
-
-
-/*  ---------------------------------------------------------------------- *\
-            MIXIN STEP - HOMEPAGE
-            ECLAIRCIR BTN
-\*  ---------------------------------------------------------------------- */
-
-
-/*  ---------------------------------------------------------------------- *\
             MIXIN TYPOGRAPHY
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-@mixin mobile-only {
-    @media screen and (max-width: map-get($breakpoints, mobile)){
-        grid-template-columns: 1fr;
-    }
+
+@use "sass:color";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin tagTheme($light-theme: true) {
+  @if $light-theme {
+    background: lighten($color-white, 100%);
+    color: darken($color-primary, 100%);
   }
+}
+
+@mixin mobile {
+  @media (max-width: map-get($breakpoints, med)) {
+    @content;
+  }
+}
+
+@mixin typographie-title-card {
+  font-size: map-get($font-size, title);
+  line-height: 4.7rem;
+  @include flexCenter(row);
+  color: $color-tertiary;
+}
+
+// @mixin typographie-title-header {
+//   position: absolute;
+//   width: 306px;
+//   height: 47px;
+//   left: 1017px;
+//   top: 44px;
+//   font-family: $font;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 36px;
+//   line-height: 47px;
+//   color: $color-primary;
+// }
+
+// @mixin typographie-location-card {
+//   position: absolute;
+//   left: 31%;
+//   right: 31%;
+//   top: 86.13%;
+//   bottom: 8.39%;
+//   font-family: $font;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 13px;
+//   line-height: 17px;
+//   text-align: center;
+//   color: $color-primary;
+// }
+// @mixin typographie-teaser-card {
+//   position: absolute;
+//   width: 192px;
+//   height: 13px;
+//   left: 4px;
+//   top: 287px;
+//   font-family: $font;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 10px;
+//   line-height: 13px;
+//   text-align: center;
+//   color: $color-black;
+// }
+// @mixin typographie-price-card {
+//   position: absolute;
+//   width: 44px;
+//   height: 12px;
+//   left: 78px;
+//   top: 303px;
+//   font-family: $font;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 9px;
+//   line-height: 12px;
+//   text-align: center;
+//   color: $color-gray;
+// }
+// @mixin typographie-tag {
+//   position: absolute;
+//   font-family: $font;
+//   width: 58px;
+//   height: 22px;
+//   left: 675px;
+//   top: 58px;
+//   border: 0.5px solid $color-primary;
+//   box-sizing: border-box;
+//   border-radius: 11px;
+// }

@@ -21,16 +21,20 @@
         une MAP pourrait etre realisé pour les differents ETATS avec une liste : focus, hover...
         https://openclassrooms.com/fr/courses/6106181-simplifiez-vous-le-css-avec-sass/6599971-integrez-les-types-de-donnees-sass
 \*  ---------------------------------------------------------------------- */
-/*  ---------------------------------------------------------------------- *\
-        RESPONSIVE BREACKPOINT
-        64rem X 16px de font-size = 1024px
-\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*choix weight via la map fontDM*/
 /*PARTIELS : le directory base/ contient les fichiers qui définissent
 les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
-@import "./base/base";
+@import "./03_base/_base";
 @import "./base/typography";*/
 /*  ---------------------------------------------------------------------- *\
             Font-family : DM_SANS
@@ -81,13 +85,92 @@ telles que le box-sizing ;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "DM Sans Regular", "DM Sans Medium", "DM Sans Bold", Arial;
+  scroll-behavior: smooth;
 }
 
 body,
 html {
+  font-size: 10px;
   margin: 0;
-  scroll-behavior: smooth;
+  font-family: "DM Sans Regular";
+  text-decoration: none;
+}
+
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
+            btn HOMEPAGE
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.user__tags {
+  background: white;
+  color: black;
+}
+
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
+            USERCARDS INDEX.HTML
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.user__name {
+  font-size: 3.6rem;
+  line-height: 4.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #d3573c;
+}
+
+/*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
+qu’à une seule page. Vous utilisez des boutons dans tout votre site,
+en revanche votre page d’accueil comporte une section Citation
+et une grille de projets qui ne sont employés nulle part ailleurs.
+En d’autres termes, pages/ contient des règles spécifiques à une
+seule page qui ne seront pas réutilisées ailleurs ;
+
+@import "./pages/about";
+@import "./pages/project";*/
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=main.css.map */

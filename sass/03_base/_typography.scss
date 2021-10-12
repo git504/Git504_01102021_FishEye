@@ -3,7 +3,7 @@ les fondations de votre site, par exemple la police de caractères
 et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
-@import "./base/base";
+@import "./03_base/_base";
 @import "./base/typography";*/
 
 /*  ---------------------------------------------------------------------- *\
@@ -63,95 +63,3 @@ telles que le box-sizing ;
     url("../../assets/dm-sans-cufonfonts-webfont/DMSans-BoldItalic.woff")
       format("woff");
 }
-
-// @mixin typographie-title-header {
-//   position: absolute;
-//   width: 306px;
-//   height: 47px;
-//   left: 1017px;
-//   top: 44px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 36px;
-//   line-height: 47px;
-//   color: $color-primary;
-// }
-
-// @mixin typographie-title-card {
-//   position: absolute;
-//   left: 10.5%;
-//   right: 10%;
-//   top: 70.97%;
-//   bottom: 13.87%;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 36px;
-//   line-height: 47px;
-//   text-align: center;
-//   color: $color-tertiar;
-// }
-// @mixin typographie-location-card {
-//   position: absolute;
-//   left: 31%;
-//   right: 31%;
-//   top: 86.13%;
-//   bottom: 8.39%;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 13px;
-//   line-height: 17px;
-//   text-align: center;
-//   color: $color-primary;
-// }
-// @mixin typographie-teaser-card {
-//   position: absolute;
-//   width: 192px;
-//   height: 13px;
-//   left: 4px;
-//   top: 287px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 10px;
-//   line-height: 13px;
-//   text-align: center;
-//   color: $color-black;
-// }
-// @mixin typographie-price-card {
-//   position: absolute;
-//   width: 44px;
-//   height: 12px;
-//   left: 78px;
-//   top: 303px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 9px;
-//   line-height: 12px;
-//   text-align: center;
-//   color: $color-gray;
-// }
-// @mixin typographie-tag {
-//   position: absolute;
-//   font-family: $font;
-//   width: 58px;
-//   height: 22px;
-//   left: 675px;
-//   top: 58px;
-//   border: 0.5px solid $color-primary;
-//   box-sizing: border-box;
-//   border-radius: 11px;
-// }
-
-// :active qui “permet de cibler un élément lorsque celui-ci est activé par l'utilisateur” (par exemple, quand l’utilisateur a cliqué dessus) ;
-
-// :hover qui permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer ;
-
-// :link qui cible tous les liens n’ayant pas encore été visités ;
-
-// :visited concernant tous les liens visités ;
-
-// :focus qui permet de cibler un élément lorsque celui-ci reçoit le focus (élément sélectionné au clavier ou à la souris).
