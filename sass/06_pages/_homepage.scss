@@ -9,3 +9,27 @@ seule page qui ne seront pas réutilisées ailleurs ;
 @import "./pages/project";*/
 
 @import "../01_utils/mixins";
+
+.header__title {
+  // font-size: map-get($font-size, title);
+  font-size: calc(1px + 2.5vw);
+  height: 4.7rem;
+  top: 4.4rem;
+  list-style: none;
+  line-height: 4.687rem;
+  color: $color-primary;
+  position: absolute;
+  padding: 0.2rem;
+  margin-left: 71%;
+  margin-right: 3%;
+  margin-top: -1.5rem;
+  text-align: center;
+  font-weight: normal;
+  font-style: normal;
+  @include mobile {
+    margin-top: -3.5rem;
+    margin-left: 60%;
+    margin-right: 1rem;
+    font-size: calc(1px + 3.5vw);
+  }
+}

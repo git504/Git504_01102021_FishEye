@@ -32,6 +32,7 @@ ou un footer ;
   justify-content: center;
   @include mobile {
     justify-content: flex-start;
+    width: 50%;
   }
 }
 
@@ -44,10 +45,13 @@ ou un footer ;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }
 
-.header__filter-tag {
+.header__filter-tag,
+.user__filter-tag {
   cursor: pointer;
   height: 2.2rem;
   text-transform: capitalize;
