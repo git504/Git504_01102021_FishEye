@@ -11,32 +11,44 @@ ou un footer ;
 @import "../01_utils/mixins";
 
 .header,
-nav {
+.header__nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-content: center;
   flex-flow: row wrap;
-  align-items: stretch;
+  align-items: center;
   height: auto;
   width: 70%;
+  @include mobile {
+    width: 100%;
+  }
   margin: 0.5rem;
 }
 
 .header__logo {
+  cursor: pointer;
   display: flex;
-  flex-basis: content;
   align-items: center;
   justify-content: center;
-}
-image {
-  color: $color-primary;
+  @include mobile {
+    justify-content: flex-start;
+  }
 }
 
 .header__filter {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  @include mobile {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .header__filter-tag {
+  cursor: pointer;
   height: 2.2rem;
   text-transform: capitalize;
   font-family: font-choice(bold);
@@ -48,6 +60,11 @@ image {
   border-radius: $border-radius;
   border: 0.05rem solid $color-gray;
   color: $color-primary;
+  transition: background-color 500ms ease-in-out;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
 }
 
 // :active qui “permet de cibler un élément lorsque celui-ci est activé par l'utilisateur” (par exemple, quand l’utilisateur a cliqué dessus) ;

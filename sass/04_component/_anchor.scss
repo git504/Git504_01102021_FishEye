@@ -8,6 +8,7 @@ qui sont plus indépendants, comme les boutons.*/
 @import "../01_utils/mixins";
 
 .anchor {
+  cursor: pointer;
   @include positionner;
   display: block;
   width: 17rem;
