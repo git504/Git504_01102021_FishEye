@@ -20,7 +20,7 @@ qui sont plus indépendants, comme les boutons.*/
 .user {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 25%;
   justify-content: center;
   align-items: center;
   @include mobile {
@@ -73,6 +73,7 @@ qui sont plus indépendants, comme les boutons.*/
   }
   &__tags {
     margin-top: 1rem;
+    margin-bottom: 3rem;
     @extend .header__filter;
   }
   &__filter-tag {
