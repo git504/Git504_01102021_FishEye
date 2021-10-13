@@ -204,6 +204,7 @@ qui sont plus indépendants, comme les boutons.*/
   cursor: pointer;
 }
 .user__location {
+  text-transform: capitalize;
   font-size: 1.3rem;
   line-height: 1.7rem;
   font-style: normal;

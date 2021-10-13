@@ -51,6 +51,7 @@
 }
 
 @mixin typographie-location-card {
+  text-transform: capitalize;
   font-size: map-get($font-size, location);
   line-height: 1.7rem;
   font-style: normal;
