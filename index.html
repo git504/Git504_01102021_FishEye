@@ -56,7 +56,12 @@
   ------------------------------------------------------------------------>
     <header role="banner" class="header">
       <!-- logo -->
-      <a aria-label="Fisheye" href="./index.html" class="header__logo">
+      <a
+        tabindex="0"
+        aria-label="Fisheye"
+        href="index.html"
+        class="header__logo"
+      >
         <svg
           role="img"
           width="200"
@@ -143,7 +148,7 @@
     </header>
 
     <main class="main" id="main" role="main">
-      <h1 class="header__title">Nos photographes</h1>
+      <h1 tabindex="1" class="header__title">Nos photographes</h1>
       <!-- section -->
       <section
         role="feed"
@@ -154,6 +159,7 @@
       >
         <!-- DEBUT insertion du composant .USER en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <article
+          tabindex="2"
           class="user"
           aria-labelledby="user__name"
           aria-posinset="1"

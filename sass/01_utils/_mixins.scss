@@ -43,7 +43,7 @@
 
 @mixin typographie-title-card {
   text-transform: capitalize;
-  font-size: map-get($font-size, title);
+  font-size: calc(20px + 1.6vw);
   line-height: 4.7rem;
   font-weight: normal;
   font-style: normal;
