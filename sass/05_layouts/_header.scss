@@ -19,58 +19,62 @@ ou un footer ;
   height: auto;
   width: 70%;
   margin: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   @include mobile {
     width: 100%;
     flex-flow: row wrap;
     justify-content: space-between;
   }
-}
-
-.header__logo {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include mobile {
-    justify-content: flex-start;
-    width: 50%;
+  &__logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile {
+      justify-content: flex-start;
+      width: 50%;
+    }
   }
-}
-
-.header__filter {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  height: fit-content;
-  justify-content: center;
-  @include mobile {
+  &__nav {
+    @include mobile {
+      width: 100%;
+      align-self: center;
+    }
+  }
+  &__filter {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-}
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: center;
 
-.header__filter-tag,
-.user__filter-tag {
-  cursor: pointer;
-  height: 2.2rem;
-  text-transform: capitalize;
-  font-family: font-choice(bold);
-  font-size: map-get($font-size, hashtag);
-  padding: 0.2rem;
-  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: $border-radius;
-  border: 0.05rem solid $color-gray;
-  color: $color-primary;
-  transition: background-color 500ms ease-in-out;
-  &:hover {
-    background-color: $color-primary;
-    color: $color-white;
+    @include mobile {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+  }
+  &__filter-tag {
+    cursor: pointer;
+    height: 2.2rem;
+    text-transform: capitalize;
+    font-family: font-choice(bold);
+    font-size: map-get($font-size, hashtag);
+    padding: 0.2rem;
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    border: 0.05rem solid $color-gray;
+    color: $color-primary;
+    transition: background-color 500ms ease-in-out;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
   }
 }
 

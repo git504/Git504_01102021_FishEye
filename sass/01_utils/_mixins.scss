@@ -42,76 +42,33 @@
 }
 
 @mixin typographie-title-card {
+  text-transform: capitalize;
   font-size: map-get($font-size, title);
   line-height: 4.7rem;
-  @include flexCenter(row);
+  font-weight: normal;
+  font-style: normal;
   color: $color-tertiary;
 }
 
-// @mixin typographie-title-header {
-//   position: absolute;
-//   width: 306px;
-//   height: 47px;
-//   left: 1017px;
-//   top: 44px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 36px;
-//   line-height: 47px;
-//   color: $color-primary;
-// }
+@mixin typographie-location-card {
+  font-size: map-get($font-size, location);
+  line-height: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
+  color: $color-primary;
+}
 
-// @mixin typographie-location-card {
-//   position: absolute;
-//   left: 31%;
-//   right: 31%;
-//   top: 86.13%;
-//   bottom: 8.39%;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 13px;
-//   line-height: 17px;
-//   text-align: center;
-//   color: $color-primary;
-// }
-// @mixin typographie-teaser-card {
-//   position: absolute;
-//   width: 192px;
-//   height: 13px;
-//   left: 4px;
-//   top: 287px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 10px;
-//   line-height: 13px;
-//   text-align: center;
-//   color: $color-black;
-// }
-// @mixin typographie-price-card {
-//   position: absolute;
-//   width: 44px;
-//   height: 12px;
-//   left: 78px;
-//   top: 303px;
-//   font-family: $font;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 9px;
-//   line-height: 12px;
-//   text-align: center;
-//   color: $color-gray;
-// }
-// @mixin typographie-tag {
-//   position: absolute;
-//   font-family: $font;
-//   width: 58px;
-//   height: 22px;
-//   left: 675px;
-//   top: 58px;
-//   border: 0.5px solid $color-primary;
-//   box-sizing: border-box;
-//   border-radius: 11px;
-// }
+@mixin typographie-teaser-card {
+  font-size: map-get($font-size, teaser);
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3rem;
+  color: $color-black;
+}
+@mixin typographie-price-card {
+  font-size: map-get($font-size, price);
+  line-height: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  color: $color-gray;
+}

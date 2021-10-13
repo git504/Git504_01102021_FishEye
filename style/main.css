@@ -91,7 +91,6 @@ telles que le box-sizing ;
 body,
 html {
   font-size: 10px;
-  margin: 0;
   font-family: "DM Sans Regular";
   height: 100%;
 }
@@ -143,16 +142,92 @@ qui sont plus indépendants, comme les boutons.*/
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-.user__name {
-  font-size: 3.6rem;
-  line-height: 4.7rem;
+.users {
   display: flex;
-  justify-content: center;
+  flex-flow: row wrap;
+  padding: 0.2rem;
+  margin: 1rem;
   align-items: center;
-  flex-direction: row;
-  color: #d3573c;
+  justify-content: space-evenly;
+  gap: 5%;
 }
 
+.user {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .user {
+    width: 80%;
+    align-items: center;
+    margin: 2.5%;
+    flex-wrap: wrap;
+  }
+}
+.user__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: 3.6rem;
+  line-height: 4.7rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #d3573c;
+}
+.user__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user__img {
+  cursor: pointer;
+  object-fit: cover;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 0px 4px 12px 0px #00000040;
+}
+.user__name {
+  text-transform: capitalize;
+  font-size: 3.6rem;
+  line-height: 4.7rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #d3573c;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.user__location {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #901c1c;
+  margin-top: 0.1rem;
+}
+.user__tagline {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3rem;
+  color: black;
+}
+.user__price {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #525252;
+}
+.user__tags {
+  margin-top: 1rem;
+}
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
@@ -232,6 +307,7 @@ ou un footer ;
   height: auto;
   width: 70%;
   margin: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 3rem;
 }
 @media (max-width: 800px) {
@@ -241,7 +317,6 @@ ou un footer ;
     justify-content: space-between;
   }
 }
-
 .header__logo {
   cursor: pointer;
   display: flex;
@@ -254,8 +329,13 @@ ou un footer ;
     width: 50%;
   }
 }
-
-.header__filter {
+@media (max-width: 800px) {
+  .header__nav {
+    width: 100%;
+    align-self: center;
+  }
+}
+.header__filter, .user__tags {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -263,17 +343,15 @@ ou un footer ;
   justify-content: center;
 }
 @media (max-width: 800px) {
-  .header__filter {
+  .header__filter, .user__tags {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 3rem;
   }
 }
-
-.header__filter-tag,
-.user__filter-tag {
+.header__filter-tag, .user__filter-tag {
   cursor: pointer;
   height: 2.2rem;
   text-transform: capitalize;
@@ -288,8 +366,7 @@ ou un footer ;
   color: #901c1c;
   transition: background-color 500ms ease-in-out;
 }
-.header__filter-tag:hover,
-.user__filter-tag:hover {
+.header__filter-tag:hover, .user__filter-tag:hover {
   background-color: #901c1c;
   color: #fafafa;
 }

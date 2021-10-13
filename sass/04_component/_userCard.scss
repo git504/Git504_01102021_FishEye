@@ -7,6 +7,75 @@ qui sont plus indépendants, comme les boutons.*/
 
 @import "../01_utils/mixins";
 
-.user__name {
-  @include typographie-title-card;
+.users {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.2rem;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5%;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  @include mobile {
+    width: 80%;
+    align-items: center;
+    margin: 2.5%;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include typographie-title-card;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    cursor: pointer;
+    object-fit: cover;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 12px 0px #00000040;
+  }
+
+  &__name {
+    @include typographie-title-card;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  &__location {
+    @include typographie-location-card;
+    margin-top: 0.1rem;
+  }
+
+  &__tagline {
+    @include typographie-teaser-card;
+  }
+
+  &__price {
+    @include typographie-price-card;
+  }
+  &__tags {
+    margin-top: 1rem;
+    @extend .header__filter;
+  }
+  &__filter-tag {
+    @extend .header__filter-tag;
+  }
 }
