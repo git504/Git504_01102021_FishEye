@@ -10,19 +10,24 @@ ou un footer ;
 
 @import "../01_utils/mixins";
 
-.header,
-.header__nav {
+.header {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  flex-flow: row wrap;
+  flex-direction: row;
   align-items: center;
-  height: auto;
+  height: fit-content;
   width: 70%;
+  margin: 0.5rem;
+  margin-bottom: 3rem;
   @include mobile {
     width: 100%;
+    flex-flow: row wrap;
   }
-  margin: 0.5rem;
+}
+
+.header__nav {
+  @extend .header;
 }
 
 .header__logo {
@@ -40,6 +45,7 @@ ou un footer ;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
   justify-content: center;
   @include mobile {
     width: 100%;
