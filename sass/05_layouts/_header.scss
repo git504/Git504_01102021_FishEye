@@ -12,22 +12,19 @@ ou un footer ;
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-content: center;
   flex-direction: row;
   align-items: center;
-  height: fit-content;
+  height: auto;
   width: 70%;
   margin: 0.5rem;
   margin-bottom: 3rem;
   @include mobile {
     width: 100%;
     flex-flow: row wrap;
+    justify-content: space-between;
   }
-}
-
-.header__nav {
-  @extend .header;
 }
 
 .header__logo {
