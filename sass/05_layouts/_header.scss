@@ -12,7 +12,7 @@ ou un footer ;
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   flex-direction: row;
   align-items: center;
@@ -25,6 +25,17 @@ ou un footer ;
     width: 100%;
     flex-flow: row wrap;
     justify-content: space-between;
+  }
+  &--page {
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    height: auto;
   }
   &__logo {
     cursor: pointer;

@@ -7,10 +7,15 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
 
 @import "../01_utils/mixins";
 
-.photographer {
-  background-color: $color-white-smoke;
-  border-radius: 0.5rem;
-  padding: 3rem 5rem;
-  width: 90%;
-  margin: 0 auto;
+.media {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 10rem;
+  &__thumb {
+    object-fit: cover;
+    width: 100%;
+    height: 26.5rem;
+    border-radius: 0.5rem;
+  }
 }
