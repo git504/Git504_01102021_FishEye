@@ -3,8 +3,14 @@ qu’à une seule page. Vous utilisez des boutons dans tout votre site,
 en revanche votre page d’accueil comporte une section Citation
 et une grille de projets qui ne sont employés nulle part ailleurs.
 En d’autres termes, pages/ contient des règles spécifiques à une
-seule page qui ne seront pas réutilisées ailleurs ;
+seule page qui ne seront pas réutilisées ailleurs ;*/
 
-@import "./pages/work";
-@import "./pages/about";
-@import "./pages/project";*/
+@import "../01_utils/mixins";
+
+.photographer {
+  background-color: $color-white-smoke;
+  border-radius: 0.5rem;
+  padding: 3rem 5rem;
+  width: 90%;
+  margin: 0 auto;
+}

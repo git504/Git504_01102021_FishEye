@@ -167,6 +167,22 @@ qui sont plus indépendants, comme les boutons.*/
     flex-wrap: wrap;
   }
 }
+.user__body {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  gap: 20px;
+}
+.user__profil {
+  background: #fafafa;
+  margin-bottom: 0;
+  gap: 20px;
+}
+.user__profil--page {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
 .user__header {
   display: flex;
   flex-direction: column;
@@ -185,13 +201,22 @@ qui sont plus indépendants, comme les boutons.*/
   justify-content: center;
   align-items: center;
 }
+.user__content--page {
+  align-items: flex-start;
+}
 .user__img {
   cursor: pointer;
   object-fit: cover;
-  width: 60%;
-  height: 60%;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   box-shadow: 0px 4px 12px 0px #00000040;
+}
+@media (max-width: 800px) {
+  .user__img {
+    width: 70%;
+    height: 70%;
+  }
 }
 .user__name {
   text-transform: capitalize;
@@ -203,6 +228,16 @@ qui sont plus indépendants, comme les boutons.*/
   margin-top: 1rem;
   cursor: pointer;
 }
+.user__name--page {
+  text-transform: capitalize;
+  font-size: calc(20px + 1.6vw);
+  line-height: 4.7rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #d3573c;
+  font-size: 6.4rem;
+  line-height: 8.333rem;
+}
 .user__location {
   text-transform: capitalize;
   font-size: 1.3rem;
@@ -212,11 +247,45 @@ qui sont plus indépendants, comme les boutons.*/
   color: #901c1c;
   margin-top: 0.1rem;
 }
+.user__location--page {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #901c1c;
+  font-size: 2.4rem;
+}
 .user__tagline {
   font-size: 1.2rem;
   font-style: normal;
   font-weight: normal;
   line-height: 1.3rem;
+  color: black;
+}
+.user__tagline--page {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.3rem;
+  color: black;
+  color: #525252;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+.user__contactButton {
+  background-color: #901c1c;
+  border-radius: 0.5rem;
+  color: #fafafa;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 2.604rem;
+  width: 17rem;
+  height: 6.9rem;
+}
+.user__contactButton:hover {
+  background-color: #d3573c;
   color: black;
 }
 .user__price {
@@ -229,6 +298,10 @@ qui sont plus indépendants, comme les boutons.*/
 .user__tags {
   margin-top: 1rem;
   margin-bottom: 3rem;
+}
+.user__tags--page {
+  margin-bottom: 0;
+  margin-top: 2rem;
 }
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
@@ -302,7 +375,7 @@ ou un footer ;
 \*  ---------------------------------------------------------------------- */
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
   flex-direction: row;
   align-items: center;
@@ -321,6 +394,7 @@ ou un footer ;
 }
 .header__logo {
   cursor: pointer;
+  margin-left: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -417,6 +491,32 @@ seule page qui ne seront pas réutilisées ailleurs ;
     margin-right: 1rem;
     font-size: calc(1px + 3vw);
   }
+}
+
+/*PARTIELS : pages/ contient les blocs de code qui ne s’appliquent
+qu’à une seule page. Vous utilisez des boutons dans tout votre site,
+en revanche votre page d’accueil comporte une section Citation
+et une grille de projets qui ne sont employés nulle part ailleurs.
+En d’autres termes, pages/ contient des règles spécifiques à une
+seule page qui ne seront pas réutilisées ailleurs ;*/
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.photographer {
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  padding: 3rem 5rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

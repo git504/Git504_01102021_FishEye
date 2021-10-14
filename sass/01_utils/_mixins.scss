@@ -30,7 +30,7 @@
 
 @mixin tagTheme($light-theme: true) {
   @if $light-theme {
-    background: lighten($color-white, 100%);
+    background: lighten($color-white-smoke, 100%);
     color: darken($color-primary, 100%);
   }
 }

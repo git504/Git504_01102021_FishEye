@@ -5,15 +5,14 @@
 //form aria-invalid
 // https://openclassrooms.com/fr/courses/6691451-codez-un-site-web-accessible-avec-html-css/6965649-rendez-vos-modales-et-carrousels-accessibles
 
-//getDB AVEC JSON SERVER
-import { requests, vehicule } from "./fetch.js";
-import { filterTags } from "./filtertags.js";
-requests();
-filterTags();
-
+//fetch.js
+import * as myFetchModule from "./fetch.js";
+//filtertags.js
+import * as myFilterModule from "./filtertags.js";
 //modale
 //lightbox
 //carrousel
 
-const car = new vehicule("renault", "clio");
-car.presenteVehicule();
+myFetchModule.requests();
+myFetchModule.vehicule;
+myFilterModule.filterTags();

@@ -52,10 +52,16 @@
  HEADER : logo    ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
     <header role="banner" class="header">
-      <a aria-label="Fisheye" href="./index.html" class="header__svg">
+      <!-- logo -->
+      <a
+        tabindex="0"
+        aria-label="Fisheye"
+        href="index.html"
+        class="header__logo"
+      >
         <svg
           role="img"
-          width="150"
+          width="200"
           height="50"
           viewBox="0 0 200 50"
           fill="none"
@@ -67,7 +73,7 @@
             x="0"
             y="0"
             height="50"
-            width="150"
+            width="200"
             xlink:href="./assets/logo.svg"
           />
           <desc id="description">Fisheye le logo</desc>
@@ -82,28 +88,65 @@
         aria-label="Photographer profil"
       >
         <!-- DEBUT insertion du composant .USER header en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <article class="user__header">
+        <article class="user__profil--page">
           <div class="user__body">
-            <div class="user__content">
-              <h1 class="user__name">Mimi Keel</h1>
-              <p class="user__location">London, UK</p>
-              <p class="user__tagline">Voir le beau dans le quotidien</p>
+            <div class="user__content--page">
+              <h1 class="user__name--page">Mimi Keel</h1>
+              <p class="user__location--page">London, UK</p>
+              <p class="user__tagline--page">Voir le beau dans le quotidien</p>
 
-              <ul
-                class="user__tags"
+              <nav
                 role="navigation"
                 aria-label="search by categories"
+                class="card__nav"
               >
-                <li class="user__tag">
-                  <a href="./index.html?tag=portrait">#portrait</a>
-                </li>
-                <li class="user__tag">
-                  <a href="./index.html?tag=portrait">#portrait</a>
-                </li>
-                <li class="user__tag">
-                  <a href="./index.html?tag=portrait">#portrait</a>
-                </li>
-              </ul>
+                <ul
+                  role="navigation"
+                  aria-label="search by categories"
+                  class="user__tags--page"
+                >
+                  <li class="user__tag--page">
+                    <a
+                      tag="portrait"
+                      href="./index.html?tag=portrait"
+                      class="user__filter-tag"
+                      >#portrait</a
+                    >
+                  </li>
+                  <li class="user__tag--page">
+                    <a
+                      tag="portrait"
+                      href="./index.html?tag=portrait"
+                      class="user__filter-tag"
+                      >#portrait</a
+                    >
+                  </li>
+                  <li class="user__tag--page">
+                    <a
+                      tag="portrait"
+                      href="./index.html?tag=portrait"
+                      class="user__filter-tag"
+                      >#portrait</a
+                    >
+                  </li>
+                  <li class="user__tag--page">
+                    <a
+                      tag="portrait"
+                      href="./index.html?tag=portrait"
+                      class="user__filter-tag"
+                      >#portrait</a
+                    >
+                  </li>
+                  <li class="user__tag--page">
+                    <a
+                      tag="portrait"
+                      href="./index.html?tag=portrait"
+                      class="user__filter-tag"
+                      >#portrait</a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
             <button class="user__contactButton">Contactez-moi</button>
           </div>

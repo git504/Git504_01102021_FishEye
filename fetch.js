@@ -32,3 +32,6 @@ class vehicule {
   }
 }
 export { vehicule };
+
+const car = new vehicule("renault", "clio");
+car.presenteVehicule();
