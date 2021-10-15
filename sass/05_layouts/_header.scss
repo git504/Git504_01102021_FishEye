@@ -82,7 +82,7 @@ ou un footer ;
     border-radius: $border-radius;
     border: 0.05rem solid $color-gray;
     color: $color-primary;
-    transition: background-color 500ms ease-in-out;
+    transition: background-color 100ms, color 00ms;
     &:hover {
       background-color: $color-primary;
       color: $color-white-smoke;

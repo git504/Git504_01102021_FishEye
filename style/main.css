@@ -493,7 +493,7 @@ ou un footer ;
   border-radius: 1.1rem;
   border: 0.05rem solid #525252;
   color: #901c1c;
-  transition: background-color 500ms ease-in-out;
+  transition: background-color 100ms, color 0ms;
 }
 .header__filter-tag:hover, .user__filter-tag:hover {
   background-color: #901c1c;
