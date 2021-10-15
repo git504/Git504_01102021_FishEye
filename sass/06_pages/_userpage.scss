@@ -19,3 +19,65 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
     border-radius: 0.5rem;
   }
 }
+
+.filter {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 90%;
+  @include mobile {
+    display: none;
+  }
+  &__custom-select {
+    margin-left: 6rem;
+  }
+  &__custom-menu {
+    display: none;
+    width: 14rem;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px $color-black;
+  }
+
+  &__dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    margin-left: 6%;
+  }
+  &__label {
+    font-family: font-choice(bold);
+    font-size: map-get($font-size, dropdown);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 2.344rem;
+  }
+
+  &__select {
+    @extend .user__contactButton;
+    font-size: map-get($font-size, dropdown);
+    width: 17rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+    padding: 1.4rem 0 1.4rem 1rem;
+    &:after {
+      content: url("../assets/arrow-bottom.svg");
+      padding-left: 2rem;
+      color: white;
+    }
+  }
+  &__custom-option {
+    @extend .filter__select;
+    border-top: 1px solid #fff;
+    &:after {
+      content: "";
+    }
+  }
+
+  .filter__custom-select:hover .filter__custom-menu {
+    display: flex;
+  }
+}

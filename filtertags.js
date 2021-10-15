@@ -1,6 +1,6 @@
 const getTagsHTML = document.querySelectorAll(".header__filter-tag");
 
-export const filterTags = () => {
+export const FILTER_TAGS = () => {
   getTagsHTML.forEach((tagHTML) => {
     tagHTML.addEventListener("click", (e) => {
       e.preventDefault();

@@ -34,7 +34,7 @@ qui sont plus indépendants, comme les boutons.*/
     background-color: $color-white-smoke;
     border-radius: 0.5rem;
     padding: 3rem 5rem;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     @include mobile {
       width: fit-content;
@@ -89,6 +89,7 @@ qui sont plus indépendants, comme les boutons.*/
     @include mobile {
       width: 15rem;
       height: 15rem;
+      transform: translateY(10%);
     }
   }
 
@@ -124,7 +125,7 @@ qui sont plus indépendants, comme les boutons.*/
     display: block;
     position: static;
     cursor: pointer;
-    transform: translateX(0);
+    transform: translateX(-15%);
     background-color: $color-primary;
     border-radius: 0.5rem;
     color: $color-white-smoke;

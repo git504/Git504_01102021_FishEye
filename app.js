@@ -13,6 +13,6 @@ import * as myFilterModule from "./filtertags.js";
 //lightbox
 //carrousel
 
-myFetchModule.requests();
+myFetchModule.REQUESTS();
 myFetchModule.vehicule;
-myFilterModule.filterTags();
+myFilterModule.FILTER_TAGS();

@@ -198,31 +198,22 @@
         <div class="filter__dropdown">
           <label for="OrderBy" class="filter__label">Trier par</label>
           <div class="filter__custom-select">
-            <input
+            <button
               name="mediaFilter"
               id="OrderBy"
               class="filter__select"
-              type="button"
-              value="Popularité"
               role="button search"
               aria-haspopup="listbox"
-            />
-            <span class="filter__custom-arrow"></span>
+            >
+              Popularité
+            </button>
+            <span class="filter__custom-arrow"> </span>
+
             <ul
               class="filter__custom-menu"
               role="listbox"
               aria-labelledby="OrderBy"
             >
-              <li
-                role="option"
-                class="filter__custom-option"
-                data-value="likes"
-                id="likes"
-                tabindex="0"
-                aria-selected="true"
-              >
-                Popularité
-              </li>
               <li
                 role="option"
                 class="filter__custom-option"

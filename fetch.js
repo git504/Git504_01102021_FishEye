@@ -4,7 +4,7 @@ const URL_PHOTOGRAPHERS = "http://localhost:3000/photographers";
 const URL_MEDIA = "http://localhost:3000/media";
 
 // Promise.all , exécute nos requêtes en parallèle et en séquence.
-const requests = async () => {
+const REQUESTS = async () => {
   await Promise.all([fetch(URL_PHOTOGRAPHERS), fetch(URL_MEDIA)])
     .then(([photographers, media]) => {
       const A_FETCH = photographers.json();
@@ -18,7 +18,7 @@ const requests = async () => {
       console.log(err, "Une erreur est survenue");
     });
 };
-export { requests };
+export { REQUESTS };
 
 class vehicule {
   constructor(marque, model) {
