@@ -1,0 +1,46 @@
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+
+/*  ---------------------------------------------------------------------- *\
+            USERINFOS    USER.HTML
+\*  ---------------------------------------------------------------------- */
+
+@import "../01_utils/mixins";
+
+.infos {
+  display: flex;
+  flex-flow: raw nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 37.6rem;
+  height: 8.9rem;
+  font-weight: map-get($main-font, bold);
+  z-index: 9;
+  border-radius: 0.5rem;
+  background-color: $color-secondary;
+  position: fixed;
+  bottom: -2vh;
+  right: 3%;
+  @include mobile {
+    display: none;
+  }
+  &__likes {
+    flex-wrap: nowrap;
+    @include flexCenter(row);
+  }
+  &__totalLikes {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 3.125rem;
+    width: 8.7rem;
+  }
+  &__heart {
+    width: 1.75rem;
+    height: 1.835rem;
+  }
+  &__price {
+    width: 50%;
+    @extend .infos__totalLikes;
+  }
+}

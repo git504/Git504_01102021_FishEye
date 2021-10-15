@@ -348,6 +348,65 @@ qui sont plus indépendants, comme les boutons.*/
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
+            USERINFOS    USER.HTML
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+.infos {
+  display: flex;
+  flex-flow: raw nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 37.6rem;
+  height: 8.9rem;
+  font-weight: "DM Sans Bold";
+  z-index: 9;
+  border-radius: 0.5rem;
+  background-color: #db8876;
+  position: fixed;
+  bottom: -2vh;
+  right: 3%;
+}
+@media (max-width: 800px) {
+  .infos {
+    display: none;
+  }
+}
+.infos__likes {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.infos__totalLikes, .infos__price {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2.4rem;
+  line-height: 3.125rem;
+  width: 8.7rem;
+}
+.infos__heart {
+  width: 1.75rem;
+  height: 1.835rem;
+}
+.infos__price {
+  width: 50%;
+}
+
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
             ANCHOR fix debut de page
 \*  ---------------------------------------------------------------------- */
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
