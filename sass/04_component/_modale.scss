@@ -8,23 +8,90 @@ qui sont plus indépendants, comme les boutons.*/
 @import "../01_utils/mixins";
 
 .modal {
+  display: flex;
+  height: 90vh;
+  z-index: 10;
+  width: 66.9rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include mobile {
+    height: 100vh;
+  }
+
   &__content {
+    background: $color-secondary;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
   }
   &__close {
+    position: absolute;
+    background: url(../../assets/cross-white.svg) no-repeat center center/4.2rem
+      4.2rem;
+    fill: $color-white-smoke;
+    height: 4.2rem;
+    width: 4.2rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  &__head {
+    font-size: 6.4rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 8.333rem;
+    display: block;
+    color: $color-black;
+    width: 44.9rem;
+    margin-top: 1.5rem;
+    margin-left: 3.5rem;
   }
   &__body {
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
   }
 }
 
 .form {
   &__data {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 0%;
+    justify-content: center;
   }
   &__label {
+    margin-top: 4.67rem;
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 4.687rem;
+    margin-top: 1.2rem;
+    font-size: 3.6rem;
   }
   &__text {
+    font-family: inherit;
+    padding-left: 1rem;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: none;
+    height: 6.8rem;
     &--area {
+      padding-top: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      height: 17rem;
+      padding-left: 1rem;
+      font-family: inherit;
     }
   }
   &__submitButton {
+    @extend .user__contactButton;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    transform: translate(0);
   }
 }
