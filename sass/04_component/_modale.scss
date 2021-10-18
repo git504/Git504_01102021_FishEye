@@ -16,6 +16,7 @@ qui sont plus indépendants, comme les boutons.*/
   margin-right: auto;
   @include mobile {
     height: 100vh;
+    width: 97%;
   }
 
   &__content {
@@ -45,7 +46,12 @@ qui sont plus indépendants, comme les boutons.*/
     color: $color-black;
     width: 44.9rem;
     margin-top: 1.5rem;
-    margin-left: 3.5rem;
+    margin-left: 5%;
+    @include mobile {
+      font-size: calc(10px + 9vw);
+      line-height: 4.5rem;
+      margin-left: 5%;
+    }
   }
   &__body {
     width: 90%;

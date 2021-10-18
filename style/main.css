@@ -481,6 +481,7 @@ qui sont plus indépendants, comme les boutons.*/
 @media (max-width: 800px) {
   .modal {
     height: 100vh;
+    width: 97%;
   }
 }
 .modal__content {
@@ -509,7 +510,14 @@ qui sont plus indépendants, comme les boutons.*/
   color: black;
   width: 44.9rem;
   margin-top: 1.5rem;
-  margin-left: 3.5rem;
+  margin-left: 5%;
+}
+@media (max-width: 800px) {
+  .modal__head {
+    font-size: calc(10px + 9vw);
+    line-height: 4.5rem;
+    margin-left: 5%;
+  }
 }
 .modal__body {
   width: 90%;
