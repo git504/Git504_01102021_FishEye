@@ -626,6 +626,11 @@ LIGHTBOX USER.HTML
   right: 0;
   border-radius: 0.5rem 0 0 0.5rem;
 }
+@media (max-width: 800px) {
+  .lightbox__slide-next {
+    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
+  }
+}
 .lightbox__slide-next__:hover {
   animation-name: opacity;
   animation-duration: 1s ease-out;
@@ -635,6 +640,11 @@ LIGHTBOX USER.HTML
   left: 0;
   transform: rotate(180deg);
   border-radius: 0 0.5rem 0.5rem 0;
+}
+@media (max-width: 800px) {
+  .lightbox__slide-prev {
+    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
+  }
 }
 .lightbox__slide-prev:hover {
   animation-name: opacity;
@@ -651,10 +661,9 @@ LIGHTBOX USER.HTML
   margin: auto;
 }
 .lightbox__slides {
-  margin: 1rem;
   border-radius: 0.5em;
-  width: 65rem;
-  height: 65rem;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-fit: cover;
   object-position: 50% 30%;
@@ -683,6 +692,12 @@ LIGHTBOX USER.HTML
   top: 0;
   right: -20%;
   border: none;
+}
+@media (max-width: 800px) {
+  .lightbox__close {
+    background: url(../../assets/cross.svg) center center/1.5rem 4.5rem no-repeat;
+    right: -15%;
+  }
 }
 
 /************CSS Animation***********/

@@ -31,6 +31,10 @@ LIGHTBOX USER.HTML
     background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
     right: 0;
     border-radius: 0.5rem 0 0 0.5rem;
+    @include mobile {
+      background: url(../../assets/arrow.svg) center center/4.5rem 2rem
+        no-repeat;
+    }
     &__:hover {
       animation-name: opacity;
       animation-duration: 1s ease-out;
@@ -41,6 +45,10 @@ LIGHTBOX USER.HTML
     left: 0;
     transform: rotate(180deg);
     border-radius: 0 0.5rem 0.5rem 0;
+    @include mobile {
+      background: url(../../assets/arrow.svg) center center/4.5rem 2rem
+        no-repeat;
+    }
     &:hover {
       animation-name: opacity;
       animation-duration: 1s ease-out;
@@ -57,10 +65,9 @@ LIGHTBOX USER.HTML
     margin: auto;
   }
   &__slides {
-    margin: 1rem;
     border-radius: 0.5em;
-    width: 65rem;
-    height: 65rem;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     object-fit: cover;
     object-position: 50% 30%;
@@ -88,6 +95,11 @@ LIGHTBOX USER.HTML
     top: 0;
     right: -20%;
     border: none;
+    @include mobile {
+      background: url(../../assets/cross.svg) center center/1.5rem 4.5rem
+        no-repeat;
+      right: -15%;
+    }
   }
 }
 
