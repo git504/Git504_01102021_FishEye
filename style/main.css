@@ -601,81 +601,78 @@ qui sont plus indépendants, comme les boutons.*/
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-#lightbox .hcg-slide-container {
-  width: 1050px;
-  height: 900px;
+#lightbox .lightbox__slide-container {
+  width: 105rem;
+  height: 90rem;
 }
 
-.hcg-slider {
+.lightbox {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
 }
-
-.hcg-slide-container {
+.lightbox__slide-container {
   max-width: 100%;
-  display: inline-block;
+  display: block;
   position: relative;
 }
-
-.hcg-slides {
+.lightbox__slides {
   display: none;
   text-align: center;
   overflow: hidden;
 }
-
-.hcg-slides img {
+.lightbox__slides > img {
   max-width: 100%;
   max-height: 100%;
   display: inline-block;
-  border-radius: 5px;
-  border: solid 1px #a0a0a0;
+  border-radius: 0.5rem;
+  background-color: #525252;
+  border: none;
   vertical-align: middle;
 }
-
-.hcg-slide-text {
-  color: #ffffff;
-  font-size: 14px;
-  padding: 3px 5px;
+.lightbox__slide-text {
+  color: #901c1c;
+  font-size: 2.4rem;
+  line-height: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  padding: 0.5rem 0.5rem;
   position: absolute;
   bottom: 0;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   left: 50%;
   text-align: center;
-  text-shadow: 0 0 2px #000;
+  text-shadow: 0 0 0.2rem #000;
   background-color: rgba(255, 255, 255, 0.3);
   display: inline-block;
   transform: translate(-50%, -5px);
 }
-
-.hcg-slide-prev,
-.hcg-slide-next {
+.lightbox__slide-prev, .lightbox__slide-next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: #fff;
+  padding: 1.6rem;
+  margin-top: -2.2rem;
+  color: #901c1c;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 2.4rem;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.2rem 0.2rem 0;
   text-decoration: none;
 }
-
-.hcg-slide-next {
+.lightbox__slide-next {
   right: 0;
-  border-radius: 3px 0 0 3px;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
-
-.hcg-slide-prev {
+.lightbox__slide-next__:hover {
+  background-color: #525252;
+}
+.lightbox__slide-prev {
   left: 0;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
-
-.hcg-slide-prev:hover,
-.hcg-slide-next:hover {
-  background-color: #000c;
+.lightbox__slide-prev:hover {
+  background-color: #525252;
 }
 
 /************CSS Animation***********/

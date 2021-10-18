@@ -2,27 +2,47 @@ const LIGHTBOX = () => {
   //If you want to include more images, add the link name and URL of the image in the array list below.
   let images_list = [
     {
-      url: "https://www.html-code-generator.com/images/slider/1.png",
+      url: "./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg",
       name: "image 1",
       link: "",
     },
     {
-      url: "https://www.html-code-generator.com/images/slider/2.png",
+      url: "./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4",
       name: "image 2",
       link: "",
     },
     {
-      url: "https://www.html-code-generator.com/images/slider/3.png",
+      url: "./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg",
       name: "image 3",
       link: "",
     },
     {
-      url: "https://www.html-code-generator.com/images/slider/4.png",
+      url: "./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg",
       name: "image 4",
       link: "",
     },
     {
-      url: "https://www.html-code-generator.com/images/slider/5.png",
+      url: "./assets/SamplePhotos/Mimi/Portrait_Background.jpg",
+      name: "image 5",
+      link: "",
+    },
+    {
+      url: "./assets/SamplePhotos/Mimi/Portrait_Nora.jpg",
+      name: "image 5",
+      link: "",
+    },
+    {
+      url: "./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg",
+      name: "image 5",
+      link: "",
+    },
+    {
+      url: "./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg",
+      name: "image 5",
+      link: "",
+    },
+    {
+      url: "./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg",
       name: "image 5",
       link: "",
     },
@@ -40,7 +60,7 @@ const LIGHTBOX = () => {
     images_div +=
       "<a" +
       href +
-      ' class="hcg-slides animated"' +
+      ' class="lightbox__slides animated"' +
       (i === 0 ? ' style="display:block"' : "") +
       ">" +
       '<img src="' +
@@ -48,17 +68,17 @@ const LIGHTBOX = () => {
       '" alt="' +
       images_list[i].name +
       '">' +
-      '<span class="hcg-slide-text">' +
+      '<span class="lightbox__slide-text">' +
       images_list[i].name +
       "</span>" +
       "</a>";
   }
-  slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+  slider_id.querySelector(".lightbox__slider-body").innerHTML = images_div;
   let slide_index = 0;
 
-  let images = slider_id.querySelectorAll(".hcg-slides");
-  let prev_button = slider_id.querySelector(".hcg-slide-prev");
-  let next_button = slider_id.querySelector(".hcg-slide-next");
+  let images = slider_id.querySelectorAll(".lightbox__slides");
+  let prev_button = slider_id.querySelector(".lightbox__slide-prev");
+  let next_button = slider_id.querySelector(".lightbox__slide-next");
 
   function showSlides() {
     if (slide_index > images.length - 1) {

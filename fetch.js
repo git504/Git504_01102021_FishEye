@@ -20,18 +20,18 @@ const REQUESTS = async () => {
 };
 export { REQUESTS };
 
-class vehicule {
-  constructor(marque, model) {
-    this.marque = marque;
-    this.model = model;
-  }
-  presenteVehicule() {
-    console.log(
-      `Je suis un vehicule de marque ${this.marque} et de model ${this.model}`
-    );
-  }
-}
-export { vehicule };
+// class vehicule {
+//   constructor(marque, model) {
+//     this.marque = marque;
+//     this.model = model;
+//   }
+//   presenteVehicule() {
+//     console.log(
+//       `Je suis un vehicule de marque ${this.marque} et de model ${this.model}`
+//     );
+//   }
+// }
+// export { vehicule };
 
-const car = new vehicule("renault", "clio");
-car.presenteVehicule();
+// const car = new vehicule("renault", "clio");
+// car.presenteVehicule();
