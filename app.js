@@ -10,11 +10,12 @@ import * as myFetchModule from "./fetch.js";
 //filtertags.js
 import * as myFilterModule from "./filtertags.js";
 //lightbox
-
+import * as myLightBox from "./lightbox.js";
 //modale
 //carrousel
 
 myFetchModule.REQUESTS();
 myFilterModule.FILTER_TAGS();
+myLightBox.LIGHTBOX();
 
 myFetchModule.vehicule;
