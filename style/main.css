@@ -587,7 +587,7 @@ qui sont plus indépendants, comme les boutons.*/
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
-            LIGHTBOX USER.HTML
+LIGHTBOX USER.HTML
 \*  ---------------------------------------------------------------------- */
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
 %placeholders pour les extensions (si vous en utilisez) ;
@@ -601,33 +601,65 @@ qui sont plus indépendants, comme les boutons.*/
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-#lightbox .lightbox__slide-container {
-  width: 105rem;
-  height: 90rem;
-}
-
 .lightbox {
-  text-align: center;
-  font-family: inherit;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 13;
+  overflow: scroll;
+}
+.lightbox__slide-prev, .lightbox__slide-next {
+  cursor: pointer;
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  margin-top: 0.7rem;
+  z-index: 11;
+}
+.lightbox__slide-next {
+  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
+  right: 0;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.lightbox__slide-next__:hover {
+  animation-name: opacity;
+  animation-duration: 1s ease-out;
+}
+.lightbox__slide-prev {
+  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
+  left: 0;
+  transform: rotate(180deg);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.lightbox__slide-prev:hover {
+  animation-name: opacity;
+  animation-duration: 1s ease-out;
+}
+.lightbox__slider-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .lightbox__slide-container {
-  max-width: 100%;
-  display: block;
   position: relative;
+  width: clamp(290px, 70%, 100%);
+  margin: auto;
 }
 .lightbox__slides {
-  display: none;
-  text-align: center;
-  overflow: hidden;
-}
-.lightbox__slides > img {
-  max-width: 100%;
-  max-height: 100%;
-  display: inline-block;
-  border-radius: 0.5rem;
-  background-color: #525252;
-  border: none;
-  vertical-align: middle;
+  margin: 1rem;
+  border-radius: 0.5em;
+  width: 65rem;
+  height: 65rem;
+  object-fit: cover;
+  object-fit: cover;
+  object-position: 50% 30%;
+  z-index: 12;
+  animation: fadeIn 1s ease-out;
 }
 .lightbox__slide-text {
   color: #901c1c;
@@ -635,52 +667,25 @@ qui sont plus indépendants, comme les boutons.*/
   line-height: 3.125rem;
   font-style: normal;
   font-weight: 400;
-  padding: 0.5rem 0.5rem;
+  animation: fadeIn 1s ease-out;
+}
+@media (max-width: 800px) {
+  .lightbox__slide-text {
+    font-size: calc(10px + 1.5vw);
+  }
+}
+.lightbox__close {
+  width: 20%;
+  height: 4rem;
+  background: url(../../assets/cross.svg) center center/3.5rem 9rem no-repeat;
+  z-index: 12;
   position: absolute;
-  bottom: 0;
-  border-radius: 0.5rem;
-  left: 50%;
-  text-align: center;
-  text-shadow: 0 0 0.2rem #000;
-  background-color: rgba(255, 255, 255, 0.3);
-  display: inline-block;
-  transform: translate(-50%, -5px);
-}
-.lightbox__slide-prev, .lightbox__slide-next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 1.6rem;
-  margin-top: -2.2rem;
-  color: #901c1c;
-  font-weight: bold;
-  font-size: 2.4rem;
-  transition: 0.6s ease;
-  border-radius: 0 0.2rem 0.2rem 0;
-  text-decoration: none;
-}
-.lightbox__slide-next {
-  right: 0;
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-.lightbox__slide-next__:hover {
-  background-color: #525252;
-}
-.lightbox__slide-prev {
-  left: 0;
-  border-radius: 0 0.5rem 0.5rem 0;
-}
-.lightbox__slide-prev:hover {
-  background-color: #525252;
+  top: 0;
+  right: -20%;
+  border: none;
 }
 
 /************CSS Animation***********/
-.animated {
-  animation-name: fadeIn;
-  animation-duration: 1s;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -689,10 +694,14 @@ qui sont plus indépendants, comme les boutons.*/
     opacity: 1;
   }
 }
-.fadeIn {
-  animation-name: fadeIn;
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
-
 /*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM
 qui contiennent ce qui est réutilisable,
 par exemple un header pour les mises en page de grande taille

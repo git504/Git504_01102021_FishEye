@@ -733,57 +733,35 @@
     <!----------------------------------------------------------------------
  LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
-    <div id="lightbox" class="lightbox">
+    <div id="lightbox" class="lightbox" aria-label="image closeup view">
+      <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+      <a
+        class="lightbox__slide-prev"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      ></a>
+      <a
+        class="lightbox__slide-next"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      ></a>
       <div class="lightbox__slide-container">
         <div class="lightbox__slider-body">
-          <a class="lightbox__slides animated" style="display: block">
-            <span class="lightbox__slide-number">1/5</span>
-            <img />
-            <span class="lightbox__slide-text">image 1</span>
-          </a>
-        </div>
-        <a class="lightbox__slide-prev" href="#">❮</a>
-        <a class="lightbox__slide-next" href="#">❯</a>
-      </div>
-    </div>
-
-    <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-    <!-- <div class="lightbox" aria-label="image closeup view">
-      <button
-        class="lightbox__next lightbox__button"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      >
-        Next image
-      </button>
-      <button
-        class="lightbox__previous lightbox__button"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      >
-        Previous image
-      </button>
-      <div class="lightbox__container" aria-label="image closeup view">
-        <div class="lightbox__image">
-          <button
-            class="lightbox__close lightbox__button"
-            role="button"
-            aria-pressed="undefined"
-            tabindex="0"
-          >
-            Close dialog</button
-          ><img
-            class="lightbox__media"
-            src="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg"
+          <button class="lightbox__close" tabindex="0"></button>
+          <img
+            class="lightbox__slides animated"
+            src="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg"
           />
         </div>
-        <h2 class="lightbox__title">Rainbow Bird</h2>
-      </div>
-    </div> -->
 
-    <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+        <h2 class="lightbox__slide-text">texte de presentation de l'image</h2>
+      </div>
+      <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+    </div>
 
     <script src="app.js" type="module"></script>
     <script src="./dist/polyfill.bundle.js"></script>
