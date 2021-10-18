@@ -323,6 +323,7 @@ qui sont plus indépendants, comme les boutons.*/
     left: 50%;
     z-index: 9;
     top: 93vh;
+    display: none;
   }
 }
 .user__price {
@@ -480,8 +481,10 @@ qui sont plus indépendants, comme les boutons.*/
 }
 @media (max-width: 800px) {
   .modal {
-    height: 100vh;
+    height: 90vh;
     width: 97%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .modal__content {

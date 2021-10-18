@@ -15,8 +15,10 @@ qui sont plus indépendants, comme les boutons.*/
   margin-left: auto;
   margin-right: auto;
   @include mobile {
-    height: 100vh;
+    height: 90vh;
     width: 97%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__content {
