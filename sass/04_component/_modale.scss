@@ -89,9 +89,24 @@ qui sont plus indépendants, comme les boutons.*/
     }
   }
   &__submitButton {
-    @extend .user__contactButton;
+    background-color: $color-primary;
+    font-size: 1.8rem;
+    color: $color-white-smoke;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 2.344rem;
+    width: 17rem;
+    height: 6.9rem;
     margin-top: 5%;
     margin-bottom: 5%;
+    border: none;
     transform: translate(0);
+    @include mobile {
+      width: 17rem;
+      height: 3.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

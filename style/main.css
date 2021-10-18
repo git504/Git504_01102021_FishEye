@@ -293,7 +293,7 @@ qui sont plus indépendants, comme les boutons.*/
   margin-top: 2rem;
   font-size: 1.8rem;
 }
-.user__contactButton, .filter__select, .filter__custom-option, .form__submitButton {
+.user__contactButton, .filter__select, .filter__custom-option {
   display: block;
   position: static;
   cursor: pointer;
@@ -309,12 +309,12 @@ qui sont plus indépendants, comme les boutons.*/
   height: 6.9rem;
   border: none;
 }
-.user__contactButton:hover, .filter__select:hover, .filter__custom-option:hover, .form__submitButton:hover {
+.user__contactButton:hover, .filter__select:hover, .filter__custom-option:hover {
   background-color: #d3573c;
   color: black;
 }
 @media (max-width: 800px) {
-  .user__contactButton, .filter__select, .filter__custom-option, .form__submitButton {
+  .user__contactButton, .filter__select, .filter__custom-option {
     width: 17rem;
     height: 3.5rem;
     display: block;
@@ -551,9 +551,27 @@ qui sont plus indépendants, comme les boutons.*/
   font-family: inherit;
 }
 .form__submitButton {
+  background-color: #901c1c;
+  font-size: 1.8rem;
+  color: #fafafa;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  line-height: 2.344rem;
+  width: 17rem;
+  height: 6.9rem;
   margin-top: 5%;
   margin-bottom: 5%;
+  border: none;
   transform: translate(0);
+}
+@media (max-width: 800px) {
+  .form__submitButton {
+    width: 17rem;
+    height: 3.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
