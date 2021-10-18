@@ -453,6 +453,40 @@ qui sont plus indépendants, comme les boutons.*/
   }
 }
 
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
+            MODALE USER.HTML
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
+/*PARTIELS : components/ est utilisé pour ranger les blocs BEM
+qui sont plus indépendants, comme les boutons.*/
+/*  ---------------------------------------------------------------------- *\
+            LIGHTBOX USER.HTML
+\*  ---------------------------------------------------------------------- */
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            MIXIN TYPOGRAPHY
+            RESPONSIVE BREACKPOINT
+            64rem X 16px de font-size = 1024px
+\*  ---------------------------------------------------------------------- */
 /*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM
 qui contiennent ce qui est réutilisable,
 par exemple un header pour les mises en page de grande taille
@@ -652,6 +686,11 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
   padding: 1%;
   margin-bottom: 4rem;
   justify-content: center;
+}
+@media (max-width: 800px) {
+  .media__card {
+    margin-bottom: 6rem;
+  }
 }
 .media a {
   position: relative;

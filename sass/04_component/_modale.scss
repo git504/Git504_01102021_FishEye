@@ -4,3 +4,27 @@ qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
             MODALE USER.HTML
 \*  ---------------------------------------------------------------------- */
+
+@import "../01_utils/mixins";
+
+.modal {
+  &__content {
+  }
+  &__close {
+  }
+  &__body {
+  }
+}
+
+.form {
+  &__data {
+  }
+  &__label {
+  }
+  &__text {
+    &--area {
+    }
+  }
+  &__submitButton {
+  }
+}

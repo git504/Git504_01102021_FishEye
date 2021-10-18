@@ -9,10 +9,12 @@
 import * as myFetchModule from "./fetch.js";
 //filtertags.js
 import * as myFilterModule from "./filtertags.js";
-//modale
 //lightbox
+
+//modale
 //carrousel
 
 myFetchModule.REQUESTS();
-myFetchModule.vehicule;
 myFilterModule.FILTER_TAGS();
+
+myFetchModule.vehicule;
