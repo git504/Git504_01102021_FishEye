@@ -731,37 +731,73 @@
     </main>
 
     <!----------------------------------------------------------------------
- LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-    <div id="lightbox" class="lightbox" aria-label="image closeup view">
-      <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-      <a
-        class="lightbox__slide-prev"
-        href="#"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      ></a>
-      <a
-        class="lightbox__slide-next"
-        href="#"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      ></a>
-      <div class="lightbox__slide-container">
-        <div class="lightbox__slider-body">
-          <button class="lightbox__close" tabindex="0"></button>
-          <img
-            class="lightbox__slides animated"
-            src="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg"
-          />
-        </div>
+      LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
+      ------------------------------------------------------------------------>
 
-        <h2 class="lightbox__slide-text">texte de presentation de l'image</h2>
+    <div class="container" aria-label="image closeup view">
+      <div
+        class="container__btn-nav--left"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      ></div>
+      <div class="container__slider">
+        <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+        <img
+          class="active container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Event_SeasideWedding.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Portrait_Background.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg"
+        />
+        <img
+          class="container__slider-image"
+          src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg"
+        />
+        <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+        <div class="container__text">
+          <p class="container__slide-text">texte de presentation de l'image</p>
+        </div>
       </div>
-      <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+      <div
+        class="container__btn-nav--right"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      >
+        <button class="container__btn-nav--close" tabindex="0"></button>
+      </div>
     </div>
+    <!----------------------------------------------------------------------
+      LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
+      ------------------------------------------------------------------------>
 
     <script src="app.js" type="module"></script>
     <script src="./dist/polyfill.bundle.js"></script>

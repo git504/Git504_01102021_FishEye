@@ -80,7 +80,7 @@ ou un footer ;
     align-items: center;
     justify-content: center;
     border-radius: $border-radius;
-    border: 0.05rem solid $color-gray;
+    border: 0.1rem solid #c4c4c4;
     color: $color-primary;
     transition: background-color 100ms, color 00ms;
     &:hover {

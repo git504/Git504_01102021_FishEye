@@ -7,117 +7,101 @@ LIGHTBOX USER.HTML
 
 @import "../01_utils/mixins";
 
-.lightbox {
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 5rem;
   display: flex;
-  align-items: center;
-  position: fixed; //position fixed pour js
+  align-content: center;
+  justify-content: space-between;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background: #fff;
   z-index: 13;
   overflow: scroll;
-  &__slide-prev,
-  &__slide-next {
-    cursor: pointer;
-    height: 100%;
-    width: 15%;
-    position: fixed;
-    margin-top: 0.7rem;
-    z-index: 11;
-  }
-  &__slide-next {
-    background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
-    right: 0;
-    border-radius: 0.5rem 0 0 0.5rem;
-    @include mobile {
-      background: url(../../assets/arrow.svg) center center/4.5rem 2rem
-        no-repeat;
-    }
-    &__:hover {
-      animation-name: opacity;
-      animation-duration: 1s ease-out;
-    }
-  }
-  &__slide-prev {
-    background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
-    left: 0;
-    transform: rotate(180deg);
-    border-radius: 0 0.5rem 0.5rem 0;
-    @include mobile {
-      background: url(../../assets/arrow.svg) center center/4.5rem 2rem
-        no-repeat;
-    }
-    &:hover {
-      animation-name: opacity;
-      animation-duration: 1s ease-out;
-    }
-  }
-  &__slider-body {
+
+  &__slider {
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
     align-items: center;
-  }
-  &__slide-container {
-    position: relative;
-    width: clamp(290px, 70%, 100%);
-    margin: auto;
-  }
-  &__slides {
-    border-radius: 0.5em;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-fit: cover;
-    object-position: 50% 30%;
-    z-index: 12;
-    animation: fadeIn 1s ease-out;
+    justify-content: center;
+    width: 70%;
+    max-height: 100%;
   }
 
-  &__slide-text {
+  &__slider-image {
+    display: none;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    &.active {
+      display: flex;
+      animation: fade 1s ease-out;
+    }
+  }
+
+  &__text {
+    align-self: flex-start;
+    margin-top: 1rem;
     color: $color-primary;
     font-size: 2.4rem;
     line-height: 3.125rem;
     font-style: normal;
     font-weight: 400;
-    animation: fadeIn 1s ease-out;
+    animation: fade 1s ease-out;
     @include mobile {
       font-size: calc(10px + 1.5vw);
     }
   }
-  &__close {
-    width: 20%;
-    height: 4rem;
-    background: url(../../assets/cross.svg) center center/3.5rem 9rem no-repeat;
-    z-index: 12;
-    position: absolute;
-    top: 0;
-    right: -20%;
-    border: none;
-    @include mobile {
-      background: url(../../assets/cross.svg) center center/1.5rem 4.5rem
-        no-repeat;
-      right: -15%;
+
+  &__btn-nav {
+    cursor: pointer;
+    height: 100%;
+    border-radius: 0.5rem 0 0 0.5rem;
+    position: fixed;
+    margin-top: 0.7rem;
+    z-index: 9;
+    &--right {
+      width: 15%;
+      right: 0;
+      background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
+      @include mobile {
+        background: url(../../assets/arrow.svg) center center/4.5rem 2rem
+          no-repeat;
+      }
     }
-  }
-}
-
-/************CSS Animation***********/
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
+    &--left {
+      width: 15%;
+      background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
+      left: 0;
+      transform: rotate(180deg);
+      @include mobile {
+        background: url(../../assets/arrow.svg) center center/4.5rem 2rem
+          no-repeat;
+      }
+    }
+    &--close {
+      width: 20%;
+      height: 4rem;
+      background: url(../../assets/cross.svg) center center/3rem 3.5rem
+        no-repeat;
+      z-index: 14;
+      position: relative;
+      border: none;
+      transform: rotate(90deg);
+      margin-left: 50%;
+      top: 0;
+    }
   }
 }

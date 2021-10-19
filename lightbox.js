@@ -1,118 +1,51 @@
+("use strict");
+
+const items = document.querySelectorAll(".container__slider-image");
+const nbSlide = items.length;
+console.log(nbSlide);
+const suivant = document.querySelector(".container__btn-nav--right");
+const precedent = document.querySelector(".container__btn-nav--left");
+let count = 0;
+
 const LIGHTBOX = () => {
-  //If you want to include more images, add the link name and URL of the image in the array list below.
-  let images_list = [
-    {
-      url: "./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg",
-      name: "image 1",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4",
-      name: "image 2",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg",
-      name: "image 3",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg",
-      name: "image 4",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Portrait_Background.jpg",
-      name: "image 5",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Portrait_Nora.jpg",
-      name: "image 5",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg",
-      name: "image 5",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg",
-      name: "image 5",
-      link: "",
-    },
-    {
-      url: "./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg",
-      name: "image 5",
-      link: "",
-    },
-  ];
+  function slideSuivante() {
+    items[count].classList.remove("active");
 
-  let slider_id = document.querySelector("#lightbox");
+    if (count < nbSlide - 1) {
+      count++;
+    } else {
+      count = 0;
+    }
 
-  // append all images
-  let dots_div = "";
-  let images_div = "";
-  for (let i = 0; i < images_list.length; i++) {
-    // if no link without href="" tag
-    let href =
-      images_list[i].link == "" ? "" : ' href="' + images_list[i].link + '"';
-    images_div +=
-      "<a" +
-      href +
-      ' class="lightbox__slides animated"' +
-      (i === 0 ? ' style="display:block"' : "") +
-      ">" +
-      '<img src="' +
-      images_list[i].url +
-      '" alt="' +
-      images_list[i].name +
-      '">' +
-      '<span class="lightbox__slide-text">' +
-      images_list[i].name +
-      "</span>" +
-      "</a>";
+    items[count].classList.add("active");
+    console.log(count);
   }
-  slider_id.querySelector(".lightbox__slider-body").innerHTML = images_div;
-  let slide_index = 0;
+  suivant.addEventListener("click", slideSuivante);
 
-  let images = slider_id.querySelectorAll(".lightbox__slides");
-  let prev_button = slider_id.querySelector(".lightbox__slide-prev");
-  let next_button = slider_id.querySelector(".lightbox__slide-next");
+  function slidePrecedente() {
+    items[count].classList.remove("active");
 
-  function showSlides() {
-    if (slide_index > images.length - 1) {
-      slide_index = 0;
+    if (count > 0) {
+      count--;
+    } else {
+      count = nbSlide - 1;
     }
-    if (slide_index < 0) {
-      slide_index = images.length - 1;
-    }
-    for (let i = 0; i < images.length; i++) {
-      images[i].style.display = "none";
-      if (i == slide_index) {
-        images[i].style.display = "block";
-      }
+
+    items[count].classList.add("active");
+    // console.log(count);
+  }
+  precedent.addEventListener("click", slidePrecedente);
+
+  function keyPress(e) {
+    console.log(e);
+
+    if (e.keyCode === 37) {
+      slidePrecedente();
+    } else if (e.keyCode === 39) {
+      slideSuivante();
     }
   }
-
-  prev_button.addEventListener(
-    "click",
-    function (event) {
-      event.preventDefault();
-      slide_index--;
-      showSlides();
-    },
-    false
-  );
-
-  next_button.addEventListener(
-    "click",
-    function (event) {
-      event.preventDefault();
-      slide_index++;
-      showSlides();
-    },
-    false
-  );
+  document.addEventListener("keydown", keyPress);
 };
-// export { LIGHTBOX };
+
+export { LIGHTBOX };

@@ -28,6 +28,24 @@
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/extensions";*/
+/*  ---------------------------------------------------------------------- *\
+            FADE FOTO
+\*  ---------------------------------------------------------------------- */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
+%placeholders pour les extensions (si vous en utilisez) ;
+
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";*/
 /*choix weight via la map fontDM*/
 /*PARTIELS : le directory base/ contient les fichiers qui définissent
 les fondations de votre site, par exemple la police de caractères
@@ -601,122 +619,104 @@ LIGHTBOX USER.HTML
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-.lightbox {
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 5rem;
   display: flex;
-  align-items: center;
+  align-content: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background: #fff;
   z-index: 13;
   overflow: scroll;
 }
-.lightbox__slide-prev, .lightbox__slide-next {
-  cursor: pointer;
-  height: 100%;
-  width: 15%;
-  position: fixed;
-  margin-top: 0.7rem;
-  z-index: 11;
-}
-.lightbox__slide-next {
-  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
-  right: 0;
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-@media (max-width: 800px) {
-  .lightbox__slide-next {
-    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
-  }
-}
-.lightbox__slide-next__:hover {
-  animation-name: opacity;
-  animation-duration: 1s ease-out;
-}
-.lightbox__slide-prev {
-  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
-  left: 0;
-  transform: rotate(180deg);
-  border-radius: 0 0.5rem 0.5rem 0;
-}
-@media (max-width: 800px) {
-  .lightbox__slide-prev {
-    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
-  }
-}
-.lightbox__slide-prev:hover {
-  animation-name: opacity;
-  animation-duration: 1s ease-out;
-}
-.lightbox__slider-body {
+.container__slider {
   display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
+  width: 70%;
+  max-height: 100%;
 }
-.lightbox__slide-container {
-  position: relative;
-  width: clamp(290px, 70%, 100%);
-  margin: auto;
-}
-.lightbox__slides {
-  border-radius: 0.5em;
+.container__slider-image {
+  display: none;
+  border-radius: 0.5rem;
   width: 100%;
-  height: auto;
+  height: 80%;
   object-fit: cover;
-  object-fit: cover;
-  object-position: 50% 30%;
-  z-index: 12;
-  animation: fadeIn 1s ease-out;
 }
-.lightbox__slide-text {
+.container__slider-image.active {
+  display: flex;
+  animation: fade 1s ease-out;
+}
+.container__text {
+  align-self: flex-start;
+  margin-top: 1rem;
   color: #901c1c;
   font-size: 2.4rem;
   line-height: 3.125rem;
   font-style: normal;
   font-weight: 400;
-  animation: fadeIn 1s ease-out;
+  animation: fade 1s ease-out;
 }
 @media (max-width: 800px) {
-  .lightbox__slide-text {
+  .container__text {
     font-size: calc(10px + 1.5vw);
   }
 }
-.lightbox__close {
-  width: 20%;
-  height: 4rem;
-  background: url(../../assets/cross.svg) center center/3.5rem 9rem no-repeat;
-  z-index: 12;
-  position: absolute;
-  top: 0;
-  right: -20%;
-  border: none;
+.container__btn-nav {
+  cursor: pointer;
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
+  position: fixed;
+  margin-top: 0.7rem;
+  z-index: 9;
+}
+.container__btn-nav--right {
+  width: 15%;
+  right: 0;
+  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
 }
 @media (max-width: 800px) {
-  .lightbox__close {
-    background: url(../../assets/cross.svg) center center/1.5rem 4.5rem no-repeat;
-    right: -15%;
+  .container__btn-nav--right {
+    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
   }
+}
+.container__btn-nav--left {
+  width: 15%;
+  background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
+  left: 0;
+  transform: rotate(180deg);
+}
+@media (max-width: 800px) {
+  .container__btn-nav--left {
+    background: url(../../assets/arrow.svg) center center/4.5rem 2rem no-repeat;
+  }
+}
+.container__btn-nav--close {
+  width: 20%;
+  height: 4rem;
+  background: url(../../assets/cross.svg) center center/3rem 3.5rem no-repeat;
+  z-index: 14;
+  position: relative;
+  border: none;
+  transform: rotate(90deg);
+  margin-left: 50%;
+  top: 0;
 }
 
-/************CSS Animation***********/
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
 /*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM
 qui contiennent ce qui est réutilisable,
 par exemple un header pour les mises en page de grande taille
@@ -814,7 +814,7 @@ ou un footer ;
   align-items: center;
   justify-content: center;
   border-radius: 1.1rem;
-  border: 0.05rem solid #525252;
+  border: 0.1rem solid #c4c4c4;
   color: #901c1c;
   transition: background-color 100ms, color 0ms;
 }

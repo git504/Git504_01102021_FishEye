@@ -1,3 +1,5 @@
+("use strict");
+
 const getTagsHTML = document.querySelectorAll(".header__filter-tag");
 
 export const FILTER_TAGS = () => {

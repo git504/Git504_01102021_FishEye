@@ -15,7 +15,5 @@ import * as myLightBox from "./lightbox.js";
 //carrousel
 
 myFetchModule.REQUESTS();
-myLightBox.LIGHTBOX();
 myFilterModule.FILTER_TAGS();
-
-myFetchModule.vehicule;
+myLightBox.LIGHTBOX();
