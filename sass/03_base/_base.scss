@@ -28,3 +28,20 @@ li {
   list-style: none;
   display: flex;
 }
+
+a:focus {
+  outline: 3px solid black;
+}
+
+//class pour cacher : extended descriptions for images pour decrir un graphique ou des donnees par exmple
+
+.visually-hidden {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  border: 0;
+  clip: rect(0000);
+}

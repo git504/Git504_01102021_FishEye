@@ -123,6 +123,21 @@ li {
   display: flex;
 }
 
+a:focus {
+  outline: 3px solid black;
+}
+
+.visually-hidden {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  border: 0;
+  clip: rect(0);
+}
+
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
@@ -632,7 +647,6 @@ SLIDER USER.HTML
   display: flex;
   align-content: center;
   justify-content: space-between;
-  position: fixed;
   background: #fafafa;
   z-index: 10;
   overflow: scroll;

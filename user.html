@@ -60,7 +60,7 @@
       <!-- logo -->
       <a
         tabindex="0"
-        aria-label="Fisheye"
+        aria-label="Fisheye portefolio de photographes"
         href="index.html"
         class="header__logo--page"
       >
@@ -90,7 +90,7 @@
       <section
         class="user--page"
         role="region"
-        aria-label="Photographer profil"
+        aria-label="Profil du photographe sélectionné"
       >
         <!-- DEBUT insertion du composant .USER header en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <article class="user__profil--page">
@@ -102,12 +102,12 @@
 
               <nav
                 role="navigation"
-                aria-label="search by categories"
+                aria-label="chercher par catégorie"
                 class="card__nav"
               >
                 <ul
                   role="navigation"
-                  aria-label="search by categories"
+                  aria-label="chercher par catégorie"
                   class="user__tags--page"
                 >
                   <li class="user__tag--page">
@@ -167,10 +167,23 @@
       <aside
         class="infos"
         role="contentinfo"
-        aria-label="basic infos like price, followers"
+        aria-label="nombre de 'followers' et nombre de 'like'"
       >
-        <!-- DEBUT insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <div class="infos">
+      <!-- extended descriptions for images : pour décrire étiquette infos -->
+      <dl class="visually-hidden"   id= "etiquetteinfos">
+        <dt>Likes
+          <dd>Le nombre de coups de coeur pour l'ensemble des photos</dd>
+        </dt>
+        <dt>Abonnés
+          <dd>le nombre d'abonnés du photographe</dd>
+        </dt>
+        <dt>Tarif
+          <dd>le prix de la prestation a la journée</dd>
+        </dt>
+      </dl>
+      <!-- DEBUT insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+
+        <div class="infos" aria-details="etiquetteinfos">
           <div class="infos__likes">
             <p class="infos__totalLikes">680</p>
             <svg
@@ -199,7 +212,7 @@
       <!----------------------------------------------------------------------
  DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
-      <section class="filter" aria-label="content filter">
+      <section class="filter" aria-label="menu filtrant ">
         <div class="filter__dropdown">
           <label for="OrderBy" class="filter__label">Trier par</label>
           <div class="filter__custom-select">
@@ -247,7 +260,7 @@
  FIN DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
 
-      <section class="media" role="region" aria-label="Photographer's media">
+      <section class="media" role="region" aria-label="Galerie du photographe">
         <!-- DEBUT insertion du composant .USER carroussel video en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <article class="media__card">
           <a
@@ -610,7 +623,7 @@
       <!----------------------------------------------------------------------
  MODAL  ᚮ◍𐌏‿𐌏◍ᚭ
   ------------------------------------------------------------------------>
-      <section class="modal" role="region" aria-label="Contact form">
+      <section class="modal" role="region" aria-label="Formulaire de contact">
         <div class="modal__content" aria-labelledby="contact" role="dialog">
           <span class="modal__close"></span>
           <h1 class="modal__head" id="contact">
@@ -633,7 +646,7 @@
                   for="firstname"
                   class="form__label"
                   id="first-name"
-                  aria-label="send firstname"
+                  aria-label="Enter votre prénom"
                   >Prénom</label
                 >
                 <input
@@ -645,7 +658,7 @@
                   required
                   aria-required="true"
                   placeholder="your first name"
-                  aria-labelledby="first-name"
+                  aria-labelledby="Entrer votre nom"
                   aria-describedby="first name format"
                 />
               </div>
@@ -657,7 +670,7 @@
                   for="lastname"
                   class="form__label"
                   id="last-name"
-                  aria-label="send name"
+                  aria-label="Enter votre nom"
                   >Nom</label
                 >
                 <input
@@ -681,7 +694,7 @@
                   for="email"
                   class="form__label"
                   id="email-form"
-                  aria-label="send email"
+                  aria-label="Entrer votre courriel"
                   >E-mail</label
                 >
                 <input
@@ -704,7 +717,7 @@
                   id="txtboxLabel"
                   for="textArea"
                   class="form__label"
-                  aria-label="send etxt"
+                  aria-label="Ecrivez votre message"
                   >Votre message</label
                 >
                 <textarea
@@ -734,7 +747,10 @@
       LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
       ------------------------------------------------------------------------>
 
-    <div class="container" aria-label="image closeup view">
+    <div
+      class="container"
+      aria-label="Galerie de photographie en mode plein écran"
+    >
       <div
         class="container__btn-nav--left"
         href="#"
