@@ -2,13 +2,12 @@
 
 const items = document.querySelectorAll(".container__slider-image");
 const nbSlide = items.length;
-console.log(nbSlide);
 const suivant = document.querySelector(".container__btn-nav--right");
 const precedent = document.querySelector(".container__btn-nav--left");
 let count = 0;
 
-const LIGHTBOX = () => {
-  function slideSuivante() {
+const SLIDER = () => {
+  slideSuivante = () => {
     items[count].classList.remove("active");
 
     if (count < nbSlide - 1) {
@@ -19,10 +18,10 @@ const LIGHTBOX = () => {
 
     items[count].classList.add("active");
     console.log(count);
-  }
+  };
   suivant.addEventListener("click", slideSuivante);
 
-  function slidePrecedente() {
+  slidePrecedente = () => {
     items[count].classList.remove("active");
 
     if (count > 0) {
@@ -32,11 +31,11 @@ const LIGHTBOX = () => {
     }
 
     items[count].classList.add("active");
-    // console.log(count);
-  }
+    console.log(count);
+  };
   precedent.addEventListener("click", slidePrecedente);
 
-  function keyPress(e) {
+  keyPress = (e) => {
     console.log(e);
 
     if (e.keyCode === 37) {
@@ -44,8 +43,8 @@ const LIGHTBOX = () => {
     } else if (e.keyCode === 39) {
       slideSuivante();
     }
-  }
+  };
   document.addEventListener("keydown", keyPress);
 };
 
-export { LIGHTBOX };
+export { SLIDER };

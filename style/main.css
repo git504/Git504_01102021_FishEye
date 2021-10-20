@@ -99,10 +99,12 @@ et les normes que vous voulez appliquer sur tout votre site,
 telles que le box-sizing ;
 
 */
-* {
-  box-sizing: border-box;
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -244,6 +246,7 @@ qui sont plus indépendants, comme les boutons.*/
 .user__img {
   cursor: pointer;
   object-fit: cover;
+  object-position: top;
   width: 20rem;
   height: 20rem;
   border-radius: 50%;
@@ -605,7 +608,7 @@ qui sont plus indépendants, comme les boutons.*/
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\
-LIGHTBOX USER.HTML
+SLIDER USER.HTML
 \*  ---------------------------------------------------------------------- */
 /* PARTIELS : dans utils/, vous rangez vos variables, fonctions, mixins et les
 %placeholders pour les extensions (si vous en utilisez) ;
@@ -619,27 +622,19 @@ LIGHTBOX USER.HTML
             RESPONSIVE BREACKPOINT
             64rem X 16px de font-size = 1024px
 \*  ---------------------------------------------------------------------- */
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .container {
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
+  top: 0;
+  left: 0;
   padding: 5rem;
   display: flex;
   align-content: center;
   justify-content: space-between;
   position: fixed;
-  top: 0;
-  left: 0;
-  background: #fff;
-  z-index: 13;
+  background: #fafafa;
+  z-index: 10;
   overflow: scroll;
 }
 .container__slider {
@@ -654,8 +649,9 @@ LIGHTBOX USER.HTML
   display: none;
   border-radius: 0.5rem;
   width: 100%;
-  height: 80%;
+  height: 90%;
   object-fit: cover;
+  object-position: top;
 }
 .container__slider-image.active {
   display: flex;
@@ -685,6 +681,7 @@ LIGHTBOX USER.HTML
   z-index: 9;
 }
 .container__btn-nav--right {
+  border: none;
   width: 15%;
   right: 0;
   background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
@@ -695,6 +692,8 @@ LIGHTBOX USER.HTML
   }
 }
 .container__btn-nav--left {
+  border: none;
+  z-index: 12;
   width: 15%;
   background: url(../../assets/arrow.svg) center center/9rem 4rem no-repeat;
   left: 0;

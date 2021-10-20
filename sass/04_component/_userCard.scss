@@ -82,6 +82,7 @@ qui sont plus indépendants, comme les boutons.*/
   &__img {
     cursor: pointer;
     object-fit: cover;
+    object-position: top;
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
