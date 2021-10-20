@@ -146,9 +146,14 @@ a:focus {
 .skip-links__a {
   position: absolute;
   top: -3em;
+  background-color: black;
+  color: white;
+  padding: 0.75rem 0.75rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 .skip-links__a:focus {
-  top: 0;
+  top: 0em;
 }
 
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
