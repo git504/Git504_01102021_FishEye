@@ -138,6 +138,19 @@ a:focus {
   clip: rect(0);
 }
 
+.skip-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.skip-links__a {
+  position: absolute;
+  top: -3em;
+}
+.skip-links__a:focus {
+  top: 0;
+}
+
 /*PARTIELS : components/ est utilisé pour ranger les blocs BEM
 qui sont plus indépendants, comme les boutons.*/
 /*  ---------------------------------------------------------------------- *\

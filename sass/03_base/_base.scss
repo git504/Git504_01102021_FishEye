@@ -29,6 +29,8 @@ li {
   display: flex;
 }
 
+//ici LES BASES POUR L ACCESSIBILITE
+
 a:focus {
   outline: 3px solid black;
 }
@@ -44,4 +46,17 @@ a:focus {
   width: 1px;
   border: 0;
   clip: rect(0000);
+}
+
+.skip-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  &__a {
+    position: absolute;
+    top: -3em;
+    &:focus {
+      top: 0;
+    }
+  }
 }
