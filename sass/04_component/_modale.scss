@@ -8,12 +8,16 @@ qui sont plus indépendants, comme les boutons.*/
 @import "../01_utils/mixins";
 
 .modal {
-  display: flex;
-  height: 90vh;
-  z-index: 10;
-  width: 66.9rem;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
+  top: 0.5rem;
+  height: 97vh;
+  z-index: 10;
+  width: 66.9rem;
   @include mobile {
     height: 90vh;
     width: 97%;
@@ -57,7 +61,6 @@ qui sont plus indépendants, comme les boutons.*/
   }
   &__body {
     width: 90%;
-    height: 90%;
     display: block;
     margin: auto;
     margin-top: 5%;

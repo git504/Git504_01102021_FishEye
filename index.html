@@ -12,11 +12,9 @@
       href="./style/main.css"
       media="all"
     />
-
     <!----------------------------------------------------------------------
- Open Graph data Facebbok  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-
+         Open Graph data Facebbok  ᚮ◍𐌏‿𐌏◍ᚭ
+          ------------------------------------------------------------------------>
     <meta
       property="og:title"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -31,11 +29,9 @@
       property="og:description"
       content="FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. "
     />
-
     <!----------------------------------------------------------------------
- Twitter Card data  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-
+         Twitter Card data  ᚮ◍𐌏‿𐌏◍ᚭ
+          ------------------------------------------------------------------------>
     <meta
       name="twitter:card"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -53,12 +49,12 @@
     <!-- Twitter Summary card images must be at least 200x200px -->
     <meta name="twitter:image" content="./assets/logo.png" />
   </head>
+
   <body>
     <a href="#main" class="anchor">Passer au contenu</a>
-
     <!----------------------------------------------------------------------
- HEADER : LOGO + SEARCHby# + TITLE    ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
+         HEADER : LOGO + SEARCHby# + TITLE    ᚮ◍𐌏‿𐌏◍ᚭ
+          ------------------------------------------------------------------------>
     <header role="banner" class="header">
       <!-- logo -->
       <a
@@ -71,7 +67,7 @@
           role="img"
           width="200"
           height="50"
-          viewBox="0 0 200 50"
+          viewbox="0 0 200 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-describedby="title description"
@@ -87,7 +83,6 @@
           <desc id="description">Fisheye le logo</desc>
         </svg>
       </a>
-
       <!-- nav-->
       <!-- lien caché margin top -3em pour rendre facile la navigation au clavier -->
       <ul class="skip-links" aria-label="menu de navigation raccourcis">
@@ -122,62 +117,53 @@
               >#portrait</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="events" href="./index.html" class="header__filter-tag"
               >#events</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="travel" href="./index.html" class="header__filter-tag"
               >#travel</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="animals" href="./index.html" class="header__filter-tag"
               >#animals</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="sports" href="./index.html" class="header__filter-tag"
               >#sports</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="architecture" href="./index.html" class="header__filter-tag"
               >#architecture</a
             >
           </li>
-
           <li class="header__filter-item">
             <a tag="art" href="./index.html" class="header__filter-tag">#art</a>
           </li>
-
           <li class="header__filter-item">
             <a tag="fashion" href="./index.html" class="header__filter-tag"
               >#fashion</a
             >
           </li>
-
           <li class="header__filter--item">
             <a tag="sport" href="./index.html" class="header__filter-tag"
               >#sport</a
             >
           </li>
         </ul>
-
         <!-- title -->
       </nav>
     </header>
-
     <main class="main" id="main" role="main">
       <h1 tabindex="1" class="header__title">Nos photographes</h1>
       <!-- section -->
       <section
+        id="users"
         role="feed"
         aria-busy="true"
         class="users"
@@ -188,7 +174,7 @@
         <article
           tabindex="2"
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
@@ -260,7 +246,7 @@
         </article>
         <article
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
@@ -333,7 +319,7 @@
         </article>
         <article
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
@@ -406,7 +392,7 @@
         </article>
         <article
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
@@ -479,7 +465,7 @@
         </article>
         <article
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
@@ -551,14 +537,14 @@
           </nav>
         </article>
         <article
+          tabindex="2"
           class="user"
-          aria-labelledby="user__name"
+          aria-labelledby="users"
           aria-posinset="1"
           aria-setsize="6"
         >
-          <a class="user__header">
+          <a href="user.html" class="user__header">
             <img
-              href="./user.html"
               class="user__img"
               src="./assets/SamplePhotos/PhotographersIDPhotos/TracyGalindo.jpg"
               alt="architecure"
@@ -623,13 +609,10 @@
             </ul>
           </nav>
         </article>
-
         <!-- FIN insertion du composant .USER en Javascrpit -->
       </section>
     </main>
-
-    <script src="app.js" type="module"></script>
-
+    <script src="./app.js" type="module"></script>
     <script src="./dist/polyfill.bundle.js"></script>
     <script src="./dist/app.bundle.js"></script>
   </body>

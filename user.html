@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.ico" alt="icone du site internet" />
     <title>FishEye photographes</title>
     <link
       rel="stylesheet"
@@ -12,10 +12,7 @@
       href="./style/main.css"
       media="all"
     />
-
-    <!----------------------------------------------------------------------
- Open Graph data Facebbok  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
+    <!--Open Graph data Facebbok  ᚮ◍𐌏‿𐌏◍ᚭ-->
     <meta
       property="og:title"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -30,10 +27,7 @@
       property="og:description"
       content="FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux. "
     />
-
-    <!----------------------------------------------------------------------
- Twitter Card data  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
+    <!--Twitter Card data  ᚮ◍𐌏‿𐌏◍ᚭ-->
     <meta
       name="twitter:card"
       content="Fisheye, la Gallery qui sélectionne et présente les nouveaux talents de la photographie"
@@ -53,9 +47,7 @@
   </head>
 
   <body>
-    <!----------------------------------------------------------------------
- HEADER : logo    ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
+    <!--HEADER : logo    ᚮ◍𐌏‿𐌏◍ᚭ-->
     <header role="banner" class="header--page">
       <!-- logo -->
       <a
@@ -68,7 +60,7 @@
           role="img"
           width="200"
           height="50"
-          viewBox="0 0 200 50"
+          viewbox="0 0 200 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-describedby="title description"
@@ -85,28 +77,31 @@
         </svg>
       </a>
     </header>
-
     <main class="main">
       <section
+        id="user"
         class="user--page"
         role="region"
         aria-label="Profil du photographe sélectionné"
       >
         <!-- DEBUT insertion du composant .USER header en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <article class="user__profil--page">
+        <article
+          class="user__profil--page"
+          role="article"
+          aria-label="Profil en détail du photographe sélectionné"
+          aria-labelledby="user"
+        >
           <div class="user__body">
             <div class="user__content--page">
               <h1 class="user__name--page">Mimi Keel</h1>
               <p class="user__location--page">London, UK</p>
               <p class="user__tagline--page">Voir le beau dans le quotidien</p>
-
               <nav
                 role="navigation"
                 aria-label="chercher par catégorie"
                 class="card__nav"
               >
                 <ul
-                  role="navigation"
                   aria-label="chercher par catégorie"
                   class="user__tags--page"
                 >
@@ -153,7 +148,9 @@
                 </ul>
               </nav>
             </div>
-            <button class="user__contactButton">Contactez-moi</button>
+            <button id="btnModal" class="user__contactButton">
+              Contactez-moi
+            </button>
           </div>
           <img
             class="user__img"
@@ -163,26 +160,21 @@
         </article>
         <!-- FIN insertion du composant .USER header en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
       </section>
-
       <aside
         class="infos"
         role="contentinfo"
         aria-label="nombre de 'followers' et nombre de 'like'"
       >
-      <!-- extended descriptions for images : pour décrire étiquette infos -->
-      <dl class="visually-hidden"   id= "etiquetteinfos">
-        <dt>Likes
+        <!-- extended descriptions for images : pour décrire étiquette infos -->
+        <dl class="visually-hidden" id="etiquetteinfos">
+          <dt>Likes</dt>
           <dd>Le nombre de coups de coeur pour l'ensemble des photos</dd>
-        </dt>
-        <dt>Abonnés
+          <dt>Abonnés</dt>
           <dd>le nombre d'abonnés du photographe</dd>
-        </dt>
-        <dt>Tarif
+          <dt>Tarif</dt>
           <dd>le prix de la prestation a la journée</dd>
-        </dt>
-      </dl>
-      <!-- DEBUT insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-
+        </dl>
+        <!-- DEBUT insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <div class="infos" aria-details="etiquetteinfos">
           <div class="infos__likes">
             <p class="infos__totalLikes">680</p>
@@ -191,7 +183,7 @@
               class="infos__heart"
               width="19"
               height="19"
-              viewBox="0 0 19 19"
+              viewbox="0 0 19 19"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               aria-describedby="title-680 description-680"
@@ -208,29 +200,27 @@
         </div>
         <!-- FIN insertion du composant .USER infos fix en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
       </aside>
-
-      <!----------------------------------------------------------------------
- DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-      <section class="filter" aria-label="menu filtrant ">
+      <!--DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ-->
+      <section class="filter" aria-label="menu filtrant">
         <div class="filter__dropdown">
-          <label for="OrderBy" class="filter__label">Trier par</label>
+          <label for="OrderBy" class="filter__label" aria-label="menu filtrant"
+            >Trier par</label
+          >
           <div class="filter__custom-select">
             <button
-              name="mediaFilter"
               id="OrderBy"
+              name="mediaFilter"
               class="filter__select"
-              role="button search"
+              role="button"
               aria-haspopup="listbox"
             >
               Popularité
             </button>
             <span class="filter__custom-arrow"> </span>
-
             <ul
+              aria-labelledby="OrderBy"
               class="filter__custom-menu"
               role="listbox"
-              aria-labelledby="OrderBy"
             >
               <li
                 role="option"
@@ -245,8 +235,8 @@
               <li
                 role="option"
                 class="filter__custom-option"
-                data-value="title"
-                id="title"
+                data-value="titre"
+                id="titre"
                 tabindex="0"
                 aria-selected="false"
               >
@@ -257,13 +247,13 @@
         </div>
       </section>
       <!----------------------------------------------------------------------
- FIN DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-
+            FIN DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ
+             ------------------------------------------------------------------------>
       <section class="media" role="region" aria-label="Galerie du photographe">
         <!-- DEBUT insertion du composant .USER carroussel video en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <article class="media__card">
           <a
+            alt="lecture d'une vidéo"
             href="./assets/SamplePhotos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4"
           >
             <div class="media__playIcon"></div>
@@ -296,7 +286,7 @@
                 class="media__media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -314,7 +304,6 @@
         </article>
         <!-- FIN insertion du composant .USER carroussel video en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
         <!-- DEBUT insertion du composant .USER carroussel foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-
         <article class="media__card">
           <a href="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg">
             <img
@@ -333,7 +322,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -350,7 +339,6 @@
           </div>
         </article>
         <!-- FIN insertion du composant .USER carroussel foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-
         <article class="media__card">
           <a href="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg">
             <img
@@ -368,7 +356,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -401,7 +389,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -434,7 +422,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -467,7 +455,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -500,7 +488,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -535,7 +523,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -568,7 +556,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -589,7 +577,7 @@
             <img
               src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg"
               alt=" Paysage de montagne avec au premier une personne se tenant sur
-            l'une d'elle"
+                  l'une d'elle"
               class="media__thumb"
             />
           </a>
@@ -602,7 +590,7 @@
                 class="media__heart"
                 width="19"
                 height="19"
-                viewBox="0 0 19 19"
+                viewbox="0 0 19 19"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="likes"
@@ -619,20 +607,28 @@
           </div>
         </article>
       </section>
-
       <!----------------------------------------------------------------------
- MODAL  ᚮ◍𐌏‿𐌏◍ᚭ
-  ------------------------------------------------------------------------>
-      <section class="modal" role="region" aria-label="Formulaire de contact">
-        <div class="modal__content" aria-labelledby="contact" role="dialog">
-          <span class="modal__close"></span>
-          <h1 class="modal__head" id="contact">
-            Contactez-moi <br />
-            Mimi Keel
+            MODAL  ᚮ◍𐌏‿𐌏◍ᚭ
+             ------------------------------------------------------------------------>
+      <section
+        id="modalForm"
+        class="modal"
+        role="region"
+        aria-label="Formulaire de contact"
+      >
+        <div class="modal__content" role="dialog">
+          <span id="closeModal" class="modal__close"> </span>
+          <h1 class="modal__head" aria-label="Contactez-moi">
+            Contactez-moi <br />Mimi Keel
           </h1>
-          <div class="modal__body" role="group" aria-labelledby="coordonnees">
+          <div
+            id="contact"
+            class="modal__body"
+            role="group"
+            aria-labelledby="coordonnees"
+          >
             <form
-              id="coordonnees"
+              aria-labelledby="contact"
               name="contact"
               action="./user.html"
               method="post"
@@ -646,7 +642,7 @@
                   for="firstname"
                   class="form__label"
                   id="first-name"
-                  aria-label="Enter votre prénom"
+                  aria-label="prénom"
                   >Prénom</label
                 >
                 <input
@@ -657,9 +653,11 @@
                   minlength="2"
                   required
                   aria-required="true"
-                  placeholder="your first name"
-                  aria-labelledby="Entrer votre nom"
-                  aria-describedby="first name format"
+                  placeholder="Votre Prénom"
+                  aria-placeholder="Votre Prénom"
+                  aria-labelledby="contact first-name"
+                  aria-describedby="Prénom"
+                  aria-label="entrer votre prénom"
                 />
               </div>
               <div
@@ -670,7 +668,7 @@
                   for="lastname"
                   class="form__label"
                   id="last-name"
-                  aria-label="Enter votre nom"
+                  aria-label="nom"
                   >Nom</label
                 >
                 <input
@@ -681,9 +679,11 @@
                   minlength="2"
                   required
                   aria-required="true"
-                  placeholder="your lastname"
-                  aria-labelledby="last-name"
-                  aria-describedby="last name format"
+                  placeholder="Votre Nom"
+                  aria-placeholder="Votre Nom"
+                  aria-labelledby="contact last-name"
+                  aria-describedby="nom"
+                  aria-label="entrer votre nom"
                 />
               </div>
               <div
@@ -694,7 +694,7 @@
                   for="email"
                   class="form__label"
                   id="email-form"
-                  aria-label="Entrer votre courriel"
+                  aria-label="mail"
                   >E-mail</label
                 >
                 <input
@@ -704,9 +704,11 @@
                   name="email"
                   required
                   aria-required="true"
-                  placeholder="your email"
-                  aria-labelledby="email-form"
-                  aria-describedby="email format"
+                  placeholder="Votre email"
+                  aria-placeholder="Votre email"
+                  aria-labelledby="contact email-form"
+                  aria-describedby="email"
+                  aria-label="entrer votre mail"
                 />
               </div>
               <div
@@ -717,14 +719,13 @@
                   id="txtboxLabel"
                   for="textArea"
                   class="form__label"
-                  aria-label="Ecrivez votre message"
+                  aria-label="message"
                   >Votre message</label
                 >
                 <textarea
                   role="textbox"
                   contenteditable="true"
-                  aria-placeholder="let's start your text here..."
-                  aria-labelledby="txtboxLabel"
+                  aria-placeholder="Ecriver votre message..."
                   class="form__text--area"
                   name="textArea"
                   id="textArea"
@@ -732,9 +733,12 @@
                   rows="10"
                   required
                   aria-required="true"
-                  placeholder="let's start your text here..."
-                  aria-describedby="textareaformat"
-                ></textarea>
+                  placeholder="Votre message..."
+                  aria-labelledby="contact txtboxLabel"
+                  aria-describedby="message"
+                  aria-label="Ecriver votre message"
+                >
+                </textarea>
                 <input class="form__submitButton" type="submit" value="Send" />
               </div>
             </form>
@@ -742,11 +746,9 @@
         </div>
       </section>
     </main>
-
     <!----------------------------------------------------------------------
-      LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
-      ------------------------------------------------------------------------>
-
+         SLIDER   ᚮ◍𐌏‿𐌏◍ᚭ
+         ------------------------------------------------------------------------>
     <div
       class="container"
       aria-label="Galerie de photographie en mode plein écran"
@@ -759,40 +761,48 @@
         tabindex="0"
       ></div>
       <div class="container__slider">
-        <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-        <img
+        <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ --><img
+          alt="text de description de la photo"
           class="active container__slider-image"
           src="./assets/SamplePhotos/Mimi/Animals_Rainbow.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Event_BenevidesWedding.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Event_SeasideWedding.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Event_PintoWedding.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Portrait_Background.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Portrait_Nora.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Portrait_Wednesday.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Travel_HillsideColor.jpg"
         />
         <img
+          alt="text de description de la photo"
           class="container__slider-image"
           src="./assets/SamplePhotos/Mimi/Travel_Lonesome.jpg"
         />
@@ -808,14 +818,15 @@
         aria-pressed="undefined"
         tabindex="0"
       >
-        <button class="container__btn-nav--close" tabindex="0"></button>
+        <button class="container__btn-nav--close" tabindex="0">
+          Fermer la galerie de photographie
+        </button>
       </div>
     </div>
     <!----------------------------------------------------------------------
-      LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
-      ------------------------------------------------------------------------>
-
-    <script src="app.js" type="module"></script>
+         LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
+         ------------------------------------------------------------------------>
+    <script src="./app.js" type="module"></script>
     <script src="./dist/polyfill.bundle.js"></script>
     <script src="./dist/app.bundle.js"></script>
   </body>
