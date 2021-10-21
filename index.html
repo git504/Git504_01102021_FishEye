@@ -54,25 +54,6 @@
     <meta name="twitter:image" content="./assets/logo.png" />
   </head>
   <body>
-    <!-- lien caché margin top -3em pour rendre facile la navigation au clavier -->
-    <ul class="skip-links" aria-label="menu de navigation raccourcis">
-      <li>
-        <a
-          class="skip-links__a"
-          href="#navigation"
-          aria-label="allez a la rechercher par TAGS"
-          >Passer directement aux TAGS</a
-        >
-      </li>
-      <li>
-        <a
-          class="skip-links__a"
-          href="#main"
-          aria-label="allez voir directement les profils des photographes"
-          >Passer directement au CONTENU</a
-        >
-      </li>
-    </ul>
     <a href="#main" class="anchor">Passer au contenu</a>
 
     <!----------------------------------------------------------------------
@@ -81,7 +62,7 @@
     <header role="banner" class="header">
       <!-- logo -->
       <a
-        tabindex="0"
+        tabindex="1"
         aria-label="Fisheye galerie de photographes en ligne"
         href="index.html"
         class="header__logo"
@@ -108,7 +89,27 @@
       </a>
 
       <!-- nav-->
-
+      <!-- lien caché margin top -3em pour rendre facile la navigation au clavier -->
+      <ul class="skip-links" aria-label="menu de navigation raccourcis">
+        <li>
+          <a
+            tabindex="0"
+            class="skip-links__a"
+            href="#navigation"
+            aria-label="allez a la rechercher par TAGS"
+            >Passer directement aux TAGS</a
+          >
+        </li>
+        <li>
+          <a
+            tabindex="0"
+            class="skip-links__a"
+            href="#main"
+            aria-label="allez voir directement les profils des photographes"
+            >Passer directement au CONTENU</a
+          >
+        </li>
+      </ul>
       <nav
         id="navigation"
         role="navigation"
