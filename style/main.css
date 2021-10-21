@@ -348,6 +348,7 @@ qui sont plus indépendants, comme les boutons.*/
   font-size: 1.8rem;
 }
 .user__contactButton, .filter__select, .filter__custom-option {
+  font-family: inherit;
   display: block;
   position: static;
   cursor: pointer;
