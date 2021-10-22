@@ -561,6 +561,7 @@ qui sont plus indépendants, comme les boutons.*/
   width: 4.2rem;
   top: 1.5rem;
   right: 1.5rem;
+  border: none;
 }
 .modal__head {
   font-size: 6.4rem;
@@ -669,6 +670,7 @@ SLIDER USER.HTML
   display: flex;
   align-content: center;
   justify-content: space-between;
+  position: fixed;
   background: #fafafa;
   z-index: 10;
   overflow: scroll;
@@ -745,12 +747,13 @@ SLIDER USER.HTML
   height: 4rem;
   background: url(../../assets/cross.svg) center center/3rem 3.5rem no-repeat;
   z-index: 14;
-  position: relative;
+  position: absolute;
   border: none;
   transform: rotate(90deg);
-  margin-left: 50%;
-  top: 0;
+  margin-left: 75%;
+  top: 2rem;
   color: transparent;
+  display: block;
 }
 
 /*PARTIELS : layouts/ est le dossier où vous mettez vos blocs BEM

@@ -6,12 +6,13 @@
   "scripts": {
     "sass": "sass --watch ./sass:./style",
     "compressed": "sass ./sass/:./css/ --style=compressed --no-source-map",
-    "start": "npm-run-all --parallel server sass",
+    "start": "npm-run-all --parallel server sass watchwebpack",
     "dev": "npm-run-all --parallel build prefix lint",
     "lint": "cd ./eslint && npm test",
     "server": "json-server --watch db.json",
     "prefix": "postcss ./style/main.css --use autoprefixer -d ./prefixed",
-    "build": "webpack"
+    "build": "webpack",
+    "watchwebpack": "webpack --watch"
   },
   "repository": {
     "type": "git",

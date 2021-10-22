@@ -1,13 +1,32 @@
-("use strict");
+"use strict";
+console.log("SLIDER.JS FONCTIONNE");
 
 const items = document.querySelectorAll(".container__slider-image");
 const nbSlide = items.length;
 const suivant = document.querySelector(".container__btn-nav--right");
 const precedent = document.querySelector(".container__btn-nav--left");
+const toCloseSlider = document.querySelector("#closeslider");
 let count = 0;
+
+// const userPics = document.querySelectorAll(".media__thumb");
+// var userPic = userPics.length;
+const getSlider = document.querySelector(".container");
+
+// function launchSlider() {
+//   getSlider.style.display = "flex";
+// }
+// toOpenSlider.addEventListener("click", launchSlider);
+
+const closeSlider = () => {
+  console.log("CLICK to close slider");
+  getSlider.style.display = "none";
+};
+
+toCloseSlider.addEventListener("click", closeSlider);
 
 const slideSuivante = () => {
   items[count].classList.remove("active");
+  console.log("slidesuivante");
 
   if (count < nbSlide - 1) {
     count++;
@@ -22,7 +41,7 @@ suivant.addEventListener("click", slideSuivante);
 
 const slidePrecedente = () => {
   items[count].classList.remove("active");
-  console.log("slideprecedent");
+  console.log("slideprecedente");
   if (count > 0) {
     count--;
   } else {
@@ -44,5 +63,3 @@ const keyPress = (e) => {
   }
 };
 document.addEventListener("keydown", keyPress);
-
-export { slidePrecedente, slideSuivante, keyPress };
