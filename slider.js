@@ -1,16 +1,16 @@
+// console.log("SLIDER.JS FONCTIONNE");
 "use strict";
-console.log("SLIDER.JS FONCTIONNE");
 
 const items = document.querySelectorAll(".container__slider-image");
 const nbSlide = items.length;
 const suivant = document.querySelector(".container__btn-nav--right");
 const precedent = document.querySelector(".container__btn-nav--left");
 const toCloseSlider = document.querySelector("#closeslider");
+const getSlider = document.querySelector(".container");
 let count = 0;
 
 // const userPics = document.querySelectorAll(".media__thumb");
 // var userPic = userPics.length;
-const getSlider = document.querySelector(".container");
 
 // function launchSlider() {
 //   getSlider.style.display = "flex";
@@ -18,11 +18,11 @@ const getSlider = document.querySelector(".container");
 // toOpenSlider.addEventListener("click", launchSlider);
 
 const closeSlider = () => {
-  console.log("CLICK to close slider");
+  console.log("FOCUS to close slider");
   getSlider.style.display = "none";
 };
 
-toCloseSlider.addEventListener("click", closeSlider);
+toCloseSlider.addEventListener("focus", closeSlider);
 
 const slideSuivante = () => {
   items[count].classList.remove("active");

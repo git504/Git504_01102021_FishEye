@@ -1,1 +1,2 @@
-"use strict";
+// console.log("LIKE.JS FONCTIONNE");
+("use strict");

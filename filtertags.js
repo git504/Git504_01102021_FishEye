@@ -1,3 +1,5 @@
+// console.log("FILTERTAGS.JS FONCTIONNE");
+
 ("use strict");
 
 const getTagsHTML = document.querySelectorAll(".header__filter-tag");

@@ -1,4 +1,4 @@
-console.log("MODAL.JS FONCTIONNE");
+// console.log("MODAL.JS FONCTIONNE");
 
 ("use strict");
 

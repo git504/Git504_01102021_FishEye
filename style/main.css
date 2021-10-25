@@ -299,6 +299,7 @@ qui sont plus indépendants, comme les boutons.*/
   font-weight: normal;
   font-style: normal;
   color: #d3573c;
+  text-align: center;
   margin-top: 1rem;
   cursor: pointer;
 }

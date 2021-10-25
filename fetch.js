@@ -1,37 +1,17 @@
+// // console.log("FETCH.JS FONCTIONNE");
 ("use strict");
 
-const URL_PHOTOGRAPHERS = "http://localhost:3000/photographers";
-const URL_MEDIA = "http://localhost:3000/media";
+function getUrl() {
+  return "http://localhost:3000/api";
+}
 
-// Promise.all , exécute nos requêtes en parallèle et en séquence.
-const REQUESTS = async () => {
-  await Promise.all([fetch(URL_PHOTOGRAPHERS), fetch(URL_MEDIA)])
-    .then(([photographers, media]) => {
-      const A_FETCH = photographers.json();
-      const B_FETCH = media.json();
-      return [A_FETCH, B_FETCH];
+const getDatas = async () => {
+  return await fetch(getUrl())
+    .then(function (response) {
+      return response.json();
     })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err, "Une erreur est survenue");
+    .catch((error) => {
+      console.error("Error:", error);
     });
 };
-export { REQUESTS };
-
-// class vehicule {
-//   constructor(marque, model) {
-//     this.marque = marque;
-//     this.model = model;
-//   }
-//   presenteVehicule() {
-//     console.log(
-//       `Je suis un vehicule de marque ${this.marque} et de model ${this.model}`
-//     );
-//   }
-// }
-// export { vehicule };
-
-// const car = new vehicule("renault", "clio");
-// car.presenteVehicule();
+export { getDatas };
