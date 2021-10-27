@@ -13,3 +13,8 @@ import * as myAnchorModule from "./onscroll.js";
 myFilterModule.FILTER_TAGS();
 myUserModule.getMedias();
 myUsersModule.getPhotographers();
+
+// console.log(e.currentTarget.getAttribute("tag"));
+// const queryString_URL_Tag = window.location.search;
+// const searchParamsTag = new URLSearchParams(queryString_URL_Tag);
+// const tagFromUrl = searchParamsTag.get("tag");

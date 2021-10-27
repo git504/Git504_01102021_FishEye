@@ -1,10 +1,11 @@
+// console.log("ONSCROLL.JS OK");
 "use strict";
 
 const anchor = document.querySelector(".anchor");
 const headerOnIndexPage = document.querySelector(".header");
 const { scrollTop } = document.documentElement;
 const topElementToTopViewPort = headerOnIndexPage.getBoundingClientRect().top;
-console.log(scrollTop);
+// console.log(scrollTop);
 // console.log(topElementToTopViewPort);
 
 const passerAuContenu = () => {

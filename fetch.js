@@ -1,4 +1,4 @@
-// // console.log("FETCH.JS FONCTIONNE");
+// console.log("FETCH.JS FONCTIONNE");
 ("use strict");
 
 function getUrl() {
