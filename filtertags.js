@@ -12,7 +12,7 @@ const FILTER_TAGS = () => {
       console.log(givingTagToMachine);
 
       for (const photographeCard of photographesCards) {
-        console.log(photographeCard);
+        // console.log(photographeCard);
         photographeCard.classList.remove("active");
         photographeCard.classList.add("delete");
 
