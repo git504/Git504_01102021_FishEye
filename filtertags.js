@@ -9,10 +9,10 @@ const FILTER_TAGS = () => {
     tag.addEventListener("click", (e) => {
       e.preventDefault();
       const givingTagToMachine = e.target.id;
-      // console.log(givingTagToMachine);
+      console.log(givingTagToMachine);
 
       for (const photographeCard of photographesCards) {
-        // console.log(photographeCard);
+        console.log(photographeCard);
         photographeCard.classList.remove("active");
         photographeCard.classList.add("delete");
 

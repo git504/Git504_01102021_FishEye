@@ -4,7 +4,7 @@ import * as myFetchModule from "./fetch.js";
 const getPhotographers = async () => {
   const db = await myFetchModule.getDatas();
   const photographers = db.photographers;
-  console.log(photographers);
+  // console.log(photographers);
   showPhotographers(photographers);
 };
 export { getPhotographers };
@@ -15,14 +15,13 @@ const showPhotographers = (arrayofphotographs) => {
 
   // On crée l'affichage de la liste des produits proposés qui sera présente sur l'index avec la méthode map. $ = STRING INTERPOLATION
   arrayofphotographs.map((photographer) => {
-    console.log(photographer);
+    // console.log(photographer);
     let listOfTags = "";
 
     for (const tag of photographer.tags) {
-      //   console.log(iterator);
+      //   console.log(tag);
       listOfTags += `<li class="user__tag">
           <a id="${tag}"
-          href="./index.html"
           class="user__filter-tag"
       >${tag}</a
       >
@@ -41,7 +40,7 @@ const showPhotographers = (arrayofphotographs) => {
         <img
         class="user__img"
         src="./assets/SamplePhotos/PhotographersIDPhotos/${photographer.portrait}"
-        alt="architecure"
+        alt="${photographer.name} + ${photographer.tagline}"
         />
         <h2 class="user__name">${photographer.name}</h2>
         </a>
