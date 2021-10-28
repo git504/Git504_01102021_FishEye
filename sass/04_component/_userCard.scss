@@ -17,7 +17,12 @@ qui sont plus indépendants, comme les boutons.*/
   gap: 5%;
 }
 
-.user {
+.delete {
+  display: none;
+}
+
+.user,
+.active {
   display: flex;
   flex-direction: column;
   align-items: center;

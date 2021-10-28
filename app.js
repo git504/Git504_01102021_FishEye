@@ -10,9 +10,9 @@ import * as myUserModule from "./displayuser.js";
 import * as myDropdownModule from "./dropdown.js";
 import * as myAnchorModule from "./onscroll.js";
 
-myFilterModule.FILTER_TAGS();
+const photographers = myUsersModule.getPhotographers();
+myFilterModule.FILTER_TAGS_MACHINE();
 myUserModule.getMedias();
-myUsersModule.getPhotographers();
 
 // console.log(e.currentTarget.getAttribute("tag"));
 // const queryString_URL_Tag = window.location.search;

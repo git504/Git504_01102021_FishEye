@@ -1,4 +1,5 @@
 import * as myFetchModule from "./fetch.js";
+
 ("use strict");
 
 const getPhotographers = async () => {
@@ -6,10 +7,11 @@ const getPhotographers = async () => {
   const photographers = db.photographers;
   // console.log(photographers);
   showPhotographers(photographers);
+  return photographers;
 };
 export { getPhotographers };
 
-const showPhotographers = (arrayofphotographs) => {
+export const showPhotographers = (arrayofphotographs) => {
   const insertUsers = document.getElementById("users");
   let listOfUsers = "";
 
@@ -27,7 +29,6 @@ const showPhotographers = (arrayofphotographs) => {
       >
     </li>`;
     }
-
     listOfUsers += `
         <article
         tabindex="2"
