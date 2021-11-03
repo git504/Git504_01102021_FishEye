@@ -1,9 +1,10 @@
 // console.log("FETCH.JS FONCTIONNE");
 ("use strict");
 
-function getUrl() {
+const getUrl = () => {
   return "http://localhost:3000/api";
-}
+};
+export { getUrl };
 
 const getDatas = async () => {
   return await fetch(getUrl())

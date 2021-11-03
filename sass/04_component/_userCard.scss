@@ -177,6 +177,12 @@ qui sont plus indépendants, comme les boutons.*/
       }
     }
   }
+
+  &__tag {
+    // padding: 20px;
+    // background: green;
+  }
+
   &__filter-tag {
     @extend .header__filter-tag;
   }

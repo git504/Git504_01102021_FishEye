@@ -11,10 +11,6 @@ import * as myDropdownModule from "./dropdown.js";
 import * as myAnchorModule from "./onscroll.js";
 
 const photographers = myUsersModule.getPhotographers();
+//   .then(myUsersModule.FILTER_TAGS_MILL());
 myFilterModule.FILTER_TAGS_MACHINE();
-myUserModule.getMedias();
-
-// console.log(e.currentTarget.getAttribute("tag"));
-// const queryString_URL_Tag = window.location.search;
-// const searchParamsTag = new URLSearchParams(queryString_URL_Tag);
-// const tagFromUrl = searchParamsTag.get("tag");
+// myUserModule.getMedias();

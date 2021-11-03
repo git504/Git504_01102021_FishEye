@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     polyfill: "babel-polyfill",
     app: "./app.js",
+    displayuser: "./displayuser.js",
   },
   output: {
     filename: "[name].bundle.js",

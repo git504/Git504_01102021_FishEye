@@ -22,25 +22,25 @@ export const showPhotographers = (arrayofphotographs) => {
 
     for (const tag of photographer.tags) {
       //   console.log(tag);
-      listOfTags += `<li class="user__tag">
-          <a id="${tag}"
-          class="user__filter-tag"
+      listOfTags += `<li id="${tag}" class="user__tag">
+      <a
+      class="user__filter-tag"
       >${tag}</a
       >
-    </li>`;
+      </li>`;
     }
     listOfUsers += `
-        <article
-        tabindex="2"
-        class="user"
-        aria-labelledby="users"
-        aria-posinset="1"
-        aria-setsize="6"
-        >
-        <a href="user.html?${photographer.id}" class="user__header">
-        <img
-        class="user__img"
-        src="./assets/SamplePhotos/PhotographersIDPhotos/${photographer.portrait}"
+    <article
+    tabindex="2"
+    class="user"
+    aria-labelledby="users"
+    aria-posinset="1"
+    aria-setsize="6"
+    >
+    <a href="user.html?id=${photographer.id}" class="user__header">
+    <img
+    class="user__img"
+    src="./assets/SamplePhotos/PhotographersIDPhotos/${photographer.portrait}"
         alt="${photographer.name} + ${photographer.tagline}"
         />
         <h2 class="user__name">${photographer.name}</h2>
@@ -61,10 +61,10 @@ export const showPhotographers = (arrayofphotographs) => {
         class="user__tags"
         >
         ${listOfTags}
-    </ul>
-    </nav>
-    </article>
-    `;
+        </ul>
+        </nav>
+        </article>
+        `;
   });
   insertUsers.innerHTML = listOfUsers;
 };
