@@ -29,6 +29,8 @@ qui sont plus indépendants, comme les boutons.*/
     @include flexCenter(row);
   }
   &__totalLikes {
+    display: flex;
+    justify-content: center;
     font-weight: 500;
     font-style: normal;
     font-size: 2.4rem;

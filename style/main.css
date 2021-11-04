@@ -477,6 +477,8 @@ qui sont plus indépendants, comme les boutons.*/
   flex-direction: row;
 }
 .infos__totalLikes, .infos__price {
+  display: flex;
+  justify-content: center;
   font-weight: 500;
   font-style: normal;
   font-size: 2.4rem;
