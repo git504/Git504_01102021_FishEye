@@ -4,7 +4,6 @@ import * as mySliderModule from "./slider.js";
 import * as myDropdownModule from "./dropdown.js";
 import * as myLikesModule from "./likes.js";
 // import * as myModalModule from "./modal.js";
-
 ("use strict");
 
 let photographersOnUserPage = {};
@@ -32,10 +31,9 @@ const dom = {
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
 let getPhotographerById = parseInt(params.get("id"));
-console.log(getPhotographerById);
+console.log("PHOTOGRAPHE ID ", getPhotographerById);
 
-// To display photographer header
-// SI API => console.log(`${myFetchModule.getUrl()}/${getPhotographerById}`);
+// To display photographer : HEADER + MEDIA + INFOS bas de page
 const showUser = async () => {
   const db = await myFetchModule.getDatas();
   const photographers = db.photographers;
@@ -61,7 +59,6 @@ const showUser = async () => {
           portrait: photographer.portrait,
           price: photographer.price,
           tagline: photographer.tagline,
-          tags: photographer.tags,
         };
         // console.log(photographersOnUserPage);
 
@@ -82,8 +79,7 @@ const showUser = async () => {
     }
   }
 
-  //ARRAY FILTER POUR SORTIR LA DATA MEDIA PHOTOGRAPHERS D UN PHOTOGRAPHE EN PARTICULIER
-
+  //ou bien solution ARRAY + FILTER
   const currentArrayOfMedias = medias.filter(
     (media) => media.photographerId === getPhotographerById
   );
@@ -128,7 +124,7 @@ const showUser = async () => {
   `;
   dom.photographerHeader.innerHTML = userHeader;
 
-  // USERCARDS : DISPLAY D'IMAGES
+  // CARDS IMAGE FLEX EN MOZAIC
   currentArrayOfMedias.forEach((art) => {
     // console.log(art);
 
