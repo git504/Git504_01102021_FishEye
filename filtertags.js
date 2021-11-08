@@ -1,11 +1,11 @@
-// console.log("FILTERTAGS.JS FONCTIONNE");
+// console.warn("FILTERTAGS.JS FONCTIONNE");
 import { getPhotographers, showPhotographers } from "./displayusers.js";
 ("use strict");
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
 let getTagOnUserPage = params.get("tag");
-console.log(getTagOnUserPage);
+console.log("TAG ON USER PAGE :", getTagOnUserPage);
 
 const headerFilterTags = document.querySelectorAll(".header__filter-tag");
 
@@ -28,5 +28,18 @@ const FILTER_TAGS_MACHINE = () => {
     });
   });
 };
-
 export { FILTER_TAGS_MACHINE };
+
+// const isUserFiltered = async () => {
+//   getPhotographers().then((photographers) => {
+//     // console.log(photographers);
+//     const currentArrayOfUserPhotographe = photographers.filter(
+//       (photographe) => {
+//         return photographe.tags.includes(getTagOnUserPage);
+//       }
+//     );
+//     // console.log(currentArrayOfPhotographe);
+//     showPhotographers(getTagOnUserPage);
+//   });
+// };
+// export { isUserFiltered };
