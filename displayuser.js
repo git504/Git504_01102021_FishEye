@@ -1,8 +1,8 @@
+// import * as mySliderModule from "./slider.js";
+// import * as myDropdownModule from "./dropdown.js";
+// import * as myLikesModule from "./likes.js";
 import * as myFetchModule from "./fetch.js";
 import * as myUsersModule from "./displayusers.js";
-import * as mySliderModule from "./slider.js";
-import * as myDropdownModule from "./dropdown.js";
-import * as myLikesModule from "./likes.js";
 import * as myFilterModule from "./filtertags.js";
 import * as myModalModule from "./modal.js";
 ("use strict");
@@ -18,26 +18,25 @@ const dom = {
   mediaTitle: document.querySelector(".media__title"),
   mediaLikes: document.querySelector(".media__likes"),
   form: document.querySelector(".form"),
-  modalForm: document.querySelector(".modal"),
+  getModal: document.getElementById("modalForm"),
   selectMenu: document.querySelector(".filter__custom-menu"),
   selectOption: document.querySelectorAll(".filter__custom-option"),
 };
 // console.log(dom);
 
-const toOpenModal = document.getElementById("btnModal");
-const toCloseModal = document.getElementById("closeModal");
-
+//POUR LE DISPLAY HTML `backtick`
 let userHeader = "";
 let listOfTags = "";
 let userInfos = "";
 let userCard = "";
+let modalHTML = "";
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
 let getPhotographerByIdURL = parseInt(params.get("id"));
 // console.log("PHOTOGRAPHE ID ", getPhotographerByIdURL);
 
-// RECUPERATION DE LA DB
+// RECUPERATION DE LA DB json
 const getDataOnUserPage = async () => {
   const db = await myFetchModule.getDatas();
   const photographers = db.photographers;
@@ -64,13 +63,25 @@ const getDataOnUserPage = async () => {
 
   //FONCTION AFFICHAGE FOTOS > USERPAGE
   showMedias(currentArrayOfMedias);
+
+  //FONCTION AFFICHAGE MODAL > USERPAGE
+  showModal(currentArrayOfPhotographer);
 };
-getDataOnUserPage();
+getDataOnUserPage().then(() => {
+  console.log("bonjour .then");
+  document
+    .querySelector("#btnModal")
+    .addEventListener("focus", myModalModule.launchModal);
+  document
+    .querySelector("#closeModal")
+    .addEventListener("focus", myModalModule.closeModal);
+  // onclick = myModalModule.launchModal();
+});
 
 const showHeader = (arrayOfUser) => {
   // console.log(arrayOfUser);
   arrayOfUser.forEach((item) => {
-    console.log(item);
+    // console.log(item);
 
     for (const tag of item.tags) {
       // console.log(tag);
@@ -123,14 +134,11 @@ const showHeader = (arrayOfUser) => {
     `;
   });
   dom.photographerHeader.innerHTML = userHeader;
-  // toOpenModal.onclick(console.log("hello"));
-  toOpenModal.addEventListener("click", myModalModule.launchModal);
-  toCloseModal.addEventListener("click", myModalModule.closeModal);
 };
 
-const showInfos = (infosOfUser) => {
-  infosOfUser.forEach((item) => {
-    console.log(item);
+const showInfos = (arrayOfUser) => {
+  arrayOfUser.forEach((item) => {
+    // console.log(item);
 
     //INFOS BAS DE PAGE
     userInfos = `<div class="infos" aria-details="etiquetteinfos">
@@ -203,6 +211,149 @@ const showMedias = (arrayOfMedias) => {
     `;
     dom.media.innerHTML = userCard;
   });
+};
+
+const showModal = (arrayOfUser) => {
+  // console.log(arrayOfUser);
+  arrayOfUser.forEach((item) => {
+    // console.log(item);
+
+    modalHTML = `
+    <div class="modal__content" role="dialog">
+      <button
+        id="closeModal"
+        class="modal__close"
+      ></button>
+      <h1 class="modal__head" aria-label="Contactez-moi">
+        Contactez-moi <br />
+        ${item.name}
+      </h1>
+      <div
+        id="contact"
+        class="modal__body"
+        role="group"
+        aria-labelledby="coordonnees"
+      >
+        <form
+          aria-labelledby="contact"
+          name="contact"
+          action="./user.html"
+          method="post"
+          class="form"
+        >
+          <div
+            class="form__data"
+            data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom."
+          >
+            <label
+              for="firstname"
+              class="form__label"
+              id="first-name"
+              aria-label="prénom"
+            >
+              Prénom
+            </label>
+            <input
+              class="form__text"
+              type="text"
+              id="firstname"
+              name="firstname"
+              minlength="2"
+              required
+              aria-required="true"
+              placeholder="Votre Prénom"
+              aria-placeholder="Votre Prénom"
+              aria-labelledby="contact first-name"
+              aria-describedby="Prénom"
+              aria-label="entrer votre prénom"
+            />
+          </div>
+          <div
+            class="form__data"
+            data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom."
+          >
+            <label
+              for="lastname"
+              class="form__label"
+              id="last-name"
+              aria-label="nom"
+            >
+              Nom
+            </label>
+            <input
+              class="form__text"
+              type="text"
+              id="lastname"
+              name="lastname"
+              minlength="2"
+              required
+              aria-required="true"
+              placeholder="Votre Nom"
+              aria-placeholder="Votre Nom"
+              aria-labelledby="contact last-name"
+              aria-describedby="nom"
+              aria-label="entrer votre nom"
+            />
+          </div>
+          <div
+            class="form__data"
+            data-error="Veuillez saisir un email valide (exemple : bonjour@gmail.com)"
+          >
+            <label
+              for="email"
+              class="form__label"
+              id="email-form"
+              aria-label="mail"
+            >
+              E-mail
+            </label>
+            <input
+              class="form__text"
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+              placeholder="Votre email"
+              aria-placeholder="Votre email"
+              aria-labelledby="contact email-form"
+              aria-describedby="email"
+              aria-label="entrer votre mail"
+            />
+          </div>
+          <div class="form__data" data-error="Veuillez saisir votre message.">
+            <label
+              id="txtboxLabel"
+              for="textArea"
+              class="form__label"
+              aria-label="message"
+            >
+              Votre message
+            </label>
+            <textarea
+              role="textbox"
+              contenteditable="true"
+              aria-placeholder="Ecriver votre message..."
+              class="form__text--area"
+              name="textArea"
+              id="textArea"
+              cols="30"
+              rows="10"
+              required
+              aria-required="true"
+              placeholder="Votre message..."
+              aria-labelledby="contact txtboxLabel"
+              aria-describedby="message"
+              aria-label="Ecriver votre message"
+            ></textarea>
+            <input class="form__submitButton" type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
+    </div>
+ ;`;
+  });
+  dom.getModal.innerHTML = modalHTML;
 };
 
 // const userfilter = async () => {
