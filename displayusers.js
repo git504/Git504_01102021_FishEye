@@ -1,4 +1,5 @@
 import * as myFetchModule from "./fetch.js";
+import { getUrlTag } from "./utils.js";
 
 ("use strict");
 
@@ -6,7 +7,10 @@ const getPhotographers = async () => {
   const db = await myFetchModule.getDatas();
   const photographers = db.photographers;
   // console.log(photographers);
-  showPhotographers(photographers);
+
+  if (getUrlTag() == null) {
+    showPhotographers(photographers);
+  }
   return photographers;
 };
 export { getPhotographers };

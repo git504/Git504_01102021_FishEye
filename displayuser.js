@@ -68,14 +68,23 @@ const getDataOnUserPage = async () => {
   showModal(currentArrayOfPhotographer);
 };
 getDataOnUserPage().then(() => {
-  console.log("bonjour .then");
+  console.log("%c on écoute la page USER", "color: green; font-weight:bold;");
+
+  //openmodal
   document
     .querySelector("#btnModal")
     .addEventListener("focus", myModalModule.launchModal);
+
+  //closemodal
   document
     .querySelector("#closeModal")
     .addEventListener("focus", myModalModule.closeModal);
-  // onclick = myModalModule.launchModal();
+
+  //filter tag
+  document.querySelectorAll(".user__filter-tag").forEach((tag) => {
+    console.log(tag);
+    tag.addEventListener("click", myFilterModule.isUserFiltered);
+  });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -168,6 +177,17 @@ const showInfos = (arrayOfUser) => {
   dom.photographerInfos.innerHTML = userInfos;
 };
 
+const mediaFactory = (media) => {
+  `<a href="./assets/SamplePhotos/${media}">
+    <img
+    src="./assets/SamplePhotos/${media}"
+    alt="Rollier à long brins"
+    class="media__thumb"
+    role="img"
+    />
+    </a>`;
+};
+
 const showMedias = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
@@ -175,14 +195,14 @@ const showMedias = (arrayOfMedias) => {
 
     userCard += `
     <article class="media__card">
-    <a href="./assets/SamplePhotos/${art.image}">
-    <img
-    src="./assets/SamplePhotos/${art.image}"
-    alt="Rollier à long brins"
-    class="media__thumb"
-    role="img"
-    />
-    </a>
+    // <a href="./assets/SamplePhotos/${art.image}">
+    // <img
+    // src="./assets/SamplePhotos/${art.image}"
+    // alt="Rollier à long brins"
+    // class="media__thumb"
+    // role="img"
+    // />
+    // </a>
     <div class="media__content">
     <h2 class="media__title">${art.title}</h2>
     <p class="media__number">${art.likes}</p>
