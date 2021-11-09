@@ -28,7 +28,8 @@ const dom = {
 let userHeader = "";
 let listOfTags = "";
 let userInfos = "";
-let userCard = "";
+let userFotoCard = "";
+let userVideoCard = "";
 let modalHTML = "";
 
 // To get Id in Url's params
@@ -62,27 +63,29 @@ const getDataOnUserPage = async () => {
   showInfos(currentArrayOfPhotographer);
 
   //FONCTION AFFICHAGE FOTOS > USERPAGE
-  showMedias(currentArrayOfMedias);
+  showFotos(currentArrayOfMedias);
+
+  //FONCTION AFFICHAGE FOTOS > USERPAGE
+  // showVideos(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
 };
 getDataOnUserPage().then(() => {
-  console.log("%c on écoute la page USER", "color: green; font-weight:bold;");
+  console.log("%c page USER ok", "color: green; font-weight:bold;");
 
-  //openmodal
+  //écouteur open-modal
   document
     .querySelector("#btnModal")
     .addEventListener("focus", myModalModule.launchModal);
 
-  //closemodal
+  //écouteur close-modal
   document
     .querySelector("#closeModal")
     .addEventListener("focus", myModalModule.closeModal);
 
-  //filter tag
+  //écouteur filter-tag
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
-    console.log(tag);
     tag.addEventListener("click", myFilterModule.isUserFiltered);
   });
 });
@@ -177,23 +180,23 @@ const showInfos = (arrayOfUser) => {
   dom.photographerInfos.innerHTML = userInfos;
 };
 
-const mediaFactory = (media) => {
-  `<a href="./assets/SamplePhotos/${media}">
-    <img
-    src="./assets/SamplePhotos/${media}"
-    alt="Rollier à long brins"
-    class="media__thumb"
-    role="img"
-    />
-    </a>`;
-};
+// const mediaFactory = (media) => {
+//   `<a href="./assets/SamplePhotos/${media}">
+//     <img
+//     src="./assets/SamplePhotos/${media}"
+//     alt="Rollier à long brins"
+//     class="media__thumb"
+//     role="img"
+//     />
+//     </a>`;
+// };
 
-const showMedias = (arrayOfMedias) => {
+const showFotos = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
     // console.log(art);
 
-    userCard += `
+    userFotoCard += `
     <article class="media__card">
     // <a href="./assets/SamplePhotos/${art.image}">
     // <img
@@ -229,7 +232,69 @@ const showMedias = (arrayOfMedias) => {
     </div>
     </article>
     `;
-    dom.media.innerHTML = userCard;
+    dom.media.innerHTML = userFotoCard;
+  });
+};
+
+const showVideos = (arrayOfMedias) => {
+  // DISPLAY DES IMAGES
+  arrayOfMedias.forEach((art) => {
+    // console.log(art);
+
+    userVideoCard += `
+    <article class="media__card">
+    <a
+      alt="lecture d'une vidéo"
+      href="./assets/SamplePhotos/videos/${art.video}"
+    >
+      <div class="media__playIcon"></div>
+      <video
+        controls
+        class="media__thumb"
+        title="Chevaux sauvages trotant au milieu des montagnes"
+        role="video"
+      >
+        <track
+          kind="subtitles"
+          default
+          src="./assets/SamplePhotos/videos/${art.vtt}"
+          srclang="fr"
+          label="français"
+        />
+        <source
+          src="./assets/SamplePhotos/videos/${art.video}"
+          type="video/mp4"
+        />
+      </video>
+    </a>
+    <div class="media__content">
+      <h2 class="media__title">${art.title}</h2>
+      <p class="media__number">${art.likes}</p>
+      <div class="media__likes" tabindex="0">
+        <svg
+          tabindex="0"
+          role="img"
+          class="media__media__heart"
+          width="19"
+          height="19"
+          viewbox="0 0 19 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="likes"
+          aria-describedby="title-Wil description-Wil"
+        >
+          <title id="title-Wil">Likes</title>
+          <desc id="description-Wil">Icone en forme de cœur</desc>
+          <path
+            d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
+            fill="#911C1C"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </article>
+    `;
+    dom.media.innerHTML = userVideoCard;
   });
 };
 
@@ -375,17 +440,3 @@ const showModal = (arrayOfUser) => {
   });
   dom.getModal.innerHTML = modalHTML;
 };
-
-// const userfilter = async () => {
-//   await showUser();
-//   document.querySelectorAll(".user__tag--page").forEach((tag) => {
-//     console.log(tag);
-//   });
-//   // .addEventListener("click", (e) => {
-//   //   console.log("hello");
-//   //   e.preventDefault();
-//   // });
-
-//   // tag.addEventListener("click", myFilterModule.isFiltered());
-// };
-// userfilter();
