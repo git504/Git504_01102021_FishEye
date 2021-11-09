@@ -8,17 +8,13 @@ import * as myModalModule from "./modal.js";
 ("use strict");
 
 const dom = {
-  userFilterTags: document.querySelectorAll(".user__filter-tag"),
-  inputSelect: document.querySelector(".filter__select"),
   photographerHeader: document.querySelector(".user--page"),
+  photographerMedia: document.querySelector(".media"),
   photographerInfos: document.querySelector(".infos"),
-  nameInForm: document.querySelector(".modal__head"),
-  media: document.querySelector(".media"),
+  photographerModal: document.getElementById("modalForm"),
   mediaCard: document.querySelector(".media__card"),
   mediaTitle: document.querySelector(".media__title"),
   mediaLikes: document.querySelector(".media__likes"),
-  form: document.querySelector(".form"),
-  getModal: document.getElementById("modalForm"),
   selectMenu: document.querySelector(".filter__custom-menu"),
   selectOption: document.querySelectorAll(".filter__custom-option"),
 };
@@ -54,7 +50,7 @@ const getDataOnUserPage = async () => {
   const currentArrayOfMedias = medias.filter(
     (media) => media.photographerId === getPhotographerByIdURL
   );
-  // console.log(currentArrayOfMedias)
+  console.log(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE HEADER > USERPAGE
   showHeader(currentArrayOfPhotographer);
@@ -66,7 +62,7 @@ const getDataOnUserPage = async () => {
   showFotos(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE FOTOS > USERPAGE
-  // showVideos(currentArrayOfMedias);
+  showVideos(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
@@ -180,32 +176,47 @@ const showInfos = (arrayOfUser) => {
   dom.photographerInfos.innerHTML = userInfos;
 };
 
-// const mediaFactory = (media) => {
-//   `<a href="./assets/SamplePhotos/${media}">
-//     <img
-//     src="./assets/SamplePhotos/${media}"
-//     alt="Rollier à long brins"
-//     class="media__thumb"
-//     role="img"
-//     />
-//     </a>`;
-// };
+const mediaFactory = (media) => {
+  media.forEach((art) => {
+    const videoProperty = art.hasOwnProperty("video");
+    const imageProperty = art.hasOwnProperty("image");
+    // console.log(imageProperty);
+    // console.log(videoProperty);
+
+    if (art.image === imageProperty) {
+      showFotos(media);
+    } else {
+      showVideo(media);
+    }
+
+    // `<a href="./assets/SamplePhotos/${media}">
+    //     <img
+    //     src="./assets/SamplePhotos/${media}"
+    //     alt="Rollier à long brins"
+    //     class="media__thumb"
+    //     role="img"
+    //     />
+    //     </a>`;
+  });
+};
 
 const showFotos = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
     // console.log(art);
+    // const imageProperty = art.hasOwnProperty("image");
+    // console.log(imageProperty);
 
     userFotoCard += `
     <article class="media__card">
-    // <a href="./assets/SamplePhotos/${art.image}">
-    // <img
-    // src="./assets/SamplePhotos/${art.image}"
-    // alt="Rollier à long brins"
-    // class="media__thumb"
-    // role="img"
-    // />
-    // </a>
+    <a href="./assets/SamplePhotos/${art.image}">
+    <img
+    src="./assets/SamplePhotos/${art.image}"
+    alt="Rollier à long brins"
+    class="media__thumb"
+    role="img"
+    />
+    </a>
     <div class="media__content">
     <h2 class="media__title">${art.title}</h2>
     <p class="media__number">${art.likes}</p>
@@ -232,7 +243,7 @@ const showFotos = (arrayOfMedias) => {
     </div>
     </article>
     `;
-    dom.media.innerHTML = userFotoCard;
+    dom.photographerMedia.innerHTML = userFotoCard;
   });
 };
 
@@ -240,6 +251,8 @@ const showVideos = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
     // console.log(art);
+    // const videoProperty = art.hasOwnProperty("video");
+    // console.log(videoProperty);
 
     userVideoCard += `
     <article class="media__card">
@@ -294,7 +307,7 @@ const showVideos = (arrayOfMedias) => {
     </div>
   </article>
     `;
-    dom.media.innerHTML = userVideoCard;
+    dom.photographerMedia.innerHTML = userVideoCard;
   });
 };
 
@@ -438,5 +451,5 @@ const showModal = (arrayOfUser) => {
     </div>
  ;`;
   });
-  dom.getModal.innerHTML = modalHTML;
+  dom.photographerModal.innerHTML = modalHTML;
 };
