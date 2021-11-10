@@ -252,6 +252,7 @@ const showMedias = (arrayOfMedias) => {
     <a
       alt="lecture d'une vidéo"
       href="./assets/SamplePhotos/videos/${art.video}"
+      aria-label="lecture d'une vidéo"
     >
       <div class="media__playIcon"></div>
       <video
@@ -315,6 +316,7 @@ const showModal = (arrayOfUser) => {
       <button
         id="closeModal"
         class="modal__close"
+        aria-label="Fermer le formulaire de contact"
       ></button>
       <h1 class="modal__head" aria-label="Contactez-moi">
         Contactez-moi <br />
@@ -324,7 +326,7 @@ const showModal = (arrayOfUser) => {
         id="contact"
         class="modal__body"
         role="group"
-        aria-labelledby="coordonnees"
+        aria-labelledby="modalForm"
       >
         <form
           aria-labelledby="contact"
@@ -355,8 +357,7 @@ const showModal = (arrayOfUser) => {
               aria-required="true"
               placeholder="Votre Prénom"
               aria-placeholder="Votre Prénom"
-              aria-labelledby="contact first-name"
-              aria-describedby="Prénom"
+              aria-labelledby="first-name"
               aria-label="entrer votre prénom"
             />
           </div>
@@ -382,8 +383,7 @@ const showModal = (arrayOfUser) => {
               aria-required="true"
               placeholder="Votre Nom"
               aria-placeholder="Votre Nom"
-              aria-labelledby="contact last-name"
-              aria-describedby="nom"
+              aria-labelledby="last-name"
               aria-label="entrer votre nom"
             />
           </div>
@@ -408,8 +408,7 @@ const showModal = (arrayOfUser) => {
               aria-required="true"
               placeholder="Votre email"
               aria-placeholder="Votre email"
-              aria-labelledby="contact email-form"
-              aria-describedby="email"
+              aria-labelledby="email-form"
               aria-label="entrer votre mail"
             />
           </div>
@@ -434,8 +433,7 @@ const showModal = (arrayOfUser) => {
               required
               aria-required="true"
               placeholder="Votre message..."
-              aria-labelledby="contact txtboxLabel"
-              aria-describedby="message"
+              aria-labelledby="txtboxLabel"
               aria-label="Ecriver votre message"
             ></textarea>
             <input class="form__submitButton" type="submit" value="Send" />
