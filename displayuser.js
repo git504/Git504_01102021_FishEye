@@ -1,4 +1,4 @@
-// import * as mySliderModule from "./slider.js";
+import * as mySliderModule from "./slider.js";
 // import * as myDropdownModule from "./dropdown.js";
 // import * as myLikesModule from "./likes.js";
 import * as myFetchModule from "./fetch.js";
@@ -58,30 +58,54 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE INFOS > USERPAGE
   showInfos(currentArrayOfPhotographer);
 
-  // mediaFactory(currentArrayOfMedias);
-
   //FONCTION AFFICHAGE FOTOS > USERPAGE
   showMedias(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
+
+  // mediaFactory(currentArrayOfMedias);
 };
 getDataOnUserPage().then(() => {
   console.log("%c page USER ok", "color: green; font-weight:bold;");
 
-  //écouteur open-modal
+  // écouteur open-modal
   document
     .querySelector("#btnModal")
     .addEventListener("focus", myModalModule.launchModal);
 
-  //écouteur close-modal
+  // écouteur close-modal
   document
     .querySelector("#closeModal")
     .addEventListener("focus", myModalModule.closeModal);
 
-  //écouteur filter-tag
+  // écouteur filter-tag
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
-    tag.addEventListener("click", myFilterModule.isUserFiltered);
+    tag.addEventListener("focus", myFilterModule.isUserFiltered);
+
+    // écouteur open-slider
+    document.querySelectorAll(".media__thumb").forEach((pic) => {
+      pic.addEventListener("focus", console.log("allo"));
+    });
+    // mySliderModule.launchSlider
+
+    // écouteur close-slider
+    document
+      .querySelector(".container__btn-nav--close")
+      .addEventListener("focus", mySliderModule.closeSlider);
+
+    // écouteur slider slide-Suivante
+    document
+      .querySelector(".container__btn-nav--right")
+      .addEventListener("focus", mySliderModule.slideSuivante);
+
+    // écouteur slider slide-Precedente
+    document
+      .querySelector(".container__btn-nav--left")
+      .addEventListener("focus", mySliderModule.slidePrecedente);
+
+    // écouteur slider KEYPRESS
+    document.addEventListener("keydown", mySliderModule.keyPress);
   });
 });
 
@@ -175,44 +199,19 @@ const showInfos = (arrayOfUser) => {
   dom.photographerInfos.innerHTML = userInfos;
 };
 
-// const mediaFactory = (media) => {
-//   // ARRAY FOTOS
-//   const currentArrayOfImages = media.filter((item) =>
-//     item.hasOwnProperty("image")
-//   );
-//   console.log("PHOTOS :", currentArrayOfImages);
-
-//   // ARRAY VIDEOS
-//   const currentArrayOfVideos = media.filter((item) =>
-//     item.hasOwnProperty("video")
-//   );
-//   console.log("VIDEOS :", currentArrayOfVideos);
-
-//   showFotos(currentArrayOfImages);
-//   showVideos(currentArrayOfVideos);
-//   // `<a href="./assets/SamplePhotos/${media}">
-//   //     <img
-//   //     src="./assets/SamplePhotos/${media}"
-//   //     alt="Rollier à long brins"
-//   //     class="media__thumb"
-//   //     role="img"
-//   //     />
-//   //     </a>`;
-// };
-
 const showMedias = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
     // console.log(art);
     // const imageProperty = art.hasOwnProperty("image");
     // console.log(imageProperty);
-    if (art.image) {
+    if (art.hasOwnProperty("image")) {
       userFotoCard = `
     <article class="media__card">
     <a href="./assets/SamplePhotos/${art.image}">
     <img
     src="./assets/SamplePhotos/${art.image}"
-    alt="Rollier à long brins"
+    alt="${art.altTxt}"
     class="media__thumb"
     role="img"
     />
@@ -255,7 +254,7 @@ const showMedias = (arrayOfMedias) => {
       <video
         controls
         class="media__thumb"
-        title="Chevaux sauvages trotant au milieu des montagnes"
+        title="${art.altTxt}"
         role="video"
       >
         <track
@@ -445,3 +444,28 @@ const showModal = (arrayOfUser) => {
   });
   dom.photographerModal.innerHTML = modalHTML;
 };
+
+// const mediaFactory = (media) => {
+//   // ARRAY FOTOS
+//   const currentArrayOfImages = media.filter((item) =>
+//     item.hasOwnProperty("image")
+//   );
+//   console.log("PHOTOS :", currentArrayOfImages);
+
+//   // ARRAY VIDEOS
+//   const currentArrayOfVideos = media.filter((item) =>
+//     item.hasOwnProperty("video")
+//   );
+//   console.log("VIDEOS :", currentArrayOfVideos);
+
+//   showFotos(currentArrayOfImages);
+//   showVideos(currentArrayOfVideos);
+//   // `<a href="./assets/SamplePhotos/${media}">
+//   //     <img
+//   //     src="./assets/SamplePhotos/${media}"
+//   //     alt="Rollier à long brins"
+//   //     class="media__thumb"
+//   //     role="img"
+//   //     />
+//   //     </a>`;
+// };
