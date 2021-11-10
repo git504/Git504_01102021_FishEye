@@ -82,31 +82,34 @@ getDataOnUserPage().then(() => {
   // écouteur filter-tag
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
     tag.addEventListener("focus", myFilterModule.isUserFiltered);
-
-    // écouteur open-slider
-    document.querySelectorAll(".media__thumb").forEach((pic) => {
-      pic.addEventListener("focus", console.log("allo"));
-    });
-    // mySliderModule.launchSlider
-
-    // écouteur close-slider
-    document
-      .querySelector(".container__btn-nav--close")
-      .addEventListener("focus", mySliderModule.closeSlider);
-
-    // écouteur slider slide-Suivante
-    document
-      .querySelector(".container__btn-nav--right")
-      .addEventListener("focus", mySliderModule.slideSuivante);
-
-    // écouteur slider slide-Precedente
-    document
-      .querySelector(".container__btn-nav--left")
-      .addEventListener("focus", mySliderModule.slidePrecedente);
-
-    // écouteur slider KEYPRESS
-    document.addEventListener("keydown", mySliderModule.keyPress);
   });
+
+  // écouteur open-slider
+  document.querySelectorAll(".media__thumb").forEach((pic) => {
+    pic.addEventListener(
+      "click",
+      // console.log("slider"),
+      mySliderModule.launchSlider
+    );
+  });
+
+  // écouteur close-slider
+  document
+    .querySelector(".container__btn-nav--close")
+    .addEventListener("focus", mySliderModule.closeSlider);
+
+  // écouteur slider slide-Suivante
+  document
+    .querySelector(".container__btn-nav--right")
+    .addEventListener("focus", mySliderModule.slideSuivante);
+
+  // écouteur slider slide-Precedente
+  document
+    .querySelector(".container__btn-nav--left")
+    .addEventListener("focus", mySliderModule.slidePrecedente);
+
+  // écouteur slider KEYPRESS
+  document.addEventListener("keydown", mySliderModule.keyPress);
 });
 
 const showHeader = (arrayOfUser) => {

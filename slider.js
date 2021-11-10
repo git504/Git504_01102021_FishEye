@@ -7,7 +7,6 @@ const getSlider = document.querySelector(".container");
 let count = 0;
 
 export const launchSlider = () => {
-  preventDefault();
   getSlider.style.display = "flex";
 };
 
