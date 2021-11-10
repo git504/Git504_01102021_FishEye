@@ -62,7 +62,7 @@ const getDataOnUserPage = async () => {
   showFotos(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE FOTOS > USERPAGE
-  showVideos(currentArrayOfMedias);
+  // showVideos(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
@@ -182,12 +182,6 @@ const mediaFactory = (media) => {
     const imageProperty = art.hasOwnProperty("image");
     // console.log(imageProperty);
     // console.log(videoProperty);
-
-    if (art.image === imageProperty) {
-      showFotos(media);
-    } else {
-      showVideo(media);
-    }
 
     // `<a href="./assets/SamplePhotos/${media}">
     //     <img
