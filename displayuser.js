@@ -50,7 +50,7 @@ const getDataOnUserPage = async () => {
   const currentArrayOfMedias = medias.filter(
     (media) => media.photographerId === getPhotographerByIdURL
   );
-  console.log(currentArrayOfMedias);
+  // console.log(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE HEADER > USERPAGE
   showHeader(currentArrayOfPhotographer);
@@ -58,11 +58,10 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE INFOS > USERPAGE
   showInfos(currentArrayOfPhotographer);
 
-  //FONCTION AFFICHAGE FOTOS > USERPAGE
-  showFotos(currentArrayOfMedias);
+  // mediaFactory(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE FOTOS > USERPAGE
-  // showVideos(currentArrayOfMedias);
+  showMedias(currentArrayOfMedias);
 
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
@@ -176,32 +175,39 @@ const showInfos = (arrayOfUser) => {
   dom.photographerInfos.innerHTML = userInfos;
 };
 
-const mediaFactory = (media) => {
-  media.forEach((art) => {
-    const videoProperty = art.hasOwnProperty("video");
-    const imageProperty = art.hasOwnProperty("image");
-    // console.log(imageProperty);
-    // console.log(videoProperty);
+// const mediaFactory = (media) => {
+//   // ARRAY FOTOS
+//   const currentArrayOfImages = media.filter((item) =>
+//     item.hasOwnProperty("image")
+//   );
+//   console.log("PHOTOS :", currentArrayOfImages);
 
-    // `<a href="./assets/SamplePhotos/${media}">
-    //     <img
-    //     src="./assets/SamplePhotos/${media}"
-    //     alt="Rollier à long brins"
-    //     class="media__thumb"
-    //     role="img"
-    //     />
-    //     </a>`;
-  });
-};
+//   // ARRAY VIDEOS
+//   const currentArrayOfVideos = media.filter((item) =>
+//     item.hasOwnProperty("video")
+//   );
+//   console.log("VIDEOS :", currentArrayOfVideos);
 
-const showFotos = (arrayOfMedias) => {
+//   showFotos(currentArrayOfImages);
+//   showVideos(currentArrayOfVideos);
+//   // `<a href="./assets/SamplePhotos/${media}">
+//   //     <img
+//   //     src="./assets/SamplePhotos/${media}"
+//   //     alt="Rollier à long brins"
+//   //     class="media__thumb"
+//   //     role="img"
+//   //     />
+//   //     </a>`;
+// };
+
+const showMedias = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art) => {
     // console.log(art);
     // const imageProperty = art.hasOwnProperty("image");
     // console.log(imageProperty);
-
-    userFotoCard += `
+    if (art.image) {
+      userFotoCard = `
     <article class="media__card">
     <a href="./assets/SamplePhotos/${art.image}">
     <img
@@ -237,18 +243,9 @@ const showFotos = (arrayOfMedias) => {
     </div>
     </article>
     `;
-    dom.photographerMedia.innerHTML = userFotoCard;
-  });
-};
-
-const showVideos = (arrayOfMedias) => {
-  // DISPLAY DES IMAGES
-  arrayOfMedias.forEach((art) => {
-    // console.log(art);
-    // const videoProperty = art.hasOwnProperty("video");
-    // console.log(videoProperty);
-
-    userVideoCard += `
+      dom.photographerMedia.innerHTML += userFotoCard;
+    } else {
+      userVideoCard = `
     <article class="media__card">
     <a
       alt="lecture d'une vidéo"
@@ -301,7 +298,8 @@ const showVideos = (arrayOfMedias) => {
     </div>
   </article>
     `;
-    dom.photographerMedia.innerHTML = userVideoCard;
+      dom.photographerMedia.innerHTML += userVideoCard;
+    }
   });
 };
 
