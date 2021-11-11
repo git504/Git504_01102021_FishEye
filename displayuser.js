@@ -11,22 +11,19 @@ const dom = {
   photographerHeader: document.querySelector(".user--page"),
   photographerMedia: document.querySelector(".media"),
   photographerInfos: document.querySelector(".infos"),
-  photographerModal: document.getElementById("modalForm"),
-  mediaCard: document.querySelector(".media__card"),
-  mediaTitle: document.querySelector(".media__title"),
-  mediaLikes: document.querySelector(".media__likes"),
-  selectMenu: document.querySelector(".filter__custom-menu"),
-  selectOption: document.querySelectorAll(".filter__custom-option"),
+  photographerModal: document.querySelector("#modalForm"),
+  photographerSlider: document.querySelector("#slider"),
 };
 // console.log(dom);
 
 //POUR LE DISPLAY HTML `backtick`
-let userHeader = "";
-let listOfTags = "";
-let userInfos = "";
-let userFotoCard = "";
-let userVideoCard = "";
-let modalHTML = "";
+let userHeader_HTML = "";
+let userListOfTags_HTML = "";
+let userInfos_HTML = "";
+let userFotoCard_HTML = "";
+let userVideoCard_HTML = "";
+let userModal_HTML = "";
+let userSlider_HTML = "";
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
@@ -86,11 +83,7 @@ getDataOnUserPage().then(() => {
 
   // écouteur open-slider
   document.querySelectorAll(".media__thumb").forEach((pic) => {
-    pic.addEventListener(
-      "click",
-      // console.log("slider"),
-      mySliderModule.launchSlider
-    );
+    pic.addEventListener("click", mySliderModule.launchSlider);
   });
 
   // écouteur close-slider
@@ -110,6 +103,11 @@ getDataOnUserPage().then(() => {
 
   // écouteur slider KEYPRESS
   document.addEventListener("keydown", mySliderModule.keyPress);
+
+  // écouteur Like
+  document.querySelectorAll(".media__likes").forEach((like) => {
+    like.addEventListener("click", console.log("like"));
+  });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -119,7 +117,7 @@ const showHeader = (arrayOfUser) => {
 
     for (const tag of item.tags) {
       // console.log(tag);
-      listOfTags += `<li class="user__tag--page">
+      userListOfTags_HTML += `<li class="user__tag--page">
       <a
       tag="${tag}"
       href="./index.html?tag=${tag}"
@@ -151,7 +149,7 @@ const showHeader = (arrayOfUser) => {
     aria-label="chercher par catégorie"
     class="user__tags--page"
     >
-    ${listOfTags}
+    ${userListOfTags_HTML}
     </ul>
     </nav>
     </div>
@@ -167,7 +165,7 @@ const showHeader = (arrayOfUser) => {
     </article>
     `;
   });
-  dom.photographerHeader.innerHTML = userHeader;
+  dom.photographerHeader.innerHTML = userHeader_HTML;
 };
 
 const showInfos = (arrayOfUser) => {
@@ -175,9 +173,9 @@ const showInfos = (arrayOfUser) => {
     // console.log(item);
 
     //INFOS BAS DE PAGE
-    userInfos = `<div class="infos" aria-details="etiquetteinfos">
+    userInfos_HTML = `<div class="infos" aria-details="etiquetteinfos">
     <div class="infos__likes">
-    <p class="infos__totalLikes"> ?€</p>
+    <p class="infos__totalLikes"> TO DO </p>
     <svg
     role="img"
     class="infos__heart"
@@ -199,7 +197,7 @@ const showInfos = (arrayOfUser) => {
     <p class="infos__price">${item.price} € / jour</p>
     </div>`;
   });
-  dom.photographerInfos.innerHTML = userInfos;
+  dom.photographerInfos.innerHTML = userInfos_HTML;
 };
 
 const showMedias = (arrayOfMedias) => {
@@ -209,7 +207,7 @@ const showMedias = (arrayOfMedias) => {
     // const imageProperty = art.hasOwnProperty("image");
     // console.log(imageProperty);
     if (art.hasOwnProperty("image")) {
-      userFotoCard = `
+      userFotoCard_HTML = `
     <article class="media__card">
     <a href="./assets/SamplePhotos/${art.image}">
     <img
@@ -245,9 +243,9 @@ const showMedias = (arrayOfMedias) => {
     </div>
     </article>
     `;
-      dom.photographerMedia.innerHTML += userFotoCard;
+      dom.photographerMedia.innerHTML += userFotoCard_HTML;
     } else {
-      userVideoCard = `
+      userVideoCard_HTML = `
     <article class="media__card">
     <a
       alt="lecture d'une vidéo"
@@ -301,7 +299,7 @@ const showMedias = (arrayOfMedias) => {
     </div>
   </article>
     `;
-      dom.photographerMedia.innerHTML += userVideoCard;
+      dom.photographerMedia.innerHTML += userVideoCard_HTML;
     }
   });
 };
@@ -311,7 +309,7 @@ const showModal = (arrayOfUser) => {
   arrayOfUser.forEach((item) => {
     // console.log(item);
 
-    modalHTML = `
+    userModal_HTML = `
     <div class="modal__content" role="dialog">
       <button
         id="closeModal"
@@ -443,8 +441,18 @@ const showModal = (arrayOfUser) => {
     </div>
  ;`;
   });
-  dom.photographerModal.innerHTML = modalHTML;
+  dom.photographerModal.innerHTML = userModal_HTML;
 };
+
+// const showSlider = (arrayOfUser) => {
+//   // console.log(arrayOfUser);
+//   arrayOfUser.forEach((item) => {
+//     // console.log(item);
+
+//     userSlider_HTML = ``;
+//   });
+//   dom.photographerSlider.innerHTML += userModal_HTML;
+// };
 
 // const mediaFactory = (media) => {
 //   // ARRAY FOTOS
