@@ -128,7 +128,7 @@ const showHeader = (arrayOfUser) => {
     }
 
     //HEADER
-    userHeader = `
+    userHeader_HTML = `
     <article
     class="user__profil--page"
     role="article"
