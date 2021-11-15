@@ -61,6 +61,9 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
 
+  //FONCTION AFFICHAGE SLIDER > USERPAGE
+  showSlider(currentArrayOfMedias);
+
   // mediaFactory(currentArrayOfMedias);
 };
 getDataOnUserPage().then(() => {
@@ -444,15 +447,77 @@ const showModal = (arrayOfUser) => {
   dom.photographerModal.innerHTML = userModal_HTML;
 };
 
-// const showSlider = (arrayOfUser) => {
-//   // console.log(arrayOfUser);
-//   arrayOfUser.forEach((item) => {
-//     // console.log(item);
+const showSlider = (arrayOfUser) => {
+  // console.log(arrayOfUser);
+  arrayOfUser.forEach((item) => {
+    // console.log(item);
+    if (item.hasOwnProperty("image")) {
+      userSlider_HTML = `
+    <div
+        class="container__btn-nav--left"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      ></div>
+      <div class="container__slider">
+        <img
+          alt="${item.altTxt}"
+          class="active container__slider-image"
+          src="./assets/SamplePhotos/${item.image}"
+        />
 
-//     userSlider_HTML = ``;
-//   });
-//   dom.photographerSlider.innerHTML += userModal_HTML;
-// };
+        <div class="container__text">
+          <p class="container__slide-text">${item.altTxt}</p>
+        </div>
+      </div>
+      <div
+        class="container__btn-nav--right"
+        href="#"
+        role="button"
+        aria-pressed="undefined"
+        tabindex="0"
+      ></div>
+      <button id="closeslider" class="container__btn-nav--close" tabindex="0">
+        Fermer la galerie de photographie
+      </button>
+    `;
+      dom.photographerSlider.innerHTML += userModal_HTML;
+    } else {
+      userSlider_HTML = `
+<div
+    class="container__btn-nav--left"
+    href="#"
+    role="button"
+    aria-pressed="undefined"
+    tabindex="0"
+  ></div>
+  <div class="container__slider">
+    <img
+      alt="${item.altTxt}"
+      class="active container__slider-image"
+      src="./assets/SamplePhotos/${item.video}"
+    />
+
+    <div class="container__text">
+      <p class="container__slide-text">${item.altTxt}</p>
+    </div>
+  </div>
+  <div
+    class="container__btn-nav--right"
+    href="#"
+    role="button"
+    aria-pressed="undefined"
+    tabindex="0"
+  ></div>
+  <button id="closeslider" class="container__btn-nav--close" tabindex="0">
+    Fermer la galerie de photographie
+  </button>
+`;
+      dom.photographerSlider.innerHTML += userModal_HTML;
+    }
+  });
+};
 
 // const mediaFactory = (media) => {
 //   // ARRAY FOTOS
