@@ -12,7 +12,7 @@ const dom = {
   photographerMedia: document.querySelector(".media"),
   photographerInfos: document.querySelector(".infos"),
   photographerModal: document.querySelector("#modalForm"),
-  photographerSlider: document.querySelector("#slider"),
+  photographerSlider: document.querySelector(".container__slider"),
 };
 // console.log(dom);
 
@@ -24,6 +24,8 @@ let userFotoCard_HTML = "";
 let userVideoCard_HTML = "";
 let userModal_HTML = "";
 let userSlider_HTML = "";
+let currentMediaIndex;
+let currentArrayOfMedias = [];
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
@@ -44,7 +46,7 @@ const getDataOnUserPage = async () => {
   // console.log(currentArrayOfPhotographer);
 
   //FILTRER LES DONNEES MEDIAS SELON ID > URL
-  const currentArrayOfMedias = medias.filter(
+  currentArrayOfMedias = medias.filter(
     (media) => media.photographerId === getPhotographerByIdURL
   );
   // console.log(currentArrayOfMedias);
@@ -61,8 +63,17 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
 
-  //FONCTION AFFICHAGE SLIDER > USERPAGE
-  showSlider(currentArrayOfMedias);
+  // écouteur find the INDEX & open-slider
+  const mediaThumb = document.querySelectorAll(".m__thumb");
+  mediaThumb.forEach((thumb) => {
+    thumb.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentMediaIndex = parseInt(e.currentTarget.id);
+      // console.log(currentMediaIndex);
+      showSlider(currentArrayOfMedias);
+      mySliderModule.launchSlider();
+    });
+  });
 
   // mediaFactory(currentArrayOfMedias);
 };
@@ -84,33 +95,31 @@ getDataOnUserPage().then(() => {
     tag.addEventListener("focus", myFilterModule.isUserFiltered);
   });
 
-  // écouteur open-slider
-  document.querySelectorAll(".media__thumb").forEach((pic) => {
-    pic.addEventListener("click", mySliderModule.launchSlider);
-  });
-
   // écouteur close-slider
   document
     .querySelector(".container__btn-nav--close")
     .addEventListener("focus", mySliderModule.closeSlider);
 
-  // écouteur slider slide-Suivante
+  // écouteur slider : slide-Suivante
   document
     .querySelector(".container__btn-nav--right")
-    .addEventListener("focus", mySliderModule.slideSuivante);
+    .addEventListener("click", slideSuivante);
 
-  // écouteur slider slide-Precedente
+  // écouteur slider : slide-Precedente
   document
     .querySelector(".container__btn-nav--left")
-    .addEventListener("focus", mySliderModule.slidePrecedente);
+    .addEventListener("click", slidePrecedente);
 
   // écouteur slider KEYPRESS
-  document.addEventListener("keydown", mySliderModule.keyPress);
+  document.addEventListener("keydown", keyPress);
 
   // écouteur Like
-  document.querySelectorAll(".media__likes").forEach((like) => {
-    like.addEventListener("click", console.log("like"));
-  });
+  // document.querySelectorAll(".media__likes").forEach((like) => {
+  //   like.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     console.log("like");
+  //   });
+  // });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -205,14 +214,14 @@ const showInfos = (arrayOfUser) => {
 
 const showMedias = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
-  arrayOfMedias.forEach((art) => {
+  arrayOfMedias.forEach((art, index) => {
     // console.log(art);
     // const imageProperty = art.hasOwnProperty("image");
     // console.log(imageProperty);
     if (art.hasOwnProperty("image")) {
       userFotoCard_HTML = `
     <article class="media__card">
-    <a href="./assets/SamplePhotos/${art.image}">
+    <a href="javascript:;" id="${index}" class="m__thumb">
     <img
     src="./assets/SamplePhotos/${art.image}"
     alt="${art.altTxt}"
@@ -250,15 +259,17 @@ const showMedias = (arrayOfMedias) => {
     } else {
       userVideoCard_HTML = `
     <article class="media__card">
-    <a
-      alt="lecture d'une vidéo"
-      href="./assets/SamplePhotos/videos/${art.video}"
-      aria-label="lecture d'une vidéo"
+    <a href="javascript:;"
+    alt="lecture d'une vidéo"
+    href="#"
+    aria-label="lecture d'une vidéo"
+    id="${index}"
+    class="m__thumb"
     >
-      <div class="media__playIcon"></div>
-      <video
-        controls
-        class="media__thumb"
+    <div class="media__playIcon"></div>
+    <video
+    controls
+    class="media__thumb"
         title="${art.altTxt}"
         role="video"
       >
@@ -274,7 +285,7 @@ const showMedias = (arrayOfMedias) => {
           type="video/mp4"
         />
       </video>
-    </a>
+      </a>
     <div class="media__content">
       <h2 class="media__title">${art.title}</h2>
       <p class="media__number">${art.likes}</p>
@@ -447,76 +458,77 @@ const showModal = (arrayOfUser) => {
   dom.photographerModal.innerHTML = userModal_HTML;
 };
 
-const showSlider = (arrayOfUser) => {
-  // console.log(arrayOfUser);
-  arrayOfUser.forEach((item) => {
-    // console.log(item);
-    if (item.hasOwnProperty("image")) {
-      userSlider_HTML = `
-    <div
-        class="container__btn-nav--left"
-        href="#"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      ></div>
-      <div class="container__slider">
-        <img
-          alt="${item.altTxt}"
-          class="active container__slider-image"
-          src="./assets/SamplePhotos/${item.image}"
-        />
-
-        <div class="container__text">
-          <p class="container__slide-text">${item.altTxt}</p>
-        </div>
-      </div>
-      <div
-        class="container__btn-nav--right"
-        href="#"
-        role="button"
-        aria-pressed="undefined"
-        tabindex="0"
-      ></div>
-      <button id="closeslider" class="container__btn-nav--close" tabindex="0">
-        Fermer la galerie de photographie
-      </button>
-    `;
-      dom.photographerSlider.innerHTML += userModal_HTML;
-    } else {
-      userSlider_HTML = `
-<div
-    class="container__btn-nav--left"
-    href="#"
-    role="button"
-    aria-pressed="undefined"
-    tabindex="0"
-  ></div>
-  <div class="container__slider">
-    <img
-      alt="${item.altTxt}"
+const showSlider = (arrayOfMedias) => {
+  let currentMedia = arrayOfMedias[currentMediaIndex];
+  // console.log(currentMedia);
+  if (currentMedia.hasOwnProperty("image")) {
+    userSlider_HTML = `
+      <img
+      alt="${currentMedia.altTxt}"
       class="active container__slider-image"
-      src="./assets/SamplePhotos/${item.video}"
+      src="./assets/SamplePhotos/${currentMedia.image}"
     />
 
     <div class="container__text">
-      <p class="container__slide-text">${item.altTxt}</p>
+      <p class="container__slide-text">${currentMedia.altTxt}</p>
     </div>
-  </div>
-  <div
-    class="container__btn-nav--right"
-    href="#"
-    role="button"
-    aria-pressed="undefined"
-    tabindex="0"
-  ></div>
-  <button id="closeslider" class="container__btn-nav--close" tabindex="0">
-    Fermer la galerie de photographie
-  </button>
+    `;
+  } else {
+    userSlider_HTML = `
+    <video
+    controls
+    class="media__thumb"
+        title="${currentMedia.altTxt}"
+        role="video"
+      >
+        <track
+          kind="subtitles"
+          default
+          src="./assets/SamplePhotos/videos/${currentMedia.vtt}"
+          srclang="fr"
+          label="français"
+        />
+        <source
+          src="./assets/SamplePhotos/videos/${currentMedia.video}"
+          type="video/mp4"
+        />
+      </video>
 `;
-      dom.photographerSlider.innerHTML += userModal_HTML;
-    }
-  });
+  }
+  dom.photographerSlider.innerHTML = userSlider_HTML;
+};
+
+const slideSuivante = () => {
+  console.log("slidesuivante");
+
+  if (currentMediaIndex < currentArrayOfMedias.length - 1) {
+    currentMediaIndex++;
+  } else {
+    currentMediaIndex = 0;
+  }
+
+  showSlider(currentArrayOfMedias);
+};
+
+const slidePrecedente = () => {
+  console.log("slideprecedente");
+  if (currentMediaIndex > 0) {
+    currentMediaIndex--;
+  } else {
+    currentMediaIndex = currentArrayOfMedias.length - 1;
+  }
+
+  showSlider(currentArrayOfMedias);
+};
+
+const keyPress = (e) => {
+  console.log(e);
+
+  if (e.keyCode === 37) {
+    slidePrecedente();
+  } else if (e.keyCode === 39) {
+    slideSuivante();
+  }
 };
 
 // const mediaFactory = (media) => {

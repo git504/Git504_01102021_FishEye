@@ -171,22 +171,49 @@
         role="region"
         aria-label="Formulaire de contact"
       ></section>
+      <!----------------------------------------------------------------------
+        SLIDER   ᚮ◍𐌏‿𐌏◍ᚭ
+        ------------------------------------------------------------------------>
+      <div
+        id="slider"
+        class="container"
+        aria-label="Galerie de photographie en mode plein écran"
+      >
+        <div
+          class="container__btn-nav--left"
+          href="#"
+          role="button"
+          aria-pressed="undefined"
+          tabindex="0"
+        ></div>
+        <div class="container__slider">
+          <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+          <!-- <img
+            alt="${item.altTxt}"
+            class="active container__slider-image"
+            src="./assets/SamplePhotos/Animals_Majesty.jpg"
+          />
+
+          <div class="container__text">
+            <p class="container__slide-text">${item.altTxt}</p>
+          </div> -->
+          <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
+        </div>
+        <div
+          class="container__btn-nav--right"
+          href="#"
+          role="button"
+          aria-pressed="undefined"
+          tabindex="0"
+        ></div>
+        <button id="closeslider" class="container__btn-nav--close" tabindex="0">
+          Fermer la galerie de photographie
+        </button>
+      </div>
     </main>
     <!----------------------------------------------------------------------
-         SLIDER   ᚮ◍𐌏‿𐌏◍ᚭ
-         ------------------------------------------------------------------------>
-    <div
-      id="slider"
-      class="container"
-      aria-label="Galerie de photographie en mode plein écran"
-    >
-      <!-- DEBUT insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-
-      <!-- FIN insertion du composant .USER LIGHTBOX foto en Javascrpit      ᚮ◍𐌏‿𐌏◍ᚭ -->
-    </div>
-    <!----------------------------------------------------------------------
-         LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
-         ------------------------------------------------------------------------>
+          LIGHTBOX   ᚮ◍𐌏‿𐌏◍ᚭ
+          ------------------------------------------------------------------------>
     <script src="./displayuser.js" type="module"></script>
     <script src="./dist/polyfill.bundle.js"></script>
     <script src="./dist/displayuser.bundle.js"></script>
