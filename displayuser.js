@@ -1,6 +1,6 @@
 import * as mySliderModule from "./slider.js";
 // import * as myDropdownModule from "./dropdown.js";
-// import * as myLikesModule from "./likes.js";
+import * as myLikesModule from "./likes.js";
 import * as myFetchModule from "./fetch.js";
 import * as myUsersModule from "./displayusers.js";
 import * as myFilterModule from "./filtertags.js";
@@ -19,13 +19,15 @@ const dom = {
 //POUR LE DISPLAY HTML `backtick`
 let userHeader_HTML = "";
 let userListOfTags_HTML = "";
-let userInfos_HTML = "";
+let userInfosPrice_HTML = "";
+let userInfosLikes_HTML = "";
 let userFotoCard_HTML = "";
 let userVideoCard_HTML = "";
 let userModal_HTML = "";
 let userSlider_HTML = "";
 let currentMediaIndex;
 let currentArrayOfMedias = [];
+let totalLikes = 0;
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
@@ -54,9 +56,6 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE HEADER > USERPAGE
   showHeader(currentArrayOfPhotographer);
 
-  //FONCTION AFFICHAGE INFOS > USERPAGE
-  showInfos(currentArrayOfPhotographer);
-
   //FONCTION AFFICHAGE FOTOS > USERPAGE
   showMedias(currentArrayOfMedias);
 
@@ -75,7 +74,13 @@ const getDataOnUserPage = async () => {
     });
   });
 
-  // mediaFactory(currentArrayOfMedias);
+  //FONCTION AFFICHAGE TOTAL-LIKES > USERPAGE
+  showInfosLikes(currentArrayOfMedias);
+
+  //FONCTION AFFICHAGE INFOS > USERPAGE
+  showInfosPrice(currentArrayOfPhotographer);
+
+  myLikesModule.increaseOrDecreaseLikesAndTotalLikes();
 };
 getDataOnUserPage().then(() => {
   console.log("%c page USER ok", "color: green; font-weight:bold;");
@@ -112,14 +117,6 @@ getDataOnUserPage().then(() => {
 
   // écouteur slider KEYPRESS
   document.addEventListener("keydown", keyPress);
-
-  // écouteur Like
-  // document.querySelectorAll(".media__likes").forEach((like) => {
-  //   like.addEventListener("click", (e) => {
-  //     e.preventDefault();
-  //     console.log("like");
-  //   });
-  // });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -180,36 +177,45 @@ const showHeader = (arrayOfUser) => {
   dom.photographerHeader.innerHTML = userHeader_HTML;
 };
 
-const showInfos = (arrayOfUser) => {
+const showInfosLikes = (arrayOfMedias) => {
+  arrayOfMedias.map((media) => {
+    totalLikes += media.likes;
+
+    userInfosLikes_HTML = `
+  <div class="infos__likes">
+  <p class="infos__totalLikes">${totalLikes}</p>
+  <svg
+  role="img"
+  class="infos__heart"
+  width="19"
+  height="19"
+  viewbox="0 0 19 19"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-describedby="title-${totalLikes} description-${totalLikes}"
+  >
+  <title id="title-${totalLikes}">Likes</title>
+  <desc id="description-${totalLikes}">Icone en forme de cœur</desc>
+  <path
+  d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
+  fill="#000"
+  ></path>
+  </svg>
+  </div>
+  `;
+  });
+  dom.photographerInfos.insertAdjacentHTML("afterbegin", userInfosLikes_HTML);
+};
+
+const showInfosPrice = (arrayOfUser) => {
   arrayOfUser.forEach((item) => {
     // console.log(item);
-
-    //INFOS BAS DE PAGE
-    userInfos_HTML = `<div class="infos" aria-details="etiquetteinfos">
-    <div class="infos__likes">
-    <p class="infos__totalLikes"> TO DO </p>
-    <svg
-    role="img"
-    class="infos__heart"
-    width="19"
-    height="19"
-    viewbox="0 0 19 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-describedby="title-680 description-680"
-    >
-    <title id="title-680">Likes</title>
-    <desc id="description-680">Icone en forme de cœur</desc>
-    <path
-    d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
-    fill="#000"
-    ></path>
-    </svg>
-    </div>
+    //INFOS PRICE BAS DE PAGE
+    userInfosPrice_HTML = `
     <p class="infos__price">${item.price} € / jour</p>
-    </div>`;
+   `;
   });
-  dom.photographerInfos.innerHTML = userInfos_HTML;
+  dom.photographerInfos.insertAdjacentHTML("beforeend", userInfosPrice_HTML);
 };
 
 const showMedias = (arrayOfMedias) => {
