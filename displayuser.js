@@ -27,7 +27,7 @@ let userModal_HTML = "";
 let userSlider_HTML = "";
 let currentMediaIndex;
 let currentArrayOfMedias = [];
-let totalLikes = 0;
+let userTotalLikes = 0;
 
 // To get Id in Url's params
 const params = new URLSearchParams(window.location.search);
@@ -62,6 +62,14 @@ const getDataOnUserPage = async () => {
   //FONCTION AFFICHAGE MODAL > USERPAGE
   showModal(currentArrayOfPhotographer);
 
+  //FONCTION AFFICHAGE TOTAL-LIKES > USERPAGE
+  showInfosLikes(currentArrayOfMedias);
+
+  //FONCTION AFFICHAGE INFOS > USERPAGE
+  showInfosPrice(currentArrayOfPhotographer);
+
+  myLikesModule.increaseOrDecreaseLikesAndTotalLikes();
+
   // écouteur find the INDEX & open-slider
   const mediaThumb = document.querySelectorAll(".m__thumb");
   mediaThumb.forEach((thumb) => {
@@ -73,14 +81,6 @@ const getDataOnUserPage = async () => {
       mySliderModule.launchSlider();
     });
   });
-
-  //FONCTION AFFICHAGE TOTAL-LIKES > USERPAGE
-  showInfosLikes(currentArrayOfMedias);
-
-  //FONCTION AFFICHAGE INFOS > USERPAGE
-  showInfosPrice(currentArrayOfPhotographer);
-
-  myLikesModule.increaseOrDecreaseLikesAndTotalLikes();
 };
 getDataOnUserPage().then(() => {
   console.log("%c page USER ok", "color: green; font-weight:bold;");
@@ -179,11 +179,11 @@ const showHeader = (arrayOfUser) => {
 
 const showInfosLikes = (arrayOfMedias) => {
   arrayOfMedias.map((media) => {
-    totalLikes += media.likes;
+    userTotalLikes += media.likes;
 
     userInfosLikes_HTML = `
   <div class="infos__likes">
-  <p class="infos__totalLikes">${totalLikes}</p>
+  <p class="infos__totalLikes">${userTotalLikes}</p>
   <svg
   role="img"
   class="infos__heart"
@@ -192,10 +192,10 @@ const showInfosLikes = (arrayOfMedias) => {
   viewbox="0 0 19 19"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  aria-describedby="title-${totalLikes} description-${totalLikes}"
+  aria-describedby="title-${userTotalLikes} description-${userTotalLikes}"
   >
-  <title id="title-${totalLikes}">Likes</title>
-  <desc id="description-${totalLikes}">Icone en forme de cœur</desc>
+  <title id="title-${userTotalLikes}">Likes</title>
+  <desc id="description-${userTotalLikes}">Icone en forme de cœur</desc>
   <path
   d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
   fill="#000"
@@ -213,6 +213,7 @@ const showInfosPrice = (arrayOfUser) => {
   userInfosPrice_HTML = `
     <p class="infos__price">${arrayOfUser[0].price} € / jour</p>
    `;
+
   dom.photographerInfos.insertAdjacentHTML("beforeend", userInfosPrice_HTML);
 };
 

@@ -5,7 +5,7 @@
 export const increaseOrDecreaseLikesAndTotalLikes = () => {
   const likesElements = document.querySelectorAll(".media__likes");
   likesElements.forEach((like) => {
-    // console.log("like to like");
+    console.log(like.previousElementSibling);
     ["click", "keyup"].forEach((event) =>
       like.addEventListener(event, (e) => {
         let totalLikes = document.querySelector(".infos__totalLikes");
@@ -30,12 +30,12 @@ export const increaseOrDecreaseLikesAndTotalLikes = () => {
 export const increaseLikesAndTotalLikes = (totalLikes, like) => {
   console.log(totalLikes);
   ++totalLikes.innerText;
-  ++like.children[0].innerText;
+  ++like.previousElementSibling.innerText;
   like.classList.add("media__liked");
 };
 
 export const decreaseLikesAndTotalLikes = (totalLikes, like) => {
   --totalLikes.innerText;
-  --like.children[0].innerText;
+  --like.previousElementSibling.innerText;
   like.classList.remove("media__liked");
 };
