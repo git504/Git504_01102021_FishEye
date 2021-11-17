@@ -204,17 +204,15 @@ const showInfosLikes = (arrayOfMedias) => {
   </div>
   `;
   });
-  dom.photographerInfos.insertAdjacentHTML("afterbegin", userInfosLikes_HTML);
+  dom.photographerInfos.innerHTML = userInfosLikes_HTML;
 };
 
 const showInfosPrice = (arrayOfUser) => {
-  arrayOfUser.forEach((item) => {
-    // console.log(item);
-    //INFOS PRICE BAS DE PAGE
-    userInfosPrice_HTML = `
-    <p class="infos__price">${item.price} € / jour</p>
+  // console.log(arrayOfUser[0].price);
+  //INFOS PRICE BAS DE PAGE
+  userInfosPrice_HTML = `
+    <p class="infos__price">${arrayOfUser[0].price} € / jour</p>
    `;
-  });
   dom.photographerInfos.insertAdjacentHTML("beforeend", userInfosPrice_HTML);
 };
 
