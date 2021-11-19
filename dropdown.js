@@ -16,27 +16,6 @@ export const getUpDownMenu = () => {
   }
 };
 
-let displaySelectOptions = () => {
-  let select = document.querySelector(".filter__custom-select");
-  let inputSelect = document.querySelector(".filter__select");
-  select.addEventListener("click", () => {
-    const option = document.querySelector(".filter__custom-menu");
-    const arrow = document.querySelector(".filter__custom-arrow", "before");
-    // if the class is not present in the HTML Element then we add it
-    if (!option.classList.contains("filter__show")) {
-      option.classList.add("filter__show");
-      arrow.style.transform = "rotate(180deg)";
-      inputSelect.setAttribute("aria-expanded", true);
-    }
-    // else we remove it
-    else {
-      arrow.style.transform = "rotate(0deg)";
-      option.classList.remove("filter__show");
-      inputSelect.setAttribute("aria-expanded", false);
-    }
-  });
-};
-
 const sortMediaByFilter = (media, filter) => {
   switch (filter) {
     case "likes":
