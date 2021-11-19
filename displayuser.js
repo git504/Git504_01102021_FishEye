@@ -95,6 +95,9 @@ getDataOnUserPage().then(() => {
     .querySelector("#closeModal")
     .addEventListener("focus", myModalModule.closeModal);
 
+  // écouteur modal KEYPRESS
+  document.addEventListener("keydown", myModalModule.keyPressModal);
+
   // écouteur filter-tag
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
     tag.addEventListener("focus", myFilterModule.isUserFiltered);
@@ -104,6 +107,9 @@ getDataOnUserPage().then(() => {
   document
     .querySelector(".container__btn-nav--close")
     .addEventListener("focus", mySliderModule.closeSlider);
+
+  // écouteur close-slider KEYPRESS
+  document.addEventListener("keydown", mySliderModule.keyPressSlider);
 
   // écouteur slider : slide-Suivante
   document

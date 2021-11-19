@@ -10,3 +10,10 @@ export const closeSlider = () => {
   console.log("FOCUS to close slider");
   getSlider.style.display = "none";
 };
+
+export const keyPressSlider = (e) => {
+  // console.log(e);
+  if (e.keyCode === 27) {
+    closeSlider();
+  }
+};

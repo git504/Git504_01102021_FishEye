@@ -14,4 +14,11 @@ const closeModal = () => {
   getModal.style.display = "none";
 };
 
-export { launchModal, closeModal };
+export { launchModal, closeModal, keyPressModal };
+
+const keyPressModal = (e) => {
+  // console.log(e);
+  if (e.keyCode === 27) {
+    closeModal();
+  }
+};

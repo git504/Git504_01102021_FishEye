@@ -16,7 +16,7 @@ export const getUpDownMenu = () => {
   }
 };
 
-const sortMediaByFilter = (media, filter) => {
+export const sortMediaByFilter = (media, filter) => {
   switch (filter) {
     case "likes":
       return media.sort((a, b) => {
