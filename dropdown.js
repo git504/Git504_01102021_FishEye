@@ -4,15 +4,16 @@
 let custoMenu = document.querySelector(".filter__custom-menu");
 let customArrow = document.querySelector(".filter__custom-arrow");
 
-export const getUpDownMenu = () => {
+export const getUpDownMenu = (e) => {
+  console.log(e.currentTarget.id);
   if (custoMenu.style.display === "flex") {
     custoMenu.style.display = "none";
     customArrow.style.transform = "rotate(0deg)";
-    console.log("to close");
+    console.log("to close filter DROPDOWN");
   } else {
     custoMenu.style.display = "flex";
     customArrow.style.transform = "rotate(180deg)";
-    console.log("to open");
+    console.log("to open filter DROPDOWN");
   }
 };
 

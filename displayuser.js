@@ -133,14 +133,18 @@ getDataOnUserPage().then(() => {
     .addEventListener("click", myDropdownModule.getUpDownMenu);
 
   // écouteur UL > LI date DROPDOWNMENU
-  document
-    .querySelector(".filter__custom-option")
-    .addEventListener("click", console.log("date"));
+  document.querySelector("#date").addEventListener("click", (e) => {
+    e.preventDefault();
+    e.currentTarget;
+    console.log(e.currentTarget.id);
+  });
 
   // écouteur UL > LI titre DROPDOWNMENU
-  document
-    .querySelector(".filter__custom-option")
-    .addEventListener("click", console.log("titre"));
+  document.querySelector("#titre").addEventListener("click", (e) => {
+    e.preventDefault();
+    e.currentTarget;
+    console.log(e.currentTarget.id);
+  });
 });
 
 const showHeader = (arrayOfUser) => {
