@@ -7,6 +7,7 @@ const getModal = document.getElementById("modalForm");
 const launchModal = () => {
   console.log("FOCUS to open modal");
   getModal.style.display = "flex";
+  document.querySelector("#firstname").focus();
 };
 
 const closeModal = () => {
@@ -14,11 +15,12 @@ const closeModal = () => {
   getModal.style.display = "none";
 };
 
-export { launchModal, closeModal, keyPressModal };
-
 const keyPressModal = (e) => {
   // console.log(e);
   if (e.keyCode === 27) {
     closeModal();
+    document.querySelector(".user__contactButton").focus();
   }
 };
+
+export { launchModal, closeModal, keyPressModal };

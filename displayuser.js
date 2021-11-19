@@ -88,7 +88,7 @@ getDataOnUserPage().then(() => {
   // écouteur open-modal
   document
     .querySelector("#btnModal")
-    .addEventListener("focus", myModalModule.launchModal);
+    .addEventListener("click", myModalModule.launchModal);
 
   // écouteur close-modal
   document
@@ -97,6 +97,9 @@ getDataOnUserPage().then(() => {
 
   // écouteur modal KEYPRESS
   document.addEventListener("keydown", myModalModule.keyPressModal);
+
+  // écouteur swipmodal KEYPRESS
+  document.addEventListener("keydown", myModalModule.keyPressSwipeModal);
 
   // écouteur filter-tag
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
@@ -149,6 +152,7 @@ const showHeader = (arrayOfUser) => {
       // console.log(tag);
       userListOfTags_HTML += `<li class="user__tag--page">
       <a
+      tabIndex = "1"
       tag="${tag}"
       href="./index.html?tag=${tag}"
       class="user__filter-tag"
@@ -183,7 +187,7 @@ const showHeader = (arrayOfUser) => {
     </ul>
     </nav>
     </div>
-    <button id="btnModal" class="user__contactButton">
+    <button tabIndex = "2" id="btnModal" class="user__contactButton">
     Contactez-moi
     </button>
     </div>
@@ -249,6 +253,7 @@ const showMedias = (arrayOfMedias) => {
     <article class="media__card">
     <a href="javascript:;" id="${index}" class="m__thumb">
     <img
+    tabIndex = "4"
     src="./assets/SamplePhotos/${art.image}"
     alt="${art.altTxt}"
     class="media__thumb"
@@ -258,7 +263,7 @@ const showMedias = (arrayOfMedias) => {
     <div class="media__content">
     <h2 class="media__title">${art.title}</h2>
     <p class="media__number">${art.likes}</p>
-    <div class="media__likes" tabindex="0">
+    <div class="media__likes" tabIndex = "4">
     <svg
     role="img"
     class="media__heart"
@@ -295,6 +300,7 @@ const showMedias = (arrayOfMedias) => {
     <div class="media__playIcon"></div>
     <video
     controls
+    tabindex="4"
     class="media__thumb"
         title="${art.altTxt}"
         role="video"
@@ -315,9 +321,8 @@ const showMedias = (arrayOfMedias) => {
     <div class="media__content">
       <h2 class="media__title">${art.title}</h2>
       <p class="media__number">${art.likes}</p>
-      <div class="media__likes" tabindex="0">
+      <div class="media__likes" tabindex="4">
         <svg
-          tabindex="0"
           role="img"
           class="media__media__heart"
           width="19"
