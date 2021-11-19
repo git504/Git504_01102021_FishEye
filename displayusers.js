@@ -28,6 +28,7 @@ export const showPhotographers = (arrayofphotographs) => {
       //   console.log(tag);
       listOfTags += `<li id="${tag}" class="user__tag">
       <a
+      tabindex="2"
       class="user__filter-tag"
       >${tag}</a
       >
@@ -35,13 +36,12 @@ export const showPhotographers = (arrayofphotographs) => {
     }
     listOfUsers += `
     <article
-    tabindex="2"
     class="user"
     aria-labelledby="users"
     aria-posinset="1"
     aria-setsize="6"
     >
-    <a href="user.html?id=${photographer.id}" class="user__header">
+    <a href="user.html?id=${photographer.id}" tabindex="2" class="user__header">
     <img
     class="user__img"
     src="./assets/SamplePhotos/PhotographersIDPhotos/${photographer.portrait}"
