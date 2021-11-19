@@ -120,20 +120,15 @@ getDataOnUserPage().then(() => {
 
   // écouteur Open close DROPDOWNMENU
   document
-    .querySelector(".filter__custom-select")
+    .querySelector(".filter__select")
     .addEventListener("click", myDropdownModule.getUpDownMenu);
 
-  // écouteur popularité DROPDOWNMENU
-  document
-    .querySelector(".filter__select")
-    .addEventListener("click", console.log("popularité"));
-
-  // écouteur date DROPDOWNMENU
+  // écouteur UL > LI date DROPDOWNMENU
   document
     .querySelector(".filter__custom-option")
     .addEventListener("click", console.log("date"));
 
-  // écouteur titre DROPDOWNMENU
+  // écouteur UL > LI titre DROPDOWNMENU
   document
     .querySelector(".filter__custom-option")
     .addEventListener("click", console.log("titre"));
