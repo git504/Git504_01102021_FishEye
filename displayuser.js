@@ -1,5 +1,5 @@
 import * as mySliderModule from "./slider.js";
-// import * as myDropdownModule from "./dropdown.js";
+import * as myDropdownModule from "./dropdown.js";
 import * as myLikesModule from "./likes.js";
 import * as myFetchModule from "./fetch.js";
 import * as myUsersModule from "./displayusers.js";
@@ -117,6 +117,26 @@ getDataOnUserPage().then(() => {
 
   // écouteur slider KEYPRESS
   document.addEventListener("keydown", keyPress);
+
+  // écouteur Open close DROPDOWNMENU
+  document
+    .querySelector(".filter__custom-select")
+    .addEventListener("click", myDropdownModule.getUpDownMenu);
+
+  // écouteur popularité DROPDOWNMENU
+  document
+    .querySelector(".filter__select")
+    .addEventListener("click", console.log("popularité"));
+
+  // écouteur date DROPDOWNMENU
+  document
+    .querySelector(".filter__custom-option")
+    .addEventListener("click", console.log("date"));
+
+  // écouteur titre DROPDOWNMENU
+  document
+    .querySelector(".filter__custom-option")
+    .addEventListener("click", console.log("titre"));
 });
 
 const showHeader = (arrayOfUser) => {
@@ -535,28 +555,3 @@ const keyPress = (e) => {
     slideSuivante();
   }
 };
-
-// const mediaFactory = (media) => {
-//   // ARRAY FOTOS
-//   const currentArrayOfImages = media.filter((item) =>
-//     item.hasOwnProperty("image")
-//   );
-//   console.log("PHOTOS :", currentArrayOfImages);
-
-//   // ARRAY VIDEOS
-//   const currentArrayOfVideos = media.filter((item) =>
-//     item.hasOwnProperty("video")
-//   );
-//   console.log("VIDEOS :", currentArrayOfVideos);
-
-//   showFotos(currentArrayOfImages);
-//   showVideos(currentArrayOfVideos);
-//   // `<a href="./assets/SamplePhotos/${media}">
-//   //     <img
-//   //     src="./assets/SamplePhotos/${media}"
-//   //     alt="Rollier à long brins"
-//   //     class="media__thumb"
-//   //     role="img"
-//   //     />
-//   //     </a>`;
-// };

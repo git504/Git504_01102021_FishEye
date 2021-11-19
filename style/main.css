@@ -1087,20 +1087,18 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
   border: none;
   padding: 1.4rem 0 1.4rem 1rem;
 }
-.filter__select:after, .filter__custom-option:after {
-  content: url("../assets/arrow-bottom.svg");
-  padding-left: 2rem;
-  color: white;
-}
 .filter__custom-option {
   border-top: 1px solid #fff;
   z-index: 9;
 }
-.filter__custom-option:after {
-  content: "";
-}
-.filter .filter__custom-select:hover .filter__custom-menu {
-  display: flex;
+.filter__custom-arrow {
+  content: url("../assets/arrow-bottom.svg");
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  color: white;
+  height: 1.5rem;
+  z-index: 9;
+  transition-duration: 0.3s;
 }
 
 /*# sourceMappingURL=main.css.map */
