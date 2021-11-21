@@ -82,64 +82,70 @@ const getDataOnUserPage = async () => {
     });
   });
 };
+
 getDataOnUserPage().then(() => {
   console.log("%c page USER ok", "color: green; font-weight:bold;");
 
-  // écouteur open-modal
+  // écouteur > open-modal
   document
     .querySelector("#btnModal")
     .addEventListener("click", myModalModule.launchModal);
 
-  // écouteur close-modal
+  // écouter & valider le formulaire
+  document
+    .querySelector(".form__submitButton")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      myModalModule.checkInputs();
+    });
+
+  // écouteur > close-modal
   document
     .querySelector("#closeModal")
     .addEventListener("focus", myModalModule.closeModal);
 
-  // écouteur modal KEYPRESS
+  // écouteur > modal KEYPRESS
   document.addEventListener("keydown", myModalModule.keyPressModal);
 
-  // écouteur swipmodal KEYPRESS
-  document.addEventListener("keydown", myModalModule.keyPressSwipeModal);
-
-  // écouteur filter-tag
+  // écouteur > filter-tags
   document.querySelectorAll(".user__filter-tag").forEach((tag) => {
     tag.addEventListener("focus", myFilterModule.isUserFiltered);
   });
 
-  // écouteur close-slider
+  // écouteur > close-slider
   document
     .querySelector(".container__btn-nav--close")
     .addEventListener("focus", mySliderModule.closeSlider);
 
-  // écouteur close-slider KEYPRESS
+  // écouteur > close-slider KEYPRESS
   document.addEventListener("keydown", mySliderModule.keyPressSlider);
 
-  // écouteur slider : slide-Suivante
+  // écouteur > slide-Suivante
   document
     .querySelector(".container__btn-nav--right")
     .addEventListener("click", slideSuivante);
 
-  // écouteur slider : slide-Precedente
+  // écouteur > slide-Precedente
   document
     .querySelector(".container__btn-nav--left")
     .addEventListener("click", slidePrecedente);
 
-  // écouteur slider KEYPRESS
+  // écouteur > slider KEYPRESS
   document.addEventListener("keydown", keyPress);
 
-  // écouteur Open close DROPDOWNMENU
+  // écouteur > Open & close DROPDOWNMENU
   document
     .querySelector(".filter__select")
     .addEventListener("click", myDropdownModule.getUpDownMenu);
 
-  // écouteur UL > LI date DROPDOWNMENU
+  // écouteur > date DROPDOWNMENU
   document.querySelector("#date").addEventListener("click", (e) => {
     e.preventDefault();
     e.currentTarget;
     console.log(e.currentTarget.id);
   });
 
-  // écouteur UL > LI titre DROPDOWNMENU
+  // écouteur > titre DROPDOWNMENU
   document.querySelector("#titre").addEventListener("click", (e) => {
     e.preventDefault();
     e.currentTarget;
@@ -381,11 +387,11 @@ const showModal = (arrayOfUser) => {
           action="./user.html"
           method="post"
           class="form"
+          id="form"
         >
           <div
             class="form__data"
-            data-error="Veuillez entrer 2 caractères ou plus pour le champ du prénom."
-          >
+            >
             <label
               for="firstname"
               class="form__label"
@@ -399,18 +405,16 @@ const showModal = (arrayOfUser) => {
               type="text"
               id="firstname"
               name="firstname"
-              minlength="2"
-              required
               aria-required="true"
               placeholder="Votre Prénom"
               aria-placeholder="Votre Prénom"
               aria-labelledby="first-name"
               aria-label="entrer votre prénom"
-            />
+              />
+              <small class="form__error"></small>
           </div>
           <div
             class="form__data"
-            data-error="Veuillez entrer 2 caractères ou plus pour le champ du nom."
           >
             <label
               for="lastname"
@@ -425,14 +429,14 @@ const showModal = (arrayOfUser) => {
               type="text"
               id="lastname"
               name="lastname"
-              minlength="2"
-              required
               aria-required="true"
               placeholder="Votre Nom"
               aria-placeholder="Votre Nom"
               aria-labelledby="last-name"
               aria-label="entrer votre nom"
-            />
+              />
+            <small class="form__error"></small>
+
           </div>
           <div
             class="form__data"
@@ -451,15 +455,15 @@ const showModal = (arrayOfUser) => {
               type="email"
               id="email"
               name="email"
-              required
               aria-required="true"
               placeholder="Votre email"
               aria-placeholder="Votre email"
               aria-labelledby="email-form"
               aria-label="entrer votre mail"
             />
+            <small class="form__error"></small>
           </div>
-          <div class="form__data" data-error="Veuillez saisir votre message.">
+          <div class="form__data">
             <label
               id="txtboxLabel"
               for="textArea"
@@ -477,13 +481,13 @@ const showModal = (arrayOfUser) => {
               id="textArea"
               cols="30"
               rows="10"
-              required
               aria-required="true"
               placeholder="Votre message..."
               aria-labelledby="txtboxLabel"
               aria-label="Ecriver votre message"
             ></textarea>
-            <input class="form__submitButton" type="submit" value="Send" />
+            <small class="form__error"></small>
+            <input  class="form__submitButton" type="submit" value="Send" />
           </div>
         </form>
       </div>
