@@ -110,28 +110,23 @@
       <!--DROPDOWN MENU  ᚮ◍𐌏‿𐌏◍ᚭ-->
       <section class="filter" aria-label="menu filtrant">
         <div class="filter__dropdown">
-          <label for="OrderBy" class="filter__label" aria-label="menu filtrant"
+          <label class="filter__label" aria-label="menu filtrant"
             >Trier par</label
           >
-          <div class="filter__custom-select">
+          <div id="OrderBy" class="filter__custom-select">
             <button
               id="popularité"
               tabindex="3"
-              id="OrderBy"
               name="mediaFilter"
               class="filter__select"
               role="button"
               aria-haspopup="listbox"
+              aria-labelledby="OrderBy"
             >
               Popularité
               <span class="filter__custom-arrow"></span>
             </button>
-            <ul
-              aria-labelledby="OrderBy"
-              class="filter__custom-menu"
-              role="listbox"
-              id="dropMenu"
-            >
+            <ul class="filter__custom-menu" role="listbox" id="dropMenu">
               <li
                 role="option"
                 class="filter__custom-option"
