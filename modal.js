@@ -213,7 +213,8 @@ const checkInputs = () => {
 
   isValid()
     ? console.warn(" ⎛𖦛𐃔𖦛⎞ statut form IS VALID ?", isValid())
-    : console.warn(" ⎛𖦛𐃔𖦛⎞ statut form IS VALID ?", isValid());
+    : (console.warn(" ⎛𖦛𐃔𖦛⎞ statut form IS VALID ?", isValid()),
+      document.querySelector("#firstname").focus());
 
   //  form.reset()
 };
