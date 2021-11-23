@@ -62,12 +62,15 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
     font-style: normal;
     @include flexCenter(row);
   }
+  &__liked {
+    color: $color-primary;
+  }
   &__likes {
     @include flexCenter(row);
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    color: $color-primary;
+    color: red;
     justify-content: flex-end;
     margin-left: 1rem;
   }

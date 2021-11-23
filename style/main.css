@@ -1044,6 +1044,9 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
   align-items: center;
   flex-direction: row;
 }
+.media__liked {
+  color: #901c1c;
+}
 .media__likes {
   display: flex;
   justify-content: center;
@@ -1052,7 +1055,7 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
-  color: #901c1c;
+  color: red;
   justify-content: flex-end;
   margin-left: 1rem;
 }
