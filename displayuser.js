@@ -133,24 +133,15 @@ getDataOnUserPage().then(() => {
   // écouteur > slider KEYPRESS
   document.addEventListener("keydown", keyPress);
 
+  // changer le text content menu selection filtre
+  document.querySelectorAll(".filter__custom-option").forEach((li) => {
+    li.addEventListener("click", myDropdownModule.updateDropDownMenu);
+  });
+
   // écouteur > Open & close DROPDOWNMENU
   document
-    .querySelector(".filter__select")
+    .querySelector("#btndrop")
     .addEventListener("click", myDropdownModule.getUpDownMenu);
-
-  // écouteur > date DROPDOWNMENU
-  document.querySelector("#date").addEventListener("click", (e) => {
-    e.preventDefault();
-    e.currentTarget;
-    console.log(e.currentTarget.id);
-  });
-
-  // écouteur > titre DROPDOWNMENU
-  document.querySelector("#titre").addEventListener("click", (e) => {
-    e.preventDefault();
-    e.currentTarget;
-    console.log(e.currentTarget.id);
-  });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -161,12 +152,12 @@ const showHeader = (arrayOfUser) => {
     for (const tag of item.tags) {
       // console.log(tag);
       userListOfTags_HTML += `<li class="user__tag--page">
-      <a
-      tabIndex = "1"
-      tag="${tag}"
-      href="./index.html?tag=${tag}"
-      class="user__filter-tag"
-      >#${tag}</a
+        <a
+        tabIndex = "1"
+        tag="${tag}"
+        href="./index.html?tag=${tag}"
+        class="user__filter-tag"
+        >#${tag}</a
       >
       </li>`;
     }
@@ -256,7 +247,7 @@ const showMedias = (arrayOfMedias) => {
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art, index) => {
     // console.log(art);
-    // const imageProperty = art.hasOwnProperty("image");
+    // const imageProperty = ("image" in art);
     // console.log(imageProperty);
     if (art.hasOwnProperty("image")) {
       userFotoCard_HTML = `

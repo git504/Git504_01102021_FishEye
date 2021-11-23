@@ -3,9 +3,23 @@
 
 let custoMenu = document.querySelector(".filter__custom-menu");
 let customArrow = document.querySelector(".filter__custom-arrow");
+let getButtontoFilter = document.getElementById("btndrop");
+let getAllLi = document.querySelectorAll(".filter__custom-option");
+
+//TO DISPLAY DROPDOWN MENU
+
+export const updateDropDownMenu = () => {
+  getAllLi.forEach((li) => {
+    let liTextContent = li.textContent;
+    // console.log(liTextContent);
+    li.textContent = getButtontoFilter.textContent;
+    getButtontoFilter.textContent = liTextContent;
+  });
+};
 
 export const getUpDownMenu = (e) => {
-  console.log(e.currentTarget.id);
+  // console.log(e.currentTarget.id);
+
   if (custoMenu.style.display === "flex") {
     custoMenu.style.display = "none";
     customArrow.style.transform = "rotate(0deg)";

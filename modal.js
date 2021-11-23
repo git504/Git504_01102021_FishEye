@@ -69,7 +69,7 @@ const checkInputs = () => {
   };
 
   const isText = (text) => {
-    return new RegExp(/^\w{7,150}$/).test(text);
+    return new RegExp(/^.{7,150}$/).test(text);
   };
 
   //TEST PRENOM
@@ -170,10 +170,7 @@ const checkInputs = () => {
       setErrorFor(formMessage, "le champ est vide");
       return false;
     } else if (!isText(textValue)) {
-      setErrorFor(
-        formMessage,
-        "Veuillez entrer un text entre 7 et 150 caractères lettres ou nbr"
-      );
+      setErrorFor(formMessage, "Votre message de 7 à 150 caractères");
       return false;
     } else {
       setSuccessFor(formMessage);
@@ -192,10 +189,7 @@ const checkInputs = () => {
       : console.error(etv, "addeventlistener");
     isText(etv)
       ? setSuccessFor(formMessage)
-      : setErrorFor(
-          formMessage,
-          "Veuillez entrer un text entre 7 et 150 caractères lettres ou nbr"
-        );
+      : setErrorFor(formMessage, "Votre message de 7 à 150 caractères");
   });
 
   const isValid = () => {

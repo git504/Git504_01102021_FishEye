@@ -115,35 +115,46 @@
           >
           <div id="OrderBy" class="filter__custom-select">
             <button
-              id="popularité"
+              id="btndrop"
               tabindex="3"
               name="mediaFilter"
               class="filter__select"
               role="button"
               aria-haspopup="listbox"
               aria-labelledby="OrderBy"
+              data-value="Popularité"
             >
               Popularité
               <span class="filter__custom-arrow"></span>
             </button>
             <ul class="filter__custom-menu" role="listbox" id="dropMenu">
-              <li
+              <!-- <li
+                id="popularité"
+                data-value="Popularité"
+                class="filter__custom-option popularite"
                 role="option"
-                class="filter__custom-option"
-                data-value="date"
-                id="date"
-                tabindex="0"
                 aria-selected="false"
+                tabindex="4"
+              >
+                Popularité
+              </li> -->
+              <li
+                id="date"
+                data-value="Date"
+                class="filter__custom-option"
+                role="option"
+                aria-selected="false"
+                tabindex="4"
               >
                 Date
               </li>
               <li
-                role="option"
-                class="filter__custom-option"
-                data-value="titre"
                 id="titre"
-                tabindex="0"
+                data-value="Titre"
+                class="filter__custom-option"
+                role="option"
                 aria-selected="false"
+                tabindex="4"
               >
                 Titre
               </li>
