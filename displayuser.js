@@ -13,6 +13,8 @@ const dom = {
   photographerInfos: document.querySelector(".infos"),
   photographerModal: document.querySelector("#modalForm"),
   photographerSlider: document.querySelector(".container__slider"),
+  photographerFilter = document.getElementById("btndrop");
+
 };
 // console.log(dom);
 
@@ -134,16 +136,15 @@ getDataOnUserPage().then(() => {
   // écouteur > slider KEYPRESS
   document.addEventListener("keydown", keyPress);
 
-  let getButtontoFilter = document.getElementById("btndrop");
   // changer le text content menu selection filtre
   document.querySelectorAll(".filter__custom-option").forEach((li) => {
     li.addEventListener("click", (e) => {
       let liTextContent = li.textContent;
-      console.log(liTextContent);
-      li.textContent = getButtontoFilter.textContent;
-      getButtontoFilter.textContent = liTextContent;
-      // myDropdownModule.sortMediaByFilter(currentArrayOfMedias, li.textContent);
+      li.textContent = dom.photographerFilter.textContent;
+      dom.photographerFilter.textContent = liTextContent;
+      // console.log(liTextContent);
     });
+    // myDropdownModule.sortMediaByFilter(currentArrayOfMedias, li.textContent);
   });
 
   // écouteur > Open & close DROPDOWNMENU
