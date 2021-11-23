@@ -22,6 +22,7 @@ let userListOfTags_HTML = "";
 let userInfosPrice_HTML = "";
 let userInfosLikes_HTML = "";
 let userFotoCard_HTML = "";
+let userCard_HTML = "";
 let userVideoCard_HTML = "";
 let userModal_HTML = "";
 let userSlider_HTML = "";
@@ -133,9 +134,16 @@ getDataOnUserPage().then(() => {
   // écouteur > slider KEYPRESS
   document.addEventListener("keydown", keyPress);
 
+  let getButtontoFilter = document.getElementById("btndrop");
   // changer le text content menu selection filtre
   document.querySelectorAll(".filter__custom-option").forEach((li) => {
-    li.addEventListener("click", myDropdownModule.updateDropDownMenu);
+    li.addEventListener("click", (e) => {
+      let liTextContent = li.textContent;
+      console.log(liTextContent);
+      li.textContent = getButtontoFilter.textContent;
+      getButtontoFilter.textContent = liTextContent;
+      // myDropdownModule.sortMediaByFilter(currentArrayOfMedias, li.textContent);
+    });
   });
 
   // écouteur > Open & close DROPDOWNMENU
@@ -249,10 +257,10 @@ const showMedias = (arrayOfMedias) => {
     // console.log(art);
     // const imageProperty = ("image" in art);
     // console.log(imageProperty);
-    if (art.hasOwnProperty("image")) {
-      userFotoCard_HTML = `
-    <article class="media__card">
-    <a href="javascript:;" id="${index}" class="m__thumb">
+
+    //composant photo
+    userFotoCard_HTML = `
+      <a href="javascript:;" id="${index}" class="m__thumb">
     <img
     tabIndex = "4"
     src="./assets/SamplePhotos/${art.image}"
@@ -261,36 +269,10 @@ const showMedias = (arrayOfMedias) => {
     role="img"
     />
     </a>
-    <div class="media__content">
-    <h2 class="media__title">${art.title}</h2>
-    <p class="media__number">${art.likes}</p>
-    <div class="media__likes" tabIndex = "4">
-    <svg
-    role="img"
-    class="media__heart"
-    width="19"
-    height="19"
-    viewbox="0 0 19 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-label="likes"
-    aria-describedby="title-Rai description-Rai"
-    >
-    <title id="title-Rai">Likes</title>
-    <desc id="description-Rai">Icone en forme de cœur</desc>
-    <path
-    d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
-    fill="#911C1C"
-    ></path>
-    </svg>
-    </div>
-    </div>
-    </article>
     `;
-      dom.photographerMedia.innerHTML += userFotoCard_HTML;
-    } else {
-      userVideoCard_HTML = `
-    <article class="media__card">
+
+    //composant video
+    userVideoCard_HTML = `
     <a href="javascript:;"
     alt="lecture d'une vidéo"
     href="#"
@@ -319,33 +301,69 @@ const showMedias = (arrayOfMedias) => {
         />
       </video>
       </a>
-    <div class="media__content">
+    `;
+
+    //composant mediacard
+    if (art.hasOwnProperty("image")) {
+      dom.photographerMedia.innerHTML += userCard_HTML = `
+      <article class="media__card">
+      ${userFotoCard_HTML}
+      <div class="media__content">
       <h2 class="media__title">${art.title}</h2>
       <p class="media__number">${art.likes}</p>
-      <div class="media__likes" tabindex="4">
-        <svg
-          role="img"
-          class="media__media__heart"
-          width="19"
-          height="19"
-          viewbox="0 0 19 19"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-label="likes"
-          aria-describedby="title-Wil description-Wil"
-        >
-          <title id="title-Wil">Likes</title>
-          <desc id="description-Wil">Icone en forme de cœur</desc>
-          <path
-            d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
-            fill="#911C1C"
-          ></path>
-        </svg>
+      <div class="media__likes" tabIndex = "4">
+      <svg
+      role="img"
+      class="media__heart"
+      width="19"
+      height="19"
+      viewbox="0 0 19 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="likes"
+      aria-describedby="title-Rai description-Rai"
+      >
+      <title id="title-Rai">Likes</title>
+      <desc id="description-Rai">Icone en forme de cœur</desc>
+      <path
+      d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
+      fill="#911C1C"
+      ></path>
+      </svg>
       </div>
-    </div>
-  </article>
-    `;
-      dom.photographerMedia.innerHTML += userVideoCard_HTML;
+      </div>
+      </article>
+      `;
+    } else {
+      dom.photographerMedia.innerHTML += userCard_HTML = `
+      <article class="media__card">
+      ${userVideoCard_HTML}
+      <div class="media__content">
+      <h2 class="media__title">${art.title}</h2>
+      <p class="media__number">${art.likes}</p>
+      <div class="media__likes" tabIndex = "4">
+      <svg
+      role="img"
+      class="media__heart"
+      width="19"
+      height="19"
+      viewbox="0 0 19 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="likes"
+      aria-describedby="title-Rai description-Rai"
+      >
+      <title id="title-Rai">Likes</title>
+      <desc id="description-Rai">Icone en forme de cœur</desc>
+      <path
+      d="M9.5 18.35L8.23125 17.03C3.725 12.36 0.75 9.28 0.75 5.5C0.75 2.42 2.8675 0 5.5625 0C7.085 0 8.54625 0.81 9.5 2.09C10.4537 0.81 11.915 0 13.4375 0C16.1325 0 18.25 2.42 18.25 5.5C18.25 9.28 15.275 12.36 10.7688 17.04L9.5 18.35Z"
+      fill="#911C1C"
+      ></path>
+      </svg>
+      </div>
+      </div>
+      </article>
+      `;
     }
   });
 };
@@ -357,11 +375,11 @@ const showModal = (arrayOfUser) => {
 
     userModal_HTML = `
     <div class="modal__content" role="dialog">
-      <button
-        id="closeModal"
-        class="modal__close"
-        aria-label="Fermer le formulaire de contact"
-      ></button>
+    <button
+    id="closeModal"
+    class="modal__close"
+    aria-label="Fermer le formulaire de contact"
+    ></button>
       <h1 class="modal__head" aria-label="Contactez-moi">
         Contactez-moi <br />
         ${item.name}
