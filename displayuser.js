@@ -135,22 +135,6 @@ getDataOnUserPage().then(() => {
   // écouteur > slider KEYPRESS
   document.addEventListener("keydown", keyPress);
 
-  // changer le text content menu selection filtre
-  document.querySelectorAll(".filter__custom-option").forEach((li) => {
-    li.addEventListener("click", (e) => {
-      let liTextValue = li.value;
-      li.value = dom.photographerFilter.value;
-      dom.photographerFilter.value = liTextValue;
-
-      //on supprime les mediacards existantes
-      dom.photographerMedia.innerHTML = "";
-      // console.log(document.querySelector(".media__card"));
-
-      //on genere un nouveau trie
-      showMedias(currentArrayOfMedias);
-    });
-  });
-
   // écouteur > Open & close DROPDOWNMENU
   document
     .querySelector("#btndrop")
@@ -160,6 +144,34 @@ getDataOnUserPage().then(() => {
   document
     .querySelector(".filter__custom-arrow")
     .addEventListener("click", myDropdownModule.getUpDownMenu);
+
+  // changer le text content menu selection filtre
+  document.querySelectorAll(".filter__custom-option").forEach((li) => {
+    li.addEventListener("click", (e) => {
+      //on echange les valeurs dans le menu
+      let liTextValue = li.value;
+      li.value = dom.photographerFilter.value;
+      dom.photographerFilter.value = liTextValue;
+      //on referme le menu deroulant
+      li.addEventListener("click", myDropdownModule.closeMenu);
+      //on supprime les mediacards existantes
+      dom.photographerMedia.innerHTML = "";
+      //on genere un nouveau trie
+      showMedias(currentArrayOfMedias);
+      myLikesModule.increaseOrDecreaseLikesAndTotalLikes();
+      // écouteur find the INDEX & open-slider
+      const mediaThumb = document.querySelectorAll(".m__thumb");
+      mediaThumb.forEach((thumb) => {
+        thumb.addEventListener("click", (e) => {
+          e.preventDefault();
+          currentMediaIndex = parseInt(e.currentTarget.id);
+          // console.log(currentMediaIndex);
+          showSlider(currentArrayOfMedias);
+          mySliderModule.launchSlider();
+        });
+      });
+    });
+  });
 });
 
 const showHeader = (arrayOfUser) => {
@@ -264,14 +276,10 @@ const showInfosPrice = (arrayOfUser) => {
 const showMedias = (arrayOfMedias) => {
   //FONCTION DE TRI > RETURN TABLEAU TRIé
   myDropdownModule.sortMediaByFilter(arrayOfMedias, dom.photographerFilter);
-  // console.log(arrayOfMedias);
-  // document
-  //   .querySelector(".media")
-  //   .removeChild(document.querySelectorAll(".media__card"));
 
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art, index) => {
-    console.log(art, index);
+    // console.log(art, index);
     //composant photo
     userFotoCard_HTML = `
       <a href="javascript:;" id="${index}" class="m__thumb">

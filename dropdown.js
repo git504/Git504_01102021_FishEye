@@ -8,6 +8,12 @@ let getButtontoFilter = document.getElementById("btndrop");
 // let filter = getButtontoFilter.textContent;
 let getAllLi = document.querySelectorAll(".filter__custom-option");
 
+export const closeMenu = (e) => {
+  custoMenu.style.display = "none";
+  customArrow.style.transform = "rotate(0deg)";
+  console.log("to close filter DROPDOWN");
+};
+
 export const getUpDownMenu = (e) => {
   // console.log(e.currentTarget.id);
   setTimeout(function () {
@@ -21,6 +27,7 @@ export const getUpDownMenu = (e) => {
       console.log("to open filter DROPDOWN");
     }
   }, 100);
+  setInterval(closeMenu, 2500);
 };
 
 export const sortMediaByFilter = (media, filter) => {
