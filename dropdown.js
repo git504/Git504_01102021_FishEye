@@ -1,4 +1,5 @@
 // console.log("DROPDOWN.JS FONCTIONNE");
+// import { showMedias } from "./displayuser";
 ("use strict");
 
 let custoMenu = document.querySelector(".filter__custom-menu");
@@ -22,39 +23,40 @@ export const getUpDownMenu = (e) => {
 };
 
 export const sortMediaByFilter = (media, filter) => {
-  console.log(filter.value);
+  let datelikespopularite = "";
 
   if (filter.value === "Date") {
-    console.log("OK Date == Date");
+    datelikespopularite = "date";
+    console.log(datelikespopularite);
+  } else if (filter.value === "Titre") {
+    datelikespopularite = "title";
+    console.log(datelikespopularite);
+  } else if (filter.value === "Popularité") {
+    datelikespopularite = "likes";
+    console.log(datelikespopularite);
   }
 
-  // let filterDTP = filter;
-  // console.log(filterDTP);
-  // } else if (filter.textContent === "Date") {
-  //   console.log("okddate");
-  //   // filter = "date";
-  // } else if (filter.textContent === "Popularité") {
-  //   console.log("okpop");
-  // filter = "likes";
-  // }
-  switch (filter) {
+  switch (datelikespopularite) {
     case "likes":
       return media.sort((a, b) => {
-        return b[filter] - a[filter];
+        return b[datelikespopularite] - a[datelikespopularite];
       });
     case "title":
       return media.sort((a, b) => {
-        if (a[filter] < b[filter]) {
+        if (a[datelikespopularite] < b[datelikespopularite]) {
           return -1;
         }
-        if (a[filter] > b[filter]) {
+        if (a[datelikespopularite] > b[datelikespopularite]) {
           return 1;
         }
         return 0;
       });
+
     case "date":
       return media.sort((a, b) => {
-        return new Date(b[filter]) - new Date(a[filter]);
+        return (
+          new Date(b[datelikespopularite]) - new Date(a[datelikespopularite])
+        );
       });
     default:
       break;

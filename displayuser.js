@@ -149,16 +149,16 @@ getDataOnUserPage().then(() => {
         dom.photographerFilter
       );
     });
-    //JOUER le filtre par default POPULARITE au chargement de la page
-    myDropdownModule.sortMediaByFilter(
-      currentArrayOfMedias,
-      dom.photographerFilter
-    );
   });
 
   // écouteur > Open & close DROPDOWNMENU
   document
     .querySelector("#btndrop")
+    .addEventListener("click", myDropdownModule.getUpDownMenu);
+
+  // écouteur > Open & close DROPDOWNMENU > ARROW
+  document
+    .querySelector(".filter__custom-arrow")
     .addEventListener("click", myDropdownModule.getUpDownMenu);
 });
 
@@ -262,6 +262,9 @@ const showInfosPrice = (arrayOfUser) => {
 };
 
 const showMedias = (arrayOfMedias) => {
+  //JOUER le filtre par default POPULARITE au chargement de la page
+  myDropdownModule.sortMediaByFilter(arrayOfMedias, dom.photographerFilter);
+
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art, index) => {
     // console.log(art);
