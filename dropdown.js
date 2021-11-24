@@ -16,18 +16,18 @@ export const closeMenu = (e) => {
 
 export const getUpDownMenu = (e) => {
   // console.log(e.currentTarget.id);
+  if (custoMenu.style.display === "flex") {
+    custoMenu.style.display = "none";
+    customArrow.style.transform = "rotate(0deg)";
+    console.log("to close filter DROPDOWN");
+  } else {
+    custoMenu.style.display = "flex";
+    customArrow.style.transform = "rotate(180deg)";
+    console.log("to open filter DROPDOWN");
+  }
   setTimeout(function () {
-    if (custoMenu.style.display === "flex") {
-      custoMenu.style.display = "none";
-      customArrow.style.transform = "rotate(0deg)";
-      console.log("to close filter DROPDOWN");
-    } else {
-      custoMenu.style.display = "flex";
-      customArrow.style.transform = "rotate(180deg)";
-      console.log("to open filter DROPDOWN");
-    }
-  }, 100);
-  setInterval(closeMenu, 2500);
+    closeMenu();
+  }, 2500);
 };
 
 export const sortMediaByFilter = (media, filter) => {
