@@ -124,18 +124,21 @@ seule page qui ne seront pas réutilisées ailleurs ;*/
     text-align: left;
     border: none;
     padding: 1.4rem 0 1.4rem 1rem;
+    display: flex;
   }
   &__custom-option {
     @extend .filter__select;
     border-top: 1px solid #fff;
     z-index: 9;
+    color: #fff;
   }
 
   &__custom-arrow {
+    position: absolute;
+    margin-top: 2.5rem;
     content: url("../assets/arrow-bottom.svg");
-    margin-left: 0.3rem;
+    margin-left: 10rem;
     margin-right: 0.3rem;
-    color: white;
     height: 1.5rem;
     z-index: 9;
     transition-duration: 0.3s;

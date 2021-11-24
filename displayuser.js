@@ -13,8 +13,7 @@ const dom = {
   photographerInfos: document.querySelector(".infos"),
   photographerModal: document.querySelector("#modalForm"),
   photographerSlider: document.querySelector(".container__slider"),
-  photographerFilter = document.getElementById("btndrop");
-
+  photographerFilter: document.getElementById("btndrop"),
 };
 // console.log(dom);
 
@@ -139,12 +138,22 @@ getDataOnUserPage().then(() => {
   // changer le text content menu selection filtre
   document.querySelectorAll(".filter__custom-option").forEach((li) => {
     li.addEventListener("click", (e) => {
-      let liTextContent = li.textContent;
-      li.textContent = dom.photographerFilter.textContent;
-      dom.photographerFilter.textContent = liTextContent;
-      // console.log(liTextContent);
+      let liTextValue = li.value;
+      li.value = dom.photographerFilter.value;
+      dom.photographerFilter.value = liTextValue;
+      // console.log(liTextValue);
+
+      //JOUER le filtre au click sur le menu
+      myDropdownModule.sortMediaByFilter(
+        currentArrayOfMedias,
+        dom.photographerFilter
+      );
     });
-    // myDropdownModule.sortMediaByFilter(currentArrayOfMedias, li.textContent);
+    //JOUER le filtre par default POPULARITE au chargement de la page
+    myDropdownModule.sortMediaByFilter(
+      currentArrayOfMedias,
+      dom.photographerFilter
+    );
   });
 
   // écouteur > Open & close DROPDOWNMENU

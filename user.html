@@ -114,7 +114,9 @@
             >Trier par</label
           >
           <div id="OrderBy" class="filter__custom-select">
-            <button
+            <span class="filter__custom-arrow"></span>
+            <input
+              type="button"
               id="btndrop"
               tabindex="3"
               name="mediaFilter"
@@ -122,27 +124,28 @@
               role="button"
               aria-haspopup="listbox"
               aria-labelledby="OrderBy"
-            >
-              Popularité
-              <span class="filter__custom-arrow"></span>
-            </button>
+              aria-selected="true"
+              value="Popularité"
+            />
+
             <ul class="filter__custom-menu" role="listbox" id="dropMenu">
-              <li
+              <input
+                type="button"
                 class="filter__custom-option"
                 role="option"
                 aria-selected="false"
                 tabindex="4"
-              >
-                Date
-              </li>
-              <li
+                value="Date"
+              />
+              <!-- Date -->
+              <input
+                type="button"
                 class="filter__custom-option"
                 role="option"
                 aria-selected="false"
                 tabindex="4"
-              >
-                Titre
-              </li>
+                value="Titre"
+              />
             </ul>
           </div>
         </div>

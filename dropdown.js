@@ -22,10 +22,12 @@ export const getUpDownMenu = (e) => {
 };
 
 export const sortMediaByFilter = (media, filter) => {
-  // console.log(filter);
-  // if (filter.textContent == "Titre") {
-  //   console.log("oktitre");
-  // }
+  console.log(filter.value);
+
+  if (filter.value === "Date") {
+    console.log("OK Date == Date");
+  }
+
   // let filterDTP = filter;
   // console.log(filterDTP);
   // } else if (filter.textContent === "Date") {
@@ -35,26 +37,26 @@ export const sortMediaByFilter = (media, filter) => {
   //   console.log("okpop");
   // filter = "likes";
   // }
-  // switch (filter) {
-  //   case "likes":
-  //     return media.sort((a, b) => {
-  //       return b[filter] - a[filter];
-  //     });
-  //   case "title":
-  //     return media.sort((a, b) => {
-  //       if (a[filter] < b[filter]) {
-  //         return -1;
-  //       }
-  //       if (a[filter] > b[filter]) {
-  //         return 1;
-  //       }
-  //       return 0;
-  //     });
-  //   case "date":
-  //     return media.sort((a, b) => {
-  //       return new Date(b[filter]) - new Date(a[filter]);
-  //     });
-  //   default:
-  //     break;
-  // }
+  switch (filter) {
+    case "likes":
+      return media.sort((a, b) => {
+        return b[filter] - a[filter];
+      });
+    case "title":
+      return media.sort((a, b) => {
+        if (a[filter] < b[filter]) {
+          return -1;
+        }
+        if (a[filter] > b[filter]) {
+          return 1;
+        }
+        return 0;
+      });
+    case "date":
+      return media.sort((a, b) => {
+        return new Date(b[filter]) - new Date(a[filter]);
+      });
+    default:
+      break;
+  }
 };
