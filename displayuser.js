@@ -141,9 +141,12 @@ getDataOnUserPage().then(() => {
       let liTextValue = li.value;
       li.value = dom.photographerFilter.value;
       dom.photographerFilter.value = liTextValue;
-      dom.photographerMedia.innerHTML = "";
-      console.log(document.querySelector(".media__card"));
 
+      //on supprime les mediacards existantes
+      dom.photographerMedia.innerHTML = "";
+      // console.log(document.querySelector(".media__card"));
+
+      //on genere un nouveau trie
       showMedias(currentArrayOfMedias);
     });
   });
