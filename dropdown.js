@@ -23,6 +23,7 @@ export const getUpDownMenu = (e) => {
 };
 
 export const sortMediaByFilter = (media, filter) => {
+  console.log(filter.value);
   let datelikespopularite = "";
 
   if (filter.value === "Date") {

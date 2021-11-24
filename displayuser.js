@@ -141,13 +141,8 @@ getDataOnUserPage().then(() => {
       let liTextValue = li.value;
       li.value = dom.photographerFilter.value;
       dom.photographerFilter.value = liTextValue;
-      // console.log(liTextValue);
-
-      //JOUER le filtre au click sur le menu
-      myDropdownModule.sortMediaByFilter(
-        currentArrayOfMedias,
-        dom.photographerFilter
-      );
+      dom.photographerMedia.removeChild(document.querySelector(".media__card"));
+      showMedias(currentArrayOfMedias);
     });
   });
 
@@ -262,15 +257,16 @@ const showInfosPrice = (arrayOfUser) => {
 };
 
 const showMedias = (arrayOfMedias) => {
-  //JOUER le filtre par default POPULARITE au chargement de la page
+  //FONCTION DE TRI > RETURN TABLEAU TRIé
   myDropdownModule.sortMediaByFilter(arrayOfMedias, dom.photographerFilter);
+  // console.log(arrayOfMedias);
+  // document
+  //   .querySelector(".media")
+  //   .removeChild(document.querySelectorAll(".media__card"));
 
   // DISPLAY DES IMAGES
   arrayOfMedias.forEach((art, index) => {
-    // console.log(art);
-    // const imageProperty = ("image" in art);
-    // console.log(imageProperty);
-
+    console.log(art, index);
     //composant photo
     userFotoCard_HTML = `
       <a href="javascript:;" id="${index}" class="m__thumb">
@@ -318,7 +314,7 @@ const showMedias = (arrayOfMedias) => {
 
     //composant mediacard
     if (art.hasOwnProperty("image")) {
-      dom.photographerMedia.innerHTML += userCard_HTML = `
+      userCard_HTML = `
       <article class="media__card">
       ${userFotoCard_HTML}
       <div class="media__content">
@@ -347,8 +343,9 @@ const showMedias = (arrayOfMedias) => {
       </div>
       </article>
       `;
+      dom.photographerMedia.innerHTML += userCard_HTML;
     } else {
-      dom.photographerMedia.innerHTML += userCard_HTML = `
+      userCard_HTML = `
       <article class="media__card">
       ${userVideoCard_HTML}
       <div class="media__content">
@@ -377,6 +374,7 @@ const showMedias = (arrayOfMedias) => {
       </div>
       </article>
       `;
+      dom.photographerMedia.innerHTML += userCard_HTML;
     }
   });
 };
