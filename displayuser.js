@@ -86,7 +86,7 @@ const getDataOnUserPage = async () => {
 };
 
 getDataOnUserPage().then(() => {
-  console.log("%c page USER ok", "color: green; font-weight:bold;");
+  // console.log("%c page USER ok", "color: green; font-weight:bold;");
 
   // écouteur > open-modal
   document
@@ -594,7 +594,7 @@ const slidePrecedente = () => {
 };
 
 const keyPress = (e) => {
-  console.log(e);
+  // console.log(e);
 
   if (e.keyCode === 37) {
     slidePrecedente();

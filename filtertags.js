@@ -11,15 +11,40 @@ const headerFilterTags = document.querySelectorAll(".header__filter-tag");
 //FILTRER LES TAGS SUR LA PAGE INDEX
 const FILTER_TAGS_MACHINE = () => {
   headerFilterTags.forEach((tag) => {
-    tag.addEventListener("click", (e) => {
-      e.preventDefault();
-      const givingTagToMachine = e.target.id;
-      isUserFiltered(givingTagToMachine);
-      // console.log("hello");
-    });
+    ["click", "keyup"].forEach((event) =>
+      tag.addEventListener(event, (e) => {
+        if (e.key == "Enter") {
+          e.preventDefault();
+          const givingTagToMachine = e.target.id;
+          isUserFiltered(givingTagToMachine);
+          // console.log("hello");
+        } else if (e.type == "click") {
+          e.preventDefault();
+          const givingTagToMachine = e.target.id;
+          isUserFiltered(givingTagToMachine);
+          // console.log("hello");
+        }
+      })
+    );
   });
 };
 export { FILTER_TAGS_MACHINE };
+
+// ["click", "keyup"].forEach((event) =>
+//   tag.addEventListener(event, (e) => {
+//     if (e.key == "Enter") {
+//       e.preventDefault();
+//       const givingTagToMachine = e.target.id;
+//       isUserFiltered(givingTagToMachine);
+//       // console.log("hello");
+//     } else if (e.type == "click") {
+//       e.preventDefault();
+//       const givingTagToMachine = e.target.id;
+//       isUserFiltered(givingTagToMachine);
+//       // console.log("hello");
+//     }
+//   })
+// );
 
 //FILTRER LES TAGS SUR LA PAGE USER
 const isUserFiltered = (oneTag) => {

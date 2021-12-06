@@ -7,7 +7,7 @@ export const launchSlider = () => {
 };
 
 export const closeSlider = () => {
-  console.log("FOCUS to close slider");
+  // console.log("FOCUS to close slider");
   getSlider.style.display = "none";
 };
 

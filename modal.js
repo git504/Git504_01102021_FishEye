@@ -5,13 +5,13 @@
 const getModal = document.getElementById("modalForm");
 
 const launchModal = () => {
-  console.log("FOCUS to open modal");
+  // console.log("FOCUS to open modal");
   getModal.style.display = "flex";
   document.querySelector("#firstname").focus();
 };
 
 const closeModal = () => {
-  console.log("FOCUS to close modal");
+  // console.log("FOCUS to close modal");
   getModal.style.display = "none";
 };
 
@@ -25,7 +25,7 @@ const keyPressModal = (e) => {
 };
 
 const checkInputs = () => {
-  console.log("%c checking form...", "color: green; font-weight:bold;");
+  // console.log("%c checking form...", "color: green; font-weight:bold;");
   //INPUTS
   const form = document.getElementById("form");
   const formPrenom = form.firstname;
@@ -85,6 +85,7 @@ const checkInputs = () => {
       return false;
     } else {
       setSuccessFor(formPrenom);
+      console.log(prenomValue);
       return true;
     }
   };
@@ -118,6 +119,7 @@ const checkInputs = () => {
       return false;
     } else {
       setSuccessFor(formNom);
+      console.log(nomValue);
       return true;
     }
   };
@@ -148,6 +150,7 @@ const checkInputs = () => {
       return false;
     } else {
       setSuccessFor(formEmail);
+      console.log(mailValue);
       return true;
     }
   };
@@ -207,7 +210,7 @@ const checkInputs = () => {
 
   isValid()
     ? console.warn(" ⎛𖦛𐃔𖦛⎞ statut form IS VALID ?", isValid())
-    : (console.warn(" ⎛𖦛𐃔𖦛⎞ statut form IS VALID ?", isValid()),
+    : (console.warn("NOT VALID FORM"),
       document.querySelector("#firstname").focus());
 
   //  form.reset()

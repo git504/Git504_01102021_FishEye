@@ -11,7 +11,7 @@ let getAllLi = document.querySelectorAll(".filter__custom-option");
 export const closeMenu = (e) => {
   custoMenu.style.display = "none";
   customArrow.style.transform = "rotate(0deg)";
-  console.log("to close filter DROPDOWN");
+  // console.log("to close filter DROPDOWN");
 };
 
 export const getUpDownMenu = (e) => {
@@ -19,11 +19,11 @@ export const getUpDownMenu = (e) => {
   if (custoMenu.style.display === "flex") {
     custoMenu.style.display = "none";
     customArrow.style.transform = "rotate(0deg)";
-    console.log("to close filter DROPDOWN");
+    // console.log("to close filter DROPDOWN");
   } else {
     custoMenu.style.display = "flex";
     customArrow.style.transform = "rotate(180deg)";
-    console.log("to open filter DROPDOWN");
+    // console.log("to open filter DROPDOWN");
   }
   setTimeout(function () {
     closeMenu();
@@ -31,18 +31,18 @@ export const getUpDownMenu = (e) => {
 };
 
 export const sortMediaByFilter = (media, filter) => {
-  console.log(filter.value);
+  // console.log(filter.value);
   let datelikespopularite = "";
 
   if (filter.value === "Date") {
     datelikespopularite = "date";
-    console.log(datelikespopularite);
+    // console.log(datelikespopularite);
   } else if (filter.value === "Titre") {
     datelikespopularite = "title";
-    console.log(datelikespopularite);
+    // console.log(datelikespopularite);
   } else if (filter.value === "Popularité") {
     datelikespopularite = "likes";
-    console.log(datelikespopularite);
+    // console.log(datelikespopularite);
   }
 
   switch (datelikespopularite) {
