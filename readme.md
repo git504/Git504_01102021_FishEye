@@ -17,7 +17,7 @@
 
 ## start :
 
-- _dans le terminal lancer la commande_ **`npm run dev`** 
+- _dans le terminal lancer la commande_ **`npm i`** et ensuite **`npm run start`**
 
 [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
